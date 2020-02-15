@@ -500,14 +500,8 @@
                                 <rect key="frame" x="0.0" y="122" width="414" height="691"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-45-5Cv" userLabel="Scroll View Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="953"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="691"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in or Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ic-Yc-lUy">
-                                                <rect key="frame" x="24" y="32" width="129" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAQ-1K-wCz" userLabel="Separator">
                                                 <rect key="frame" x="8" y="85" width="398" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -521,22 +515,39 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAW-Sa-xQg">
+                                                <rect key="frame" x="24" y="625" width="58" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Log out">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logOutPressed:" destination="E9G-bq-S4L" eventType="touchUpInside" id="mLx-Jg-WMx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Px0-yD-Chg">
+                                                <rect key="frame" x="24" y="32" width="116" height="30"/>
+                                                <state key="normal" title="Log in or Sign up">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.30980392159999998" green="0.42745098040000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="HNS-ce-his" firstAttribute="top" secondItem="lAQ-1K-wCz" secondAttribute="bottom" constant="32" id="FF7-nv-Siw"/>
+                                            <constraint firstItem="jAW-Sa-xQg" firstAttribute="leading" secondItem="8mj-45-5Cv" secondAttribute="leading" constant="24" id="GgQ-Wj-rUg"/>
                                             <constraint firstAttribute="trailing" secondItem="lAQ-1K-wCz" secondAttribute="trailing" constant="8" id="JcK-vR-ZpL"/>
-                                            <constraint firstItem="1Ic-Yc-lUy" firstAttribute="leading" secondItem="8mj-45-5Cv" secondAttribute="leading" constant="24" id="LpL-N5-31e"/>
-                                            <constraint firstItem="lAQ-1K-wCz" firstAttribute="top" secondItem="1Ic-Yc-lUy" secondAttribute="bottom" constant="32" id="Pd7-wj-k82"/>
-                                            <constraint firstAttribute="height" constant="953" id="aPK-E2-2Zc"/>
+                                            <constraint firstItem="Px0-yD-Chg" firstAttribute="leading" secondItem="8mj-45-5Cv" secondAttribute="leading" constant="24" id="PWw-cI-8ev"/>
+                                            <constraint firstItem="Px0-yD-Chg" firstAttribute="top" secondItem="8mj-45-5Cv" secondAttribute="top" constant="32" id="ae2-aV-ZAu"/>
                                             <constraint firstItem="HNS-ce-his" firstAttribute="leading" secondItem="8mj-45-5Cv" secondAttribute="leading" constant="24" id="dRw-aR-iNN"/>
-                                            <constraint firstItem="1Ic-Yc-lUy" firstAttribute="top" secondItem="8mj-45-5Cv" secondAttribute="top" constant="32" id="kAW-Jf-4wg"/>
+                                            <constraint firstAttribute="bottom" secondItem="jAW-Sa-xQg" secondAttribute="bottom" constant="33" id="kdD-Dn-l9v"/>
                                             <constraint firstItem="lAQ-1K-wCz" firstAttribute="leading" secondItem="8mj-45-5Cv" secondAttribute="leading" constant="8" id="wL2-TF-yOI"/>
+                                            <constraint firstItem="lAQ-1K-wCz" firstAttribute="top" secondItem="Px0-yD-Chg" secondAttribute="bottom" constant="23" id="yDP-Np-5if"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="8mj-45-5Cv" secondAttribute="bottom" constant="-265" id="1uL-vJ-Y4m"/>
+                                    <constraint firstAttribute="bottom" secondItem="8mj-45-5Cv" secondAttribute="bottom" id="5NV-4R-NqO"/>
                                     <constraint firstItem="8mj-45-5Cv" firstAttribute="leading" secondItem="9VS-5F-942" secondAttribute="leading" id="KGo-Pa-uho"/>
                                     <constraint firstItem="8mj-45-5Cv" firstAttribute="top" secondItem="9VS-5F-942" secondAttribute="top" id="L6O-mw-9oe"/>
                                     <constraint firstItem="8mj-45-5Cv" firstAttribute="trailing" secondItem="9VS-5F-942" secondAttribute="trailing" id="T5C-aK-NBC"/>
@@ -548,18 +559,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="3Aj-CQ-cAO" firstAttribute="top" secondItem="Cpl-oi-WNc" secondAttribute="bottom" id="7Yc-br-r7W"/>
                             <constraint firstItem="3Aj-CQ-cAO" firstAttribute="trailing" secondItem="aNz-U5-ZSp" secondAttribute="trailing" id="Qya-6o-WMd"/>
                             <constraint firstItem="Cpl-oi-WNc" firstAttribute="top" secondItem="aNz-U5-ZSp" secondAttribute="top" id="SJJ-ym-VGq"/>
                             <constraint firstItem="3Aj-CQ-cAO" firstAttribute="leading" secondItem="aNz-U5-ZSp" secondAttribute="leading" id="TiB-JS-d3c"/>
                             <constraint firstItem="Cpl-oi-WNc" firstAttribute="leading" secondItem="aNz-U5-ZSp" secondAttribute="leading" id="cMt-ul-l9z"/>
-                            <constraint firstItem="3Aj-CQ-cAO" firstAttribute="top" secondItem="Cpl-oi-WNc" secondAttribute="bottom" id="cq8-hR-op0"/>
                             <constraint firstItem="3Aj-CQ-cAO" firstAttribute="bottom" secondItem="aNz-U5-ZSp" secondAttribute="bottom" id="lx9-co-CiK"/>
                             <constraint firstItem="Cpl-oi-WNc" firstAttribute="trailing" secondItem="aNz-U5-ZSp" secondAttribute="trailing" id="mtR-7t-ey2"/>
+                            <constraint firstItem="aNz-U5-ZSp" firstAttribute="bottom" secondItem="8mj-45-5Cv" secondAttribute="bottom" id="pU0-6c-nND"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aNz-U5-ZSp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="eqT-iJ-1fz"/>
                     <connections>
+                        <outlet property="logOutButton" destination="jAW-Sa-xQg" id="ADH-mp-Vki"/>
                         <outlet property="profileImageView" destination="y8z-lv-pA8" id="M4R-ub-YLG"/>
                     </connections>
                 </viewController>

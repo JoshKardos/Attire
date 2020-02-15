@@ -28,7 +28,6 @@ class SearchViewController: UIViewController {
     let headerSearchBarDistance: CGFloat = 20.5 //50.66666793823242
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         if let uid = Auth.auth().currentUser?.uid {
             UsersManager.loadCurrentUser(uid: uid)
