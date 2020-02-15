@@ -1,0 +1,13 @@
+//
+//  UsersManager.swift
+//  SnowRental
+//
+//  Created by Josh Kardos on 2/15/20.
+//  Copyright © 2020 Josh Kardos. All rights reserved.
+//
+
+import Foundation
+class UsersManager {
+    static let currentUser = User()
+}
+
