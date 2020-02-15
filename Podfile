@@ -6,7 +6,7 @@ target 'SnowRental' do
   use_frameworks!
 
   # Pods for SnowRental
-
+  pod 'ProgressHUD'
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Firebase/Core'

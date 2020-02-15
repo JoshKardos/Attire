@@ -18,7 +18,7 @@ class YouMightLikeCell: UICollectionViewCell {
     func configureCell(shirtDesign: Dictionary<String, Any>){
         imageView.image = UIImage(named: shirtDesign["imageName"] as! String)
         movieNameLabel.text = "Movies: " + (shirtDesign["movieName"] as! String)
-        timesUsedLabel.text = "Used: " + (shirtDesign["timesUsed"] as! String)
+        timesUsedLabel.text = "Used: " + String(shirtDesign["timesUsed"] as! Int)
     }
     
 }

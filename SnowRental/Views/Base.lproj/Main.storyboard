@@ -237,7 +237,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="ivP-s2-AW9" kind="show" id="vW6-ge-OeE"/>
+                                                            <action selector="addDesignPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="fgM-Fi-VYT"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -352,6 +352,7 @@
                         <outlet property="timelessAttireLabel" destination="VQf-X8-A5X" id="5U9-NV-CRI"/>
                         <outlet property="youMightLikeCollectionView" destination="A82-7t-MvP" id="gZU-6D-Iia"/>
                         <segue destination="RU3-l2-Kiq" kind="show" identifier="ShowSearchTableViewController" animates="NO" id="8cm-81-cHS"/>
+                        <segue destination="ivP-s2-AW9" kind="show" identifier="ShowAuthenticationStoryboard" id="i7g-RT-Jlk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

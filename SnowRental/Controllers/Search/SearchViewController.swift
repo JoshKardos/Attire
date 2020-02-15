@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class SearchViewController: UIViewController {
     
@@ -25,10 +26,17 @@ class SearchViewController: UIViewController {
     let searchBarMaxTopConstraint: CGFloat = 260
     let searchBarMinTopConstraint: CGFloat = -20
     let headerSearchBarDistance: CGFloat = 20.5 //50.66666793823242
-    let movies: Dictionary<String, Any> = [:]
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        self.fetchMovies()
+        if let uid = Auth.auth().currentUser?.uid {
+            UsersManager.loadCurrentUser(uid: uid)
+        }
+        MoviesManager.fetchMovies {
+            self.youMightLikeCollectionView.reloadData()
+        }
+        
         scrollView.delegate = self
         youMightLikeCollectionView.dataSource = self
         searchBar.delegate = self
@@ -38,10 +46,13 @@ class SearchViewController: UIViewController {
         configureScrollView()
     }
     
-    func fetchMovies() {
-        Database.database().reference().child("Goodfellas").observe(.value) { (snapshot) in
-            
-            print(snapshot)
+    @IBAction func addDesignPressed(_ sender: Any) {
+        
+        if Auth.auth().currentUser == nil {
+            self.performSegue(withIdentifier: "ShowAuthenticationStoryboard", sender: nil)
+        } else {
+            self.tabBarController!.selectedIndex = 1
+            print("logged in")
         }
     }
 }
@@ -64,14 +75,14 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return MoviesManager.movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YouMightLikeCell", for: indexPath) as! YouMightLikeCell
-        let movieNames = Array(movies.keys)
+        let movieNames = Array(MoviesManager.movies.keys)
         let movieName = movieNames[indexPath.row]
-        let movie = movies[movieName] as! Dictionary<String, Any>
+        let movie = MoviesManager.movies[movieName] as! Dictionary<String, Any>
         cell.configureCell(shirtDesign: movie)
         return cell
     }
