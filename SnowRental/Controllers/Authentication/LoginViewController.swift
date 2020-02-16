@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: Any) {
+        ProgressHUD.show()
         if self.validTextFields() {
             UsersManager.logIn(email: emailTextField.text!, password: passwordTextField.text!) {
                 self.navigationController?.dismiss(animated: false, completion: {

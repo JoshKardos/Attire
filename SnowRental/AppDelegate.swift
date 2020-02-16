@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        //if user is logged in then fetch his/her data
+        UsersManager.loadCurrentUser(uid: Auth.auth().currentUser!.uid, onSuccess: {})
         return true
     }
 

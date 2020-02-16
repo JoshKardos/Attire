@@ -18,8 +18,8 @@ class SearchTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        resultsTableView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        searchBar.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        resultsTableView.dataSource = self
         
         // SET PLACEHOLDER FOR SEARCH BAR
         var myMutableStringTitle = NSMutableAttributedString()
@@ -28,16 +28,23 @@ class SearchTableViewController: UIViewController {
         myMutableStringTitle.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range:NSRange(location : 0, length : searchBarPlaceholder.count))    // color
         searchBar.attributedPlaceholder = myMutableStringTitle
         ///
-        
-        searchBar.delegate = self
+        searchBar.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         searchBar.becomeFirstResponder()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
     }
     
+    @IBAction func searchBarChanged(_ sender: Any) {
+        if searchBar.text!.count > 1 {
+            MoviesManager.searchMovie(title: searchBar.text!) {
+                self.resultsTableView.reloadData()
+            }
+        }
+    }
+    
     @objc
     func keyboardWillShow(_ notification: Notification) {
-        resultsTableViewBottomConstraint.constant = 260
+
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
@@ -46,6 +53,18 @@ class SearchTableViewController: UIViewController {
     
 }
 
-extension SearchTableViewController: UITextFieldDelegate {
+extension SearchTableViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if MoviesManager.omdbSearchMovies.count < 10 {
+            return MoviesManager.omdbSearchMovies.count
+        }
+        return 10
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableView") as! SearchCell
+        let movie = MoviesManager.omdbSearchMovies[indexPath.row] as! [String: String]
+        cell.configureCell(movie: movie)
+        return cell
+    }
 }

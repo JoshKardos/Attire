@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8FED789157070691D4FD8F74 /* Pods_SnowRentalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0EB9A4652A6C1C2FFEA8A6 /* Pods_SnowRentalTests.framework */; };
 		A52035AEF462217FCDC822FC /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEA69882E10CE19597CF21C /* Pods_SnowRental_SnowRentalUITests.framework */; };
+		B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */; };
+		B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0823F918FB00D765FD /* ApiKeys.swift */; };
+		B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0A23F932B200D765FD /* SearchCell.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
 		B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5323F879DC005695E8 /* UsersManager.swift */; };
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
@@ -17,6 +20,8 @@
 		B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5E23F8B420005695E8 /* LoginViewController.swift */; };
 		B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B6023F8D2E3005695E8 /* AccountViewController.swift */; };
 		B3864B6323F8DE8E005695E8 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */; };
+		B3864B6523F8E1F1005695E8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B6423F8E1F1005695E8 /* Profile.storyboard */; };
+		B3864B6723F90041005695E8 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B6623F90041005695E8 /* ChangePasswordViewController.swift */; };
 		B397450523F4F93900604316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397450423F4F93900604316 /* AppDelegate.swift */; };
 		B397450723F4F93900604316 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397450623F4F93900604316 /* SceneDelegate.swift */; };
 		B397450E23F4F93900604316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B397450C23F4F93900604316 /* Main.storyboard */; };
@@ -58,6 +63,9 @@
 		5A3E5CD5582046876C95818F /* Pods-SnowRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.release.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.release.xcconfig"; sourceTree = "<group>"; };
 		6627E58904A120D74DE1EAAA /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C473764375729EC5218FEF7 /* Pods-SnowRentalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+		B34AFB0823F918FB00D765FD /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		B34AFB0A23F932B200D765FD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		B3864B5323F879DC005695E8 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		B3864B5E23F8B420005695E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3864B6023F8D2E3005695E8 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
+		B3864B6423F8E1F1005695E8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B3864B6623F90041005695E8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B397450123F4F93900604316 /* SnowRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B397450423F4F93900604316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B397450623F4F93900604316 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 				B397450C23F4F93900604316 /* Main.storyboard */,
 				B3864B4A23F87710005695E8 /* Authentication.storyboard */,
 				B397451423F4F93A00604316 /* LaunchScreen.storyboard */,
+				B3864B6423F8E1F1005695E8 /* Profile.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +188,8 @@
 				B397453923F5DA8200604316 /* ProfileViewController.swift */,
 				B3864B6023F8D2E3005695E8 /* AccountViewController.swift */,
 				B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */,
+				B3864B6623F90041005695E8 /* ChangePasswordViewController.swift */,
+				B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -185,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				B397453D23F72F8A00604316 /* YouMightLikeCell.swift */,
+				B34AFB0A23F932B200D765FD /* SearchCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -234,6 +248,7 @@
 				B397450423F4F93900604316 /* AppDelegate.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
 				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
+				B34AFB0823F918FB00D765FD /* ApiKeys.swift */,
 				B3864B5523F87B66005695E8 /* Models */,
 				B3864B5223F8787C005695E8 /* Managers */,
 				B3864B5123F87838005695E8 /* Cells */,
@@ -388,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3864B6523F8E1F1005695E8 /* Profile.storyboard in Resources */,
 				B397451623F4F93A00604316 /* LaunchScreen.storyboard in Resources */,
 				B3CEC85E23F7C5D100333178 /* GoogleService-Info.plist in Resources */,
 				B397451323F4F93A00604316 /* Assets.xcassets in Resources */,
@@ -521,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */,
+				B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */,
 				B3864B6323F8DE8E005695E8 /* ContactInfoViewController.swift in Sources */,
 				B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */,
 				B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */,
@@ -529,9 +546,12 @@
 				B397450523F4F93900604316 /* AppDelegate.swift in Sources */,
 				B3864B5D23F8A9B2005695E8 /* MoviesManager.swift in Sources */,
 				B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */,
+				B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */,
 				B397450723F4F93900604316 /* SceneDelegate.swift in Sources */,
 				B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */,
+				B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */,
 				B3864B5B23F89F72005695E8 /* FirebaseNodes.swift in Sources */,
+				B3864B6723F90041005695E8 /* ChangePasswordViewController.swift in Sources */,
 				B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */,
 				B397453A23F5DA8200604316 /* ProfileViewController.swift in Sources */,
 				B397451123F4F93900604316 /* SnowRental.xcdatamodeld in Sources */,

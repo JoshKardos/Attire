@@ -7,12 +7,14 @@ target 'SnowRental' do
 
   # Pods for SnowRental
   pod 'ProgressHUD'
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.0'
   pod 'SwiftyJSON'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Kingfisher', '~> 5.0'
+
 
   target 'SnowRentalTests' do
     inherit! :search_paths

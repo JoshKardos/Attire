@@ -7,20 +7,26 @@
 //
 
 import Foundation
+import FirebaseAuth
 import UIKit
 
 class ContactInfoViewController: UIViewController {
 
     @IBOutlet weak var emailContainer: UIView!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var verifiedLabel: UILabel!
     @IBOutlet weak var passwordContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let emailPressedGesture = UITapGestureRecognizer(target: self, action:  #selector(self.emailPressed))
-        self.emailContainer.addGestureRecognizer(emailPressedGesture)
+        emailLabel.text = UsersManager.currentUser.email
+        if Auth.auth().currentUser!.isEmailVerified {
+            verifiedLabel.text = "Verified"
+        } else {
+            verifiedLabel.text = "Not verified"
+        }
     }
-
-    @objc func emailPressed(sender : UITapGestureRecognizer) {
-        print("clicked email")
+    @IBAction func passwordPressed(_ sender: Any) {
+        print("password pressed")
     }
 }
