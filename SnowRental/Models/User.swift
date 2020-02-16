@@ -10,12 +10,14 @@ import Foundation
 class User{
     
     var uid: String!
-    var fullname: String!
+    var firstName: String!
+    var lastName: String!
     var email: String!
     init(){}
     init(dictionary: NSDictionary){
         uid = (dictionary["uid"] as! String)
-        fullname = (dictionary["fullname"] as! String)
+        firstName = (dictionary["firstName"] as! String)
+        lastName = (dictionary["lastName"] as! String)
         email = (dictionary["email"] as! String)
     }
     
