@@ -29,9 +29,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let uid = Auth.auth().currentUser?.uid {
-            UsersManager.loadCurrentUser(uid: uid)
-        }
         MoviesManager.fetchMovies {
             self.youMightLikeCollectionView.reloadData()
         }

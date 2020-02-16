@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func setPlaceholder(textField: UITextField, placeholderString: String) {
+    static func setPlaceholder(textField: UITextField, placeholderString: String) {
         var placeholderMutableStringTitle = NSMutableAttributedString()
         let placeholder  = placeholderString // PlaceHolderText
         placeholderMutableStringTitle = NSMutableAttributedString(string : placeholder, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: textField.font!.pointSize)]) // font
@@ -59,10 +59,10 @@ class SignUpViewController: UIViewController {
         firstNameTextField.borderStyle = .none
         lastNameTextField.borderStyle = .none
         
-        self.setPlaceholder(textField: emailTextField, placeholderString: "Email")
-        self.setPlaceholder(textField: passwordTextField, placeholderString: "Password")
-        self.setPlaceholder(textField: firstNameTextField, placeholderString: "First name")
-        self.setPlaceholder(textField: lastNameTextField, placeholderString: "Last name")
+        SignUpViewController.setPlaceholder(textField: emailTextField, placeholderString: "Email")
+        SignUpViewController.setPlaceholder(textField: passwordTextField, placeholderString: "Password")
+        SignUpViewController.setPlaceholder(textField: firstNameTextField, placeholderString: "First name")
+        SignUpViewController.setPlaceholder(textField: lastNameTextField, placeholderString: "Last name")
         
     }
     

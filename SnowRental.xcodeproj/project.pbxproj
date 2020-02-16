@@ -14,6 +14,9 @@
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
 		B3864B5B23F89F72005695E8 /* FirebaseNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */; };
 		B3864B5D23F8A9B2005695E8 /* MoviesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5C23F8A9B2005695E8 /* MoviesManager.swift */; };
+		B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5E23F8B420005695E8 /* LoginViewController.swift */; };
+		B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B6023F8D2E3005695E8 /* AccountViewController.swift */; };
+		B3864B6323F8DE8E005695E8 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */; };
 		B397450523F4F93900604316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397450423F4F93900604316 /* AppDelegate.swift */; };
 		B397450723F4F93900604316 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397450623F4F93900604316 /* SceneDelegate.swift */; };
 		B397450E23F4F93900604316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B397450C23F4F93900604316 /* Main.storyboard */; };
@@ -60,6 +63,9 @@
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNodes.swift; sourceTree = "<group>"; };
 		B3864B5C23F8A9B2005695E8 /* MoviesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesManager.swift; sourceTree = "<group>"; };
+		B3864B5E23F8B420005695E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B3864B6023F8D2E3005695E8 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		B397450123F4F93900604316 /* SnowRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B397450423F4F93900604316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B397450623F4F93900604316 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			children = (
 				B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */,
 				B3C3495723F7E09400B061E9 /* SignUpViewController.swift */,
+				B3864B5E23F8B420005695E8 /* LoginViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -168,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				B397453923F5DA8200604316 /* ProfileViewController.swift */,
+				B3864B6023F8D2E3005695E8 /* AccountViewController.swift */,
+				B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 			children = (
 				B397450423F4F93900604316 /* AppDelegate.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
+				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
 				B3864B5523F87B66005695E8 /* Models */,
 				B3864B5223F8787C005695E8 /* Managers */,
 				B3864B5123F87838005695E8 /* Cells */,
@@ -234,7 +244,6 @@
 				B397451723F4F93A00604316 /* Info.plist */,
 				B3CEC85D23F7C5D100333178 /* GoogleService-Info.plist */,
 				B397450F23F4F93900604316 /* SnowRental.xcdatamodeld */,
-				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
 			);
 			path = SnowRental;
 			sourceTree = "<group>";
@@ -511,6 +520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */,
+				B3864B6323F8DE8E005695E8 /* ContactInfoViewController.swift in Sources */,
 				B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */,
 				B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */,
 				B397453C23F5F7A400604316 /* SearchViewController.swift in Sources */,
@@ -521,6 +532,7 @@
 				B397450723F4F93900604316 /* SceneDelegate.swift in Sources */,
 				B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */,
 				B3864B5B23F89F72005695E8 /* FirebaseNodes.swift in Sources */,
+				B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */,
 				B397453A23F5DA8200604316 /* ProfileViewController.swift in Sources */,
 				B397451123F4F93900604316 /* SnowRental.xcdatamodeld in Sources */,
 				B3864B5723F87B7D005695E8 /* User.swift in Sources */,
