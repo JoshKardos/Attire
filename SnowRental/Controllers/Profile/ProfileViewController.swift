@@ -37,10 +37,8 @@ class ProfileViewController: UIViewController {
     
     func configureProfile() {
         if Auth.auth().currentUser == nil {
-            print("configure logged out")
             self.configureLoggedOutProfile()
         } else {
-            print("configure logged in")
             self.configureLoggedInProfile()
         }
     }
