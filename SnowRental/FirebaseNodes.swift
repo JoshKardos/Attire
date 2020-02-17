@@ -8,5 +8,8 @@
 
 import Foundation
 class FirebaseNodes {
+    static let designs = "designs"
+    static let movieDesigns = "movie-designs"
     static let users = "users"
+    static let movies = "movies"
 }

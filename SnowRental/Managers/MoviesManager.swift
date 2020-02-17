@@ -14,10 +14,51 @@ import SwiftyJSON
 class MoviesManager {
     static var movies: Dictionary<String, Any> = [:]
     static var omdbSearchMovies: [Any] = []
-
+    static var movieViewingDesignIds: [String] = []
+    static var movieViewingDesigns: [Any] = []
     static let omdbBaseUrl = "http://www.omdbapi.com/?apikey=\(ApiKeys.omdbApi)"
+    
+    static func fetchDesignFromFirebase(id: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
+        Database.database().reference().child(FirebaseNodes.designs).child(id).observe(.value) { (snapshot) in
+            if !snapshot.exists() {
+                onEmpty()
+                return
+            }
+            movieViewingDesigns.append(snapshot.value as Any)
+            onSuccess()
+        }
+    }
+    
+    static func fetchDesignIdsFromFirebase(imdbID: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
+        Database.database().reference().child(FirebaseNodes.movieDesigns).child(imdbID).observe(.value) { (snapshot) in
+            if !snapshot.exists() {
+                onEmpty()
+                return
+            }
+            let designsMap = snapshot.value as! [String: Any]
+            let designsIds = designsMap.keys
+            movieViewingDesignIds = Array(designsIds)
+            onSuccess()
+        }
+    }
+    
+    static func clearMovieDesigns() {
+        movieViewingDesignIds = []
+        movieViewingDesigns = []
+    }
+    
+    static func searchMovieFromFirebase(imdbID: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
+        clearMovieDesigns()
+        Database.database().reference().child(FirebaseNodes.movies).child(imdbID).observe(.value) { (snapshot) in
+            if !snapshot.exists() {
+                onEmpty()
+                return
+            }
+            onSuccess()
+        }
+    }
 
-    static func searchMovie(title: String, onSuccess: @escaping() -> Void ) {
+    static func searchMovieFromOMDB(title: String, onSuccess: @escaping() -> Void) {
         let titleUrl = title.replacingOccurrences(of: " ", with: "+")
         AF.request("\(omdbBaseUrl)&s=\(titleUrl)", method: .get).responseJSON { (response) in
             switch response.result {

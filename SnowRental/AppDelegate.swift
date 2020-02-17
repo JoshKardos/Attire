@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //if user is logged in then fetch his/her data
-        UsersManager.loadCurrentUser(uid: Auth.auth().currentUser!.uid, onSuccess: {})
+        UsersManager.loadCurrentUser(onSuccess: {})
         return true
     }
 
