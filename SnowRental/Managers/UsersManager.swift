@@ -26,8 +26,11 @@ class UsersManager {
         }
     }
     
-    static func loadCurrentUser(uid: String, onSuccess: @escaping() -> Void){
-        Database.database().reference().child(FirebaseNodes.users).child(uid).observe(.value) { (snapshot) in
+    static func loadCurrentUser(onSuccess: @escaping() -> Void){
+        guard let id = Auth.auth().currentUser?.uid else {
+            return
+        }
+        Database.database().reference().child(FirebaseNodes.users).child(id).observe(.value) { (snapshot) in
             currentUser = User(dictionary: snapshot.value as! NSDictionary)
             onSuccess()
         }
@@ -40,7 +43,7 @@ class UsersManager {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
             }
-            loadCurrentUser(uid: (result?.user.uid)!) {
+            loadCurrentUser() {
                 onSuccess()
             }
         }

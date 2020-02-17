@@ -566,11 +566,11 @@
             </objects>
             <point key="canvasLocation" x="6809" y="897"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="2q4-b1-i0V">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uzb-MF-Zzu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="person" catalog="system" id="m9w-zg-3C2"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="m9w-zg-3C2"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="ITA-lR-3zY">

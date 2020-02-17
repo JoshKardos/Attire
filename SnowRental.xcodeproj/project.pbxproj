@@ -12,6 +12,14 @@
 		B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */; };
 		B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0823F918FB00D765FD /* ApiKeys.swift */; };
 		B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0A23F932B200D765FD /* SearchCell.swift */; };
+		B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0C23F9432000D765FD /* MovieViewController.swift */; };
+		B34AFB0F23F9F2AE00D765FD /* DesignManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */; };
+		B34AFB1123FA199B00D765FD /* ShopDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1023FA199B00D765FD /* ShopDesignCell.swift */; };
+		B34AFB1723FA1B7F00D765FD /* ImageHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1623FA1B7F00D765FD /* ImageHelpers.swift */; };
+		B34AFB1923FA233900D765FD /* Design.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34AFB1823FA233900D765FD /* Design.storyboard */; };
+		B34AFB1C23FA555300D765FD /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1B23FA555300D765FD /* DesignViewController.swift */; };
+		B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */; };
+		B34AFB2523FA7EC700D765FD /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
 		B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5323F879DC005695E8 /* UsersManager.swift */; };
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
@@ -66,6 +74,14 @@
 		B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		B34AFB0823F918FB00D765FD /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		B34AFB0A23F932B200D765FD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		B34AFB0C23F9432000D765FD /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignManager.swift; sourceTree = "<group>"; };
+		B34AFB1023FA199B00D765FD /* ShopDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDesignCell.swift; sourceTree = "<group>"; };
+		B34AFB1623FA1B7F00D765FD /* ImageHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelpers.swift; sourceTree = "<group>"; };
+		B34AFB1823FA233900D765FD /* Design.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Design.storyboard; sourceTree = "<group>"; };
+		B34AFB1B23FA555300D765FD /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
+		B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
+		B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		B3864B5323F879DC005695E8 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -142,6 +158,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B34AFB1523FA1B7200D765FD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B34AFB1623FA1B7F00D765FD /* ImageHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B34AFB1A23FA554300D765FD /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				B34AFB1F23FA6BF200D765FD /* Camera */,
+				B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		B34AFB1F23FA6BF200D765FD /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B34AFB1B23FA555300D765FD /* DesignViewController.swift */,
+				B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		B3864B4C23F8777B005695E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +191,7 @@
 				B3864B4A23F87710005695E8 /* Authentication.storyboard */,
 				B397451423F4F93A00604316 /* LaunchScreen.storyboard */,
 				B3864B6423F8E1F1005695E8 /* Profile.storyboard */,
+				B34AFB1823FA233900D765FD /* Design.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +199,7 @@
 		B3864B4D23F87787005695E8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B34AFB1A23FA554300D765FD /* Design */,
 				B3864B4E23F8779F005695E8 /* Authentication */,
 				B3864B5023F877DC005695E8 /* Profile */,
 				B3864B4F23F877BD005695E8 /* Search */,
@@ -178,6 +222,7 @@
 			children = (
 				B397453B23F5F7A400604316 /* SearchViewController.swift */,
 				B3CEC85923F7A19300333178 /* SearchTableViewController.swift */,
+				B34AFB0C23F9432000D765FD /* MovieViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -199,6 +244,7 @@
 			children = (
 				B397453D23F72F8A00604316 /* YouMightLikeCell.swift */,
 				B34AFB0A23F932B200D765FD /* SearchCell.swift */,
+				B34AFB1023FA199B00D765FD /* ShopDesignCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -208,6 +254,7 @@
 			children = (
 				B3864B5323F879DC005695E8 /* UsersManager.swift */,
 				B3864B5C23F8A9B2005695E8 /* MoviesManager.swift */,
+				B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -245,6 +292,7 @@
 		B397450323F4F93900604316 /* SnowRental */ = {
 			isa = PBXGroup;
 			children = (
+				B34AFB1523FA1B7200D765FD /* Helpers */,
 				B397450423F4F93900604316 /* AppDelegate.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
 				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
@@ -404,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3864B6523F8E1F1005695E8 /* Profile.storyboard in Resources */,
+				B34AFB1923FA233900D765FD /* Design.storyboard in Resources */,
 				B397451623F4F93A00604316 /* LaunchScreen.storyboard in Resources */,
 				B3CEC85E23F7C5D100333178 /* GoogleService-Info.plist in Resources */,
 				B397451323F4F93A00604316 /* Assets.xcassets in Resources */,
@@ -536,20 +585,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34AFB1123FA199B00D765FD /* ShopDesignCell.swift in Sources */,
 				B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */,
 				B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */,
 				B3864B6323F8DE8E005695E8 /* ContactInfoViewController.swift in Sources */,
 				B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */,
 				B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */,
 				B397453C23F5F7A400604316 /* SearchViewController.swift in Sources */,
+				B34AFB2523FA7EC700D765FD /* LibraryViewController.swift in Sources */,
 				B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */,
+				B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */,
 				B397450523F4F93900604316 /* AppDelegate.swift in Sources */,
+				B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */,
 				B3864B5D23F8A9B2005695E8 /* MoviesManager.swift in Sources */,
+				B34AFB1723FA1B7F00D765FD /* ImageHelpers.swift in Sources */,
 				B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */,
 				B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */,
 				B397450723F4F93900604316 /* SceneDelegate.swift in Sources */,
+				B34AFB0F23F9F2AE00D765FD /* DesignManager.swift in Sources */,
 				B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */,
 				B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */,
+				B34AFB1C23FA555300D765FD /* DesignViewController.swift in Sources */,
 				B3864B5B23F89F72005695E8 /* FirebaseNodes.swift in Sources */,
 				B3864B6723F90041005695E8 /* ChangePasswordViewController.swift in Sources */,
 				B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */,
