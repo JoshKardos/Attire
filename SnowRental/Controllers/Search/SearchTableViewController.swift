@@ -17,7 +17,7 @@ class SearchTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = false
         resultsTableView.dataSource = self
         resultsTableView.delegate = self
         
@@ -51,11 +51,23 @@ class SearchTableViewController: UIViewController {
     
     @objc
     func keyboardWillShow(_ notification: Notification) {
-
+        print("here")
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            print("inside")
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            if let tabBarHeight = tabBarController?.tabBar.frame.height {
+                resultsTableViewBottomConstraint.constant = keyboardHeight - tabBarHeight
+            } else {
+                resultsTableViewBottomConstraint.constant = keyboardHeight
+            }
+            
+        }
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        print("pressed")
+        self.navigationController?.popViewController(animated: false)
     }
     
 }

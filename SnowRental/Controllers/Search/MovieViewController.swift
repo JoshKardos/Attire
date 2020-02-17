@@ -20,7 +20,6 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.configureView()
         shopCollectionView.dataSource = self
         shopCollectionView.delegate = self

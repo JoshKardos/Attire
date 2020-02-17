@@ -7,6 +7,7 @@
 //
 
 import Foundation
-class ShopManager {
-
+import UIKit
+class DesignManager {
+    static var imageFromLibrary: UIImage?
 }

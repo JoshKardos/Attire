@@ -29,6 +29,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         MoviesManager.fetchMovies {
             self.youMightLikeCollectionView.reloadData()
         }
@@ -40,6 +41,15 @@ class SearchViewController: UIViewController {
         searchBar.backgroundColor = UIColor.clear
         headerLabel.font = UIFont.boldSystemFont(ofSize: 29.0)
         configureScrollView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        searchBar.resignFirstResponder() // remove focus
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func addDesignPressed(_ sender: Any) {
@@ -57,15 +67,12 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print("began editing")
         // segue to search controller
-        self.performSegue(withIdentifier: "ShowSearchTableViewController", sender: nil)
+        performSegue(withIdentifier: "ShowSearchTableViewController", sender: self)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         print("end editing")
 
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("search")
     }
 }
 
