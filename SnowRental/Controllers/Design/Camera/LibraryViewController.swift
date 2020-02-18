@@ -20,6 +20,15 @@ class LibraryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let imgFromLibrary = DesignManager.imageFromLibrary {
+            imageView.image = imgFromLibrary
+        } else {
+            print("here")
+            imageView.image = UIImage(systemName: "camera.fill")
+        }
+    }
 
     @IBAction func choosePressed(_ sender: Any) {
         pickerController = UIImagePickerController()

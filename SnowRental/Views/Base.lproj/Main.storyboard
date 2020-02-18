@@ -371,7 +371,7 @@
         <!--Search Table View Controller-->
         <scene sceneID="zvt-V6-ycy">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="RU3-l2-Kiq" customClass="SearchTableViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchTableViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RU3-l2-Kiq" customClass="SearchTableViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d5x-MX-fut">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

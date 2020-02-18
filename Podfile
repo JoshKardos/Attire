@@ -14,7 +14,7 @@ target 'SnowRental' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Kingfisher', '~> 5.0'
-
+  pod 'TaggerKit'
 
   target 'SnowRentalTests' do
     inherit! :search_paths
