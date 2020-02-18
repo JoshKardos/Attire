@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import ProgressHUD
 
 class DesignViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class DesignViewController: UIViewController {
     @IBOutlet weak var nextBarButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-
+    
     @IBOutlet weak var libraryView: UIView!
     
     var captureSession = AVCaptureSession()
@@ -29,7 +30,7 @@ class DesignViewController: UIViewController {
     var image: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         setupCaptureSession()
         setupDevice()
         setupInputOutput()
@@ -42,9 +43,25 @@ class DesignViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhotoPreview" {
             let previewVC = segue.destination as! PreviewPhotoViewController
-            previewVC.image = self.image
+            if segmentedControl.selectedSegmentIndex == 0 {
+                previewVC.image = DesignManager.imageFromLibrary
+            } else {
+                previewVC.image = self.image
+            }
         } else if segue.identifier == "showLibrary" {
             print("show library")
+        }
+    }
+    
+    @IBAction func nextPressed(_ sender: Any) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            if DesignManager.imageFromLibrary != nil {
+                performSegue(withIdentifier: "toPhotoPreview", sender: nil)
+            } else {
+                ProgressHUD.showError("Must have a picture selected")
+            }
+        } else {
+            performSegue(withIdentifier: "toPhotoPreview", sender: nil)
         }
     }
     
@@ -104,10 +121,10 @@ class DesignViewController: UIViewController {
     @IBAction func segmentedControlChnged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.configureCameraView()
+            self.configureLibraryView()
             break
         case 1:
-            self.configureLibraryView()
+            self.configureCameraView()
             break
         default:
             break
@@ -117,20 +134,23 @@ class DesignViewController: UIViewController {
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.tabBarController!.selectedIndex = 0
         DesignManager.imageFromLibrary = nil
+        image = nil
     }
     
     func configureCameraView() {
-        cameraButton.isHidden = true
-        cameraButton.isEnabled = false
-        libraryView.isHidden = false
-        stopRunningCaptureSession()
-    }
-    
-    func configureLibraryView() {
         cameraButton.isHidden = false
         cameraButton.isEnabled = true
         libraryView.isHidden = true
+        nextBarButton.isEnabled = false
         startRunningCaptureSession()
+    }
+    
+    func configureLibraryView() {
+        cameraButton.isHidden = true
+        cameraButton.isEnabled = false
+        libraryView.isHidden = false
+        nextBarButton.isEnabled = true
+        stopRunningCaptureSession()
     }
     
 }

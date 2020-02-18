@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8FED789157070691D4FD8F74 /* Pods_SnowRentalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0EB9A4652A6C1C2FFEA8A6 /* Pods_SnowRentalTests.framework */; };
 		A52035AEF462217FCDC822FC /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEA69882E10CE19597CF21C /* Pods_SnowRental_SnowRentalUITests.framework */; };
+		B319DF1623FB4A0000B2A8D0 /* DesignFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */; };
+		B319DF1823FB4CBE00B2A8D0 /* FiltersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */; };
+		B319DF1A23FBA13400B2A8D0 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */; };
+		B319DF1C23FBC25100B2A8D0 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1B23FBC25100B2A8D0 /* ConfirmViewController.swift */; };
 		B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */; };
 		B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0823F918FB00D765FD /* ApiKeys.swift */; };
 		B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0A23F932B200D765FD /* SearchCell.swift */; };
@@ -71,6 +75,10 @@
 		5A3E5CD5582046876C95818F /* Pods-SnowRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.release.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.release.xcconfig"; sourceTree = "<group>"; };
 		6627E58904A120D74DE1EAAA /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C473764375729EC5218FEF7 /* Pods-SnowRentalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFilterViewCell.swift; sourceTree = "<group>"; };
+		B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersManager.swift; sourceTree = "<group>"; };
+		B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		B319DF1B23FBC25100B2A8D0 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		B34AFB0823F918FB00D765FD /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		B34AFB0A23F932B200D765FD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
@@ -170,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				B34AFB1F23FA6BF200D765FD /* Camera */,
-				B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -178,8 +185,11 @@
 		B34AFB1F23FA6BF200D765FD /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */,
 				B34AFB1B23FA555300D765FD /* DesignViewController.swift */,
 				B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */,
+				B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */,
+				B319DF1B23FBC25100B2A8D0 /* ConfirmViewController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -245,6 +255,7 @@
 				B397453D23F72F8A00604316 /* YouMightLikeCell.swift */,
 				B34AFB0A23F932B200D765FD /* SearchCell.swift */,
 				B34AFB1023FA199B00D765FD /* ShopDesignCell.swift */,
+				B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -255,6 +266,7 @@
 				B3864B5323F879DC005695E8 /* UsersManager.swift */,
 				B3864B5C23F8A9B2005695E8 /* MoviesManager.swift */,
 				B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */,
+				B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -587,8 +599,11 @@
 			files = (
 				B34AFB1123FA199B00D765FD /* ShopDesignCell.swift in Sources */,
 				B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */,
+				B319DF1823FB4CBE00B2A8D0 /* FiltersManager.swift in Sources */,
 				B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */,
 				B3864B6323F8DE8E005695E8 /* ContactInfoViewController.swift in Sources */,
+				B319DF1623FB4A0000B2A8D0 /* DesignFilterViewCell.swift in Sources */,
+				B319DF1C23FBC25100B2A8D0 /* ConfirmViewController.swift in Sources */,
 				B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */,
 				B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */,
 				B397453C23F5F7A400604316 /* SearchViewController.swift in Sources */,
@@ -600,6 +615,7 @@
 				B3864B5D23F8A9B2005695E8 /* MoviesManager.swift in Sources */,
 				B34AFB1723FA1B7F00D765FD /* ImageHelpers.swift in Sources */,
 				B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */,
+				B319DF1A23FBA13400B2A8D0 /* TagsViewController.swift in Sources */,
 				B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */,
 				B397450723F4F93900604316 /* SceneDelegate.swift in Sources */,
 				B34AFB0F23F9F2AE00D765FD /* DesignManager.swift in Sources */,

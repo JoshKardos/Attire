@@ -15,6 +15,8 @@ class SearchTableViewController: UIViewController {
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var resultsTableViewBottomConstraint: NSLayoutConstraint!
     
+    var isMovieSearchForDesign: Bool?
+    var designDelegate: PreviewPhotoViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -51,9 +53,7 @@ class SearchTableViewController: UIViewController {
     
     @objc
     func keyboardWillShow(_ notification: Notification) {
-        print("here")
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            print("inside")
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
             if let tabBarHeight = tabBarController?.tabBar.frame.height {
@@ -66,7 +66,6 @@ class SearchTableViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        print("pressed")
         self.navigationController?.popViewController(animated: false)
     }
     
@@ -89,6 +88,11 @@ extension SearchTableViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = MoviesManager.omdbSearchMovies[indexPath.row] as! [String: String]
+        if let _ = isMovieSearchForDesign {
+            designDelegate?.designMovie = movie
+            self.navigationController?.popViewController(animated: false)
+            return
+        }
         self.performSegue(withIdentifier: "toMovieViewController", sender: movie)
     }
 }
