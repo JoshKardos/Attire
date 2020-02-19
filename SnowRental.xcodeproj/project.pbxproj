@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FED789157070691D4FD8F74 /* Pods_SnowRentalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0EB9A4652A6C1C2FFEA8A6 /* Pods_SnowRentalTests.framework */; };
-		A52035AEF462217FCDC822FC /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEA69882E10CE19597CF21C /* Pods_SnowRental_SnowRentalUITests.framework */; };
+		0F5A5754804B7CBCDBFE96EC /* Pods_SnowRental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4557ADBD13F7098629D8865 /* Pods_SnowRental.framework */; };
+		764432CE4E106C9C37589A0C /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B44BC4CBFCF52D5B026547C /* Pods_SnowRental_SnowRentalUITests.framework */; };
+		8F3A83A0EBC9F3F01EE71BDF /* Pods_SnowRentalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B555FDE7D471F5B29AF98B /* Pods_SnowRentalTests.framework */; };
 		B319DF1623FB4A0000B2A8D0 /* DesignFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */; };
 		B319DF1823FB4CBE00B2A8D0 /* FiltersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */; };
 		B319DF1A23FBA13400B2A8D0 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */; };
@@ -21,7 +22,7 @@
 		B34AFB1123FA199B00D765FD /* ShopDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1023FA199B00D765FD /* ShopDesignCell.swift */; };
 		B34AFB1723FA1B7F00D765FD /* ImageHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1623FA1B7F00D765FD /* ImageHelpers.swift */; };
 		B34AFB1923FA233900D765FD /* Design.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34AFB1823FA233900D765FD /* Design.storyboard */; };
-		B34AFB1C23FA555300D765FD /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1B23FA555300D765FD /* DesignViewController.swift */; };
+		B34AFB1C23FA555300D765FD /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1B23FA555300D765FD /* CameraViewController.swift */; };
 		B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */; };
 		B34AFB2523FA7EC700D765FD /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
@@ -49,7 +50,6 @@
 		B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85923F7A19300333178 /* SearchTableViewController.swift */; };
 		B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */; };
 		B3CEC85E23F7C5D100333178 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3CEC85D23F7C5D100333178 /* GoogleService-Info.plist */; };
-		CC923C12CA6C2806675562DE /* Pods_SnowRental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF676A9408882515B6726B26 /* Pods_SnowRental.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,11 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E5298930BC024A84DBF35A2 /* Pods-SnowRentalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.release.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.release.xcconfig"; sourceTree = "<group>"; };
-		22A4F00682AFFF97900BBF8F /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.release.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5A3E5CD5582046876C95818F /* Pods-SnowRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.release.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.release.xcconfig"; sourceTree = "<group>"; };
-		6627E58904A120D74DE1EAAA /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8C473764375729EC5218FEF7 /* Pods-SnowRentalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		06AD20A222C23505E975D7A7 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.release.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0B44BC4CBFCF52D5B026547C /* Pods_SnowRental_SnowRentalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRental_SnowRentalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D96BC654C957550EBB4C9B /* Pods-SnowRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.debug.xcconfig"; sourceTree = "<group>"; };
+		56B555FDE7D471F5B29AF98B /* Pods_SnowRentalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRentalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5757B8DBA54F25FED9E7065A /* Pods-SnowRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.release.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.release.xcconfig"; sourceTree = "<group>"; };
+		709EAA87BEC417D3523E4125 /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2A4E0F9EB9753340155546F /* Pods-SnowRentalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.release.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4557ADBD13F7098629D8865 /* Pods_SnowRental.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRental.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFilterViewCell.swift; sourceTree = "<group>"; };
 		B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersManager.swift; sourceTree = "<group>"; };
 		B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +90,7 @@
 		B34AFB1023FA199B00D765FD /* ShopDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDesignCell.swift; sourceTree = "<group>"; };
 		B34AFB1623FA1B7F00D765FD /* ImageHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelpers.swift; sourceTree = "<group>"; };
 		B34AFB1823FA233900D765FD /* Design.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Design.storyboard; sourceTree = "<group>"; };
-		B34AFB1B23FA555300D765FD /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
+		B34AFB1B23FA555300D765FD /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
 		B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -122,10 +125,7 @@
 		B3CEC85923F7A19300333178 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotAuthenticatedViewController.swift; sourceTree = "<group>"; };
 		B3CEC85D23F7C5D100333178 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C1A4092415BAD4E46BA58DD8 /* Pods-SnowRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.debug.xcconfig"; sourceTree = "<group>"; };
-		DF676A9408882515B6726B26 /* Pods_SnowRental.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRental.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC0EB9A4652A6C1C2FFEA8A6 /* Pods_SnowRentalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRentalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEEA69882E10CE19597CF21C /* Pods_SnowRental_SnowRentalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRental_SnowRentalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC43D1D86316EA69540819C /* Pods-SnowRentalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC923C12CA6C2806675562DE /* Pods_SnowRental.framework in Frameworks */,
+				0F5A5754804B7CBCDBFE96EC /* Pods_SnowRental.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FED789157070691D4FD8F74 /* Pods_SnowRentalTests.framework in Frameworks */,
+				8F3A83A0EBC9F3F01EE71BDF /* Pods_SnowRentalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,19 +149,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52035AEF462217FCDC822FC /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */,
+				764432CE4E106C9C37589A0C /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		995F432DCF2CFF1CDE98970A /* Frameworks */ = {
+		01A4707DFC7E268026BE0B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF676A9408882515B6726B26 /* Pods_SnowRental.framework */,
-				FEEA69882E10CE19597CF21C /* Pods_SnowRental_SnowRentalUITests.framework */,
-				FC0EB9A4652A6C1C2FFEA8A6 /* Pods_SnowRentalTests.framework */,
+				A4557ADBD13F7098629D8865 /* Pods_SnowRental.framework */,
+				0B44BC4CBFCF52D5B026547C /* Pods_SnowRental_SnowRentalUITests.framework */,
+				56B555FDE7D471F5B29AF98B /* Pods_SnowRentalTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */,
-				B34AFB1B23FA555300D765FD /* DesignViewController.swift */,
+				B34AFB1B23FA555300D765FD /* CameraViewController.swift */,
 				B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */,
 				B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */,
 				B319DF1B23FBC25100B2A8D0 /* ConfirmViewController.swift */,
@@ -287,7 +287,7 @@
 				B397452A23F4F93A00604316 /* SnowRentalUITests */,
 				B397450223F4F93900604316 /* Products */,
 				E4491DAEA1CCBCBE8DE28108 /* Pods */,
-				995F432DCF2CFF1CDE98970A /* Frameworks */,
+				01A4707DFC7E268026BE0B06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,12 +344,12 @@
 		E4491DAEA1CCBCBE8DE28108 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C1A4092415BAD4E46BA58DD8 /* Pods-SnowRental.debug.xcconfig */,
-				5A3E5CD5582046876C95818F /* Pods-SnowRental.release.xcconfig */,
-				6627E58904A120D74DE1EAAA /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */,
-				22A4F00682AFFF97900BBF8F /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */,
-				8C473764375729EC5218FEF7 /* Pods-SnowRentalTests.debug.xcconfig */,
-				1E5298930BC024A84DBF35A2 /* Pods-SnowRentalTests.release.xcconfig */,
+				39D96BC654C957550EBB4C9B /* Pods-SnowRental.debug.xcconfig */,
+				5757B8DBA54F25FED9E7065A /* Pods-SnowRental.release.xcconfig */,
+				709EAA87BEC417D3523E4125 /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */,
+				06AD20A222C23505E975D7A7 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */,
+				DFC43D1D86316EA69540819C /* Pods-SnowRentalTests.debug.xcconfig */,
+				A2A4E0F9EB9753340155546F /* Pods-SnowRentalTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -361,11 +361,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B397453023F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRental" */;
 			buildPhases = (
-				297EE237C24BD5D2944DF204 /* [CP] Check Pods Manifest.lock */,
+				24EC4290EEE16839334743FE /* [CP] Check Pods Manifest.lock */,
 				B39744FD23F4F93900604316 /* Sources */,
 				B39744FE23F4F93900604316 /* Frameworks */,
 				B39744FF23F4F93900604316 /* Resources */,
-				D8F5B7C23B1CBF2D2F38ED63 /* [CP] Embed Pods Frameworks */,
+				10B6DB9B375CD30FA6EF5A21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,7 +380,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B397453323F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRentalTests" */;
 			buildPhases = (
-				483EF8DE96E8F1ECD88E9A33 /* [CP] Check Pods Manifest.lock */,
+				703B3978320689D6CB378C73 /* [CP] Check Pods Manifest.lock */,
 				B397451823F4F93A00604316 /* Sources */,
 				B397451923F4F93A00604316 /* Frameworks */,
 				B397451A23F4F93A00604316 /* Resources */,
@@ -399,11 +399,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B397453623F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRentalUITests" */;
 			buildPhases = (
-				340E9559F8AB6651DB3B9AE4 /* [CP] Check Pods Manifest.lock */,
+				9CDEFF0316E78730672A60EF /* [CP] Check Pods Manifest.lock */,
 				B397452323F4F93A00604316 /* Sources */,
 				B397452423F4F93A00604316 /* Frameworks */,
 				B397452523F4F93A00604316 /* Resources */,
-				B89235A6F9D03FF701DB3998 /* [CP] Embed Pods Frameworks */,
+				584B6BB49CFC01F5587B2FE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -490,7 +490,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		297EE237C24BD5D2944DF204 /* [CP] Check Pods Manifest.lock */ = {
+		10B6DB9B375CD30FA6EF5A21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24EC4290EEE16839334743FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -512,29 +529,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		340E9559F8AB6651DB3B9AE4 /* [CP] Check Pods Manifest.lock */ = {
+		584B6BB49CFC01F5587B2FE3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SnowRental-SnowRentalUITests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		483EF8DE96E8F1ECD88E9A33 /* [CP] Check Pods Manifest.lock */ = {
+		703B3978320689D6CB378C73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -556,38 +568,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B89235A6F9D03FF701DB3998 /* [CP] Embed Pods Frameworks */ = {
+		9CDEFF0316E78730672A60EF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnowRental-SnowRentalUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8F5B7C23B1CBF2D2F38ED63 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -621,7 +621,7 @@
 				B34AFB0F23F9F2AE00D765FD /* DesignManager.swift in Sources */,
 				B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */,
 				B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */,
-				B34AFB1C23FA555300D765FD /* DesignViewController.swift in Sources */,
+				B34AFB1C23FA555300D765FD /* CameraViewController.swift in Sources */,
 				B3864B5B23F89F72005695E8 /* FirebaseNodes.swift in Sources */,
 				B3864B6723F90041005695E8 /* ChangePasswordViewController.swift in Sources */,
 				B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */,
@@ -798,7 +798,7 @@
 		};
 		B397453123F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1A4092415BAD4E46BA58DD8 /* Pods-SnowRental.debug.xcconfig */;
+			baseConfigurationReference = 39D96BC654C957550EBB4C9B /* Pods-SnowRental.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SnowRental/SnowRentalDebug.entitlements;
@@ -882,7 +882,7 @@
 		};
 		B397453223F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A3E5CD5582046876C95818F /* Pods-SnowRental.release.xcconfig */;
+			baseConfigurationReference = 5757B8DBA54F25FED9E7065A /* Pods-SnowRental.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -964,7 +964,7 @@
 		};
 		B397453423F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C473764375729EC5218FEF7 /* Pods-SnowRentalTests.debug.xcconfig */;
+			baseConfigurationReference = DFC43D1D86316EA69540819C /* Pods-SnowRentalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -987,7 +987,7 @@
 		};
 		B397453523F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E5298930BC024A84DBF35A2 /* Pods-SnowRentalTests.release.xcconfig */;
+			baseConfigurationReference = A2A4E0F9EB9753340155546F /* Pods-SnowRentalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1010,7 +1010,7 @@
 		};
 		B397453723F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6627E58904A120D74DE1EAAA /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */;
+			baseConfigurationReference = 709EAA87BEC417D3523E4125 /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1031,7 +1031,7 @@
 		};
 		B397453823F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22A4F00682AFFF97900BBF8F /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */;
+			baseConfigurationReference = 06AD20A222C23505E975D7A7 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
