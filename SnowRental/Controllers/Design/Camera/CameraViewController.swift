@@ -11,7 +11,7 @@ import UIKit
 import AVFoundation
 import ProgressHUD
 
-class DesignViewController: UIViewController {
+class CameraViewController: UIViewController {
     
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var nextBarButton: UIBarButtonItem!
@@ -31,10 +31,10 @@ class DesignViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        setupCaptureSession()
-        setupDevice()
-        setupInputOutput()
-        setupPreviewLayer()
+//        setupCaptureSession()
+//        setupDevice()
+//        setupInputOutput()
+//        setupPreviewLayer()
         
         segmentedControl.selectedSegmentIndex = 0
         
@@ -155,7 +155,7 @@ class DesignViewController: UIViewController {
     
 }
 
-extension DesignViewController : AVCapturePhotoCaptureDelegate{
+extension CameraViewController : AVCapturePhotoCaptureDelegate{
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             image = UIImage(data: imageData)

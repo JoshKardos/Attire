@@ -24,9 +24,11 @@ class PreviewPhotoViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = designMovie {
+        if let _ = designMovie, TagsViewController.viewed == false {
             performSegue(withIdentifier: "ShowTagsView", sender: nil)
             return
+        } else {
+            TagsViewController.viewed = false
         }
     }
     

@@ -17,6 +17,8 @@ class TagsViewController: UIViewController, TKCollectionViewDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addedTagsLabel: UILabel!
     
+    static var viewed = false
+    
     var productTagsCollection = TKCollectionView()
     var addTagsCollection = TKCollectionView()
     var image: UIImage!
@@ -40,6 +42,12 @@ class TagsViewController: UIViewController, TKCollectionViewDelegate {
                     
         productTagsCollection.delegate = self
         addTagsCollection.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        TagsViewController.viewed = true
+        
+        //need to change to flase when submitted or cancelled
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

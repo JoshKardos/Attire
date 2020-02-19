@@ -8,6 +8,11 @@
 
 import Foundation
 class FirebaseNodes {
+    
+    // STORAGE
+    static let storageRef = "gs://attire-bc3c7.appspot.com"
+    
+    // DATABASE
     static let designs = "designs"
     static let movieDesigns = "movie-designs"
     static let users = "users"
