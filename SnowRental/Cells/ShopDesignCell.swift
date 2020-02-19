@@ -14,7 +14,7 @@ class ShopDesignCell: UICollectionViewCell {
     @IBOutlet weak var designImage: UIImageView!
     
     func configureCell(design: [String: String]) {
-        guard let designUrl = design["downloadUrl"] else {
+        guard let designUrl = design["imageUrl"] else {
             return
         }
         let url = URL(string: designUrl)

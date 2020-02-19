@@ -60,35 +60,62 @@ class ConfirmViewController: UIViewController {
             ProgressHUD.showError("Must be logged in")
             return
         }
+        
+        guard let movieId = self.movie!["imdbID"] as? String else {
+            ProgressHUD.showError("Must have a movie picked")
+            return
+        }
 
         let uploadMetadata = StorageMetadata.init()
         uploadMetadata.contentType = "image/jpeg"
 
+        ProgressHUD.show()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+//        self.view.isUserInteractionEnabled = true
         if let imageData = image?.jpegData(compressionQuality: 0.75) {
             storageRef.putData(imageData, metadata: uploadMetadata) { (metadata, error) in
                 if error != nil{
                     print("*** \(error.debugDescription)")
                     ProgressHUD.showError("Failed to upload")
+                    UIApplication.shared.endIgnoringInteractionEvents()
                     return
                 }
                 storageRef.downloadURL { (photoUrl, error) in
                     if error != nil{
                         print("Error downloading URL: \(error!.localizedDescription)")
                         ProgressHUD.showError("Error downloading URL: \(error!.localizedDescription)")
+                        UIApplication.shared.endIgnoringInteractionEvents()
                         return
                     }
                     guard let url = photoUrl?.absoluteString else{
                         print("No URL")
                         ProgressHUD.showError("No URL")
+                        UIApplication.shared.endIgnoringInteractionEvents()
                         return
                     }
 
-                    ref.child(newDesignKey).updateChildValues(["designId": newDesignKey, "imageUrl": url, "userId": userId, "movieId": String(self.movie!["imdbID"]!)])
-                    ProgressHUD.showSuccess("Added desgin!")
+                    ref.child(newDesignKey).updateChildValues(["designId": newDesignKey, "imageUrl": url, "userId": userId, "movieId": movieId])
+                    Database.database().reference().child(FirebaseNodes.movieDesigns).child(movieId).updateChildValues([newDesignKey: "1"])
+                    var designTags: [String: String] = [:]
+                    if let newTags = self.tags {
+                        for tag in newTags {
+                            designTags[tag] = "1"
+                        }
+                        Database.database().reference().child(FirebaseNodes.designTags).child(newDesignKey).updateChildValues(designTags)
+                    }
+                    ProgressHUD.showSuccess("Added design!")
+                    self.navigationController?.popToRootViewController(animated: false)
+                    UIApplication.shared.endIgnoringInteractionEvents()
+
                     return
                 }
             }
+        } else {
+            ProgressHUD.showError("Failed to upload")
+            UIApplication.shared.endIgnoringInteractionEvents()
+
         }
+
     }
     
     // when confirm is pressed

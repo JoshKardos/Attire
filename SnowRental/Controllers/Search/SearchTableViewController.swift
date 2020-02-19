@@ -88,11 +88,12 @@ extension SearchTableViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = MoviesManager.omdbSearchMovies[indexPath.row] as! [String: String]
-        if let _ = isMovieSearchForDesign {
+        if let _ = isMovieSearchForDesign { // passes only when creating design
             designDelegate?.designMovie = movie
             self.navigationController?.popViewController(animated: false)
             return
         }
+        MoviesManager.clearMovieDesigns()
         self.performSegue(withIdentifier: "toMovieViewController", sender: movie)
     }
 }

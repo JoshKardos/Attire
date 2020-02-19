@@ -76,8 +76,12 @@ class FiltersManager {
             filteredImage = UIImage(cgImage: cgiImageResult)
         }
         
-        filteredImages[filterEffect.filterName] = filteredImage
-        
-        return filteredImage
+        do {
+            try filteredImages[filterEffect.filterName] = filteredImage
+            return filteredImage
+        } catch {
+            print("error with filters")
+            return filteredImage
+        }
     }
 }
