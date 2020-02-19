@@ -15,6 +15,8 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var shopCollectionView: UICollectionView!
+    @IBOutlet weak var designLoadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noDesignsLabel: UILabel!
     
     var movie: [String: String] = [:]
     
@@ -23,22 +25,22 @@ class MovieViewController: UIViewController {
         self.configureView()
         shopCollectionView.dataSource = self
         shopCollectionView.delegate = self
-        MoviesManager.searchMovieFromFirebase(imdbID: movie["imdbID"]!, onSuccess: {
-            MoviesManager.fetchDesignIdsFromFirebase(imdbID: self.movie["imdbID"]!, onSuccess: {
-                for id in MoviesManager.movieViewingDesignIds {
-                    MoviesManager.fetchDesignFromFirebase(id: id, onSuccess: {
-                        if MoviesManager.movieViewingDesigns.count == MoviesManager.movieViewingDesignIds.count {
-                            print(MoviesManager.movieViewingDesigns)
-                            self.shopCollectionView.reloadData()
-                        }
-                    }, onEmpty: {
-                        print("empty 3")
-                    })
-                }
-            }, onEmpty: {
-                print("empty 2")
-            })
-        }, onEmpty: { // on empty
+        MoviesManager.fetchDesignIdsFromFirebase(imdbID: self.movie["imdbID"]!, onSuccess: {
+            for id in MoviesManager.movieViewingDesignIds {
+                MoviesManager.fetchDesignFromFirebase(id: id, onSuccess: {
+                    if MoviesManager.movieViewingDesigns.count == MoviesManager.movieViewingDesignIds.count {
+                        self.designLoadingIndicator.stopAnimating()
+                        self.shopCollectionView.reloadData()
+                    }
+                }, onEmpty: {
+                    self.designLoadingIndicator.stopAnimating()
+                    print("empty 2")
+                })
+            }
+        }, onEmpty: {
+            //no designs
+            self.designLoadingIndicator.stopAnimating()
+            self.noDesignsLabel.isHidden = false
             print("empty 1")
         })
     }
@@ -60,11 +62,12 @@ class MovieViewController: UIViewController {
 
 extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2//MoviesManager.movieViewingDesigns.count
+        return MoviesManager.movieViewingDesigns.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopDesignCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopDesignCell", for: indexPath) as! ShopDesignCell
+        cell.configureCell(design: MoviesManager.movieViewingDesigns[indexPath.row] as! [String : String])
         return cell
     }
 

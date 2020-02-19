@@ -641,11 +641,26 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SL7-a4-N1a">
+                                                        <rect key="frame" x="75" y="3" width="20" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </activityIndicatorView>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no designs... Click &quot;Add Designs&quot; to add" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iob-4h-oZB">
+                                                        <rect key="frame" x="82" y="84.5" width="250" height="41"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="250" id="0OO-v3-7pp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="Iob-4h-oZB" firstAttribute="centerY" secondItem="eWY-ik-qXX" secondAttribute="centerY" id="Cn6-ig-O20"/>
                                                     <constraint firstItem="x07-xV-h6D" firstAttribute="leading" secondItem="eWY-ik-qXX" secondAttribute="leading" constant="16" id="GDe-kD-bsM"/>
                                                     <constraint firstItem="tnI-4S-TmS" firstAttribute="leading" secondItem="eWY-ik-qXX" secondAttribute="leading" id="HzK-vr-iiu"/>
+                                                    <constraint firstItem="Iob-4h-oZB" firstAttribute="centerX" secondItem="eWY-ik-qXX" secondAttribute="centerX" id="JZG-RW-fkf"/>
                                                     <constraint firstAttribute="bottom" secondItem="tnI-4S-TmS" secondAttribute="bottom" constant="8" id="VOz-QO-QKr"/>
                                                     <constraint firstAttribute="trailing" secondItem="Vyb-y1-9Ar" secondAttribute="trailing" constant="16" id="VWh-pW-jXk"/>
                                                     <constraint firstAttribute="trailing" secondItem="tnI-4S-TmS" secondAttribute="trailing" id="XZq-bR-2AD"/>
@@ -712,8 +727,10 @@
                     <navigationItem key="navigationItem" id="d46-KB-ukM"/>
                     <size key="freeformSize" width="414" height="1362"/>
                     <connections>
+                        <outlet property="designLoadingIndicator" destination="SL7-a4-N1a" id="PPn-LN-Ehj"/>
                         <outlet property="movieImageView" destination="OsB-38-zSb" id="v8b-CM-4rA"/>
                         <outlet property="movieNameLabel" destination="kxU-rq-FSz" id="Kb2-5d-7e3"/>
+                        <outlet property="noDesignsLabel" destination="Iob-4h-oZB" id="SKn-WS-1zO"/>
                         <outlet property="shopCollectionView" destination="tnI-4S-TmS" id="FHR-6p-T6W"/>
                     </connections>
                 </viewController>

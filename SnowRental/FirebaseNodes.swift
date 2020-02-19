@@ -17,4 +17,5 @@ class FirebaseNodes {
     static let movieDesigns = "movie-designs"
     static let users = "users"
     static let movies = "movies"
+    static let designTags = "design-tags"
 }

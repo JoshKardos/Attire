@@ -48,7 +48,6 @@ class MoviesManager {
     }
     
     static func searchMovieFromFirebase(imdbID: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
-        clearMovieDesigns()
         Database.database().reference().child(FirebaseNodes.movies).child(imdbID).observe(.value) { (snapshot) in
             if !snapshot.exists() {
                 onEmpty()
