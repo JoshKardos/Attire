@@ -72,7 +72,7 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("clicked")
+        performSegue(withIdentifier: "toOrderViewController", sender: nil)
     }
 }
 

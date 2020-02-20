@@ -15,7 +15,8 @@ target 'SnowRental' do
   pod 'Firebase/Storage'
   pod 'Kingfisher', '~> 5.0'
   pod 'TaggerKit'
-
+  pod 'ChromaColorPicker'
+  
   target 'SnowRentalTests' do
     inherit! :search_paths
     # Pods for testing
