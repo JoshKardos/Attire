@@ -7,7 +7,7 @@ target 'SnowRental' do
 
   # Pods for SnowRental
   pod 'ProgressHUD'
-  pod 'Alamofire', '~> 5.0'
+  pod 'Alamofire' #, '~> 5.0'
   pod 'SwiftyJSON'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
@@ -16,6 +16,7 @@ target 'SnowRental' do
   pod 'Kingfisher', '~> 5.0'
   pod 'TaggerKit'
   pod 'ChromaColorPicker'
+  pod 'Stripe', '~> 16.0.2'
   
   target 'SnowRentalTests' do
     inherit! :search_paths

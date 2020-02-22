@@ -5,7 +5,6 @@
 //  Created by Josh Kardos on 2/19/20.
 //  Copyright © 2020 Josh Kardos. All rights reserved.
 //
-
 import Foundation
 
 extension String {

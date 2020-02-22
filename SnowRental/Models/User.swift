@@ -13,14 +13,14 @@ class User{
     var firstName: String!
     var lastName: String!
     var email: String!
+    var stripeCustomerId: String?
+    
     init(){}
     init(dictionary: NSDictionary){
-        uid = (dictionary["uid"] as! String)
-        firstName = (dictionary["firstName"] as! String)
-        lastName = (dictionary["lastName"] as! String)
-        email = (dictionary["email"] as! String)
+        uid = (dictionary[FirebaseNodes.uid] as! String)
+        firstName = (dictionary[FirebaseNodes.firstName] as! String)
+        lastName = (dictionary[FirebaseNodes.lastName] as! String)
+        email = (dictionary[FirebaseNodes.email] as! String)
+        stripeCustomerId = (dictionary[FirebaseNodes.stripeCustomerId] as! String)
     }
-    
-    
-    
 }

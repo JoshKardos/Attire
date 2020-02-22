@@ -10,7 +10,7 @@ import Foundation
 class FirebaseNodes {
     
     // STORAGE
-    static let storageRef = "gs://attire-bc3c7.appspot.com"
+    static let storageRef = ApiKeys.firebaseRef
     
     // DATABASE
     static let designs = "designs"
@@ -18,4 +18,29 @@ class FirebaseNodes {
     static let users = "users"
     static let movies = "movies"
     static let designTags = "design-tags"
+    
+    
+    // user node
+    static let uid = "uid"
+    static let firstName = "firstName"
+    static let lastName = "lastName"
+    static let email = "email"
+    static let stripeCustomerId = "stripeCustomerId"
+    
+    // design node
+    static let imageName = "imageName"
+    static let movieName = "movieName"
+    static let timesUsed = "timesUsed"
+    
+    // movie node
+    static let title = "Title"
+    static let poster = "Poster"
+    static let imdbID = "imdbID"
+    
+    // design node
+    static let imageUrl = "imageUrl"
+    static let designId = "designId"
+    static let userId = "userId"
+    static let movieId = "movieId"
+
 }

@@ -15,8 +15,8 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     func configureCell(movie: [String: String]) {
-        titleLabel.text = movie["Title"]
-        let posterString = movie["Poster"]!
+        titleLabel.text = movie[FirebaseNodes.title]
+        let posterString = movie[FirebaseNodes.poster]!
         if posterString == "N/A" {
             return
         }

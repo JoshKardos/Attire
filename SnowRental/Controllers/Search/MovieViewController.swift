@@ -25,7 +25,7 @@ class MovieViewController: UIViewController {
         self.configureView()
         shopCollectionView.dataSource = self
         shopCollectionView.delegate = self
-        MoviesManager.fetchDesignIdsFromFirebase(imdbID: self.movie["imdbID"]!, onSuccess: {
+        MoviesManager.fetchDesignIdsFromFirebase(imdbID: self.movie[FirebaseNodes.imdbID]!, onSuccess: {
             for id in MoviesManager.movieViewingDesignIds {
                 MoviesManager.fetchDesignFromFirebase(id: id, onSuccess: {
                     if MoviesManager.movieViewingDesigns.count == MoviesManager.movieViewingDesignIds.count {
@@ -49,8 +49,8 @@ class MovieViewController: UIViewController {
         if movie.isEmpty {
             return
         }
-        movieNameLabel.text = movie["Title"]!
-        let posterString = movie["Poster"]!
+        movieNameLabel.text = movie[FirebaseNodes.title]!
+        let posterString = movie[FirebaseNodes.poster]!
         if posterString == "N/A" {
             return
         }

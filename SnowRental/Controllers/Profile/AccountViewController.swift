@@ -8,10 +8,48 @@
 
 import Foundation
 import UIKit
+import Stripe
 
 class AccountViewController: UIViewController {
     
+    var customerContext: STPCustomerContext?
+    var paymentContext: STPPaymentContext?
+    
     override func viewDidLoad() {
         self.navigationController?.navigationBar.isHidden = false
+        // Do any additional setup after loading the view.
+        let config = STPPaymentConfiguration.shared()
+        config.additionalPaymentOptions = .applePay
+        config.shippingType = .shipping
+        config.requiredShippingAddressFields = Set<STPContactField>(arrayLiteral: STPContactField.name, STPContactField.emailAddress, STPContactField.phoneNumber, STPContactField.postalAddress)
+        config.companyName = "Testing XYZ"
+        customerContext = STPCustomerContext(keyProvider: MyAPIClient())
+        paymentContext = STPPaymentContext(customerContext: customerContext!, configuration: config, theme: .default())
+        self.paymentContext?.delegate = self
+        self.paymentContext?.hostViewController = self
+        self.paymentContext?.paymentAmount = 5000
     }
+    @IBAction func paymentSettingsPressed(_ sender: Any) {
+        self.paymentContext?.pushPaymentOptionsViewController()
+    }
+}
+
+extension AccountViewController : STPPaymentContextDelegate {
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        
+    }
+    
+    
 }

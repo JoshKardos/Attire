@@ -67,7 +67,6 @@ extension PreviewPhotoViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("clicked")
         imageView.image = FiltersManager.filteredImages[FiltersManager.Filters[indexPath.row].filterName]
     }
 

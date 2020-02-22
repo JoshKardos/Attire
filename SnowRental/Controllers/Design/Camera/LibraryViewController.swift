@@ -25,7 +25,6 @@ class LibraryViewController: UIViewController {
         if let imgFromLibrary = DesignManager.imageFromLibrary {
             imageView.image = imgFromLibrary
         } else {
-            print("here")
             imageView.image = UIImage(systemName: "camera.fill")
         }
     }

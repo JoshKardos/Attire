@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 class FiltersManager {
-    static let filterNicknames = [
-        "None",
-//        "Halftone",
-//        "Gaussian",
-//        "Crystallize",
-        "Sepia"
-    ]
-    static let filterNames = [
-        "None",
-//        "CICMYKHalftone",
-//        "CIGaussianBlur",
-//        "CICrystallize",
-        "CISepiaTone"
-    ]
+//    static let filterNicknames = [
+//        "None",
+////        "Halftone",
+////        "Gaussian",
+////        "Crystallize",
+//        "Sepia"
+//    ]
+//    static let filterNames = [
+//        "None",
+////        "CICMYKHalftone",
+////        "CIGaussianBlur",
+////        "CICrystallize",
+//        "CISepiaTone"
+//    ]
     
     struct Filter {
         let filterName: String

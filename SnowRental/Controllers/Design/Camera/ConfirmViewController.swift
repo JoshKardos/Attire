@@ -34,7 +34,7 @@ class ConfirmViewController: UIViewController {
         guard let movie = movie else {
             return
         }
-        movieNameLabel.text = movie["Title"]!
+        movieNameLabel.text = movie[FirebaseNodes.title]!
         
         if let _ = tags {
             add(tagsCollection, toView: tagsView)
@@ -43,7 +43,7 @@ class ConfirmViewController: UIViewController {
         tagsLabel.text = "Tags (\(tags?.count ?? 0))"
         tagsViewContainer.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         tagsViewContainer.layer.borderWidth = 2
-        let posterString = movie["Poster"]!
+        let posterString = movie[FirebaseNodes.poster]!
         if posterString == "N/A" {
             return
         }
@@ -61,7 +61,7 @@ class ConfirmViewController: UIViewController {
             return
         }
         
-        guard let movieId = self.movie!["imdbID"] as? String else {
+        guard let movieId = self.movie![FirebaseNodes.imdbID] as? String else {
             ProgressHUD.showError("Must have a movie picked")
             return
         }
@@ -94,7 +94,7 @@ class ConfirmViewController: UIViewController {
                         return
                     }
 
-                    ref.child(newDesignKey).updateChildValues(["designId": newDesignKey, "imageUrl": url, "userId": userId, "movieId": movieId])
+                    ref.child(newDesignKey).updateChildValues([FirebaseNodes.designId: newDesignKey, FirebaseNodes.imageUrl: url, FirebaseNodes.userId: userId, FirebaseNodes.movieId: movieId])
                     Database.database().reference().child(FirebaseNodes.movieDesigns).child(movieId).updateChildValues([newDesignKey: "1"])
                     var designTags: [String: String] = [:]
                     if let newTags = self.tags {

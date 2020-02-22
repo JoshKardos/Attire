@@ -17,16 +17,16 @@ class ContactInfoViewController: UIViewController {
     @IBOutlet weak var verifiedLabel: UILabel!
     @IBOutlet weak var passwordContainer: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(Auth.auth().currentUser!.isEmailVerified)
         emailLabel.text = UsersManager.currentUser.email
         if Auth.auth().currentUser!.isEmailVerified {
             verifiedLabel.text = "Verified"
+            verifiedLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         } else {
             verifiedLabel.text = "Not verified"
+            verifiedLabel.textColor = UIColor.red
         }
-    }
-    @IBAction func passwordPressed(_ sender: Any) {
-        print("password pressed")
     }
 }

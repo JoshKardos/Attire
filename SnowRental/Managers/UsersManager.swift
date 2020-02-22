@@ -31,6 +31,9 @@ class UsersManager {
             return
         }
         Database.database().reference().child(FirebaseNodes.users).child(id).observe(.value) { (snapshot) in
+            if !snapshot.exists() {
+                return
+            }
             currentUser = User(dictionary: snapshot.value as! NSDictionary)
             onSuccess()
         }
@@ -57,7 +60,6 @@ class UsersManager {
             }
             if let uid = Auth.auth().currentUser?.uid{
                 Auth.auth().currentUser?.sendEmailVerification(completion: nil)
-                
                 self.signUpUser(firstName: firstName, lastName: lastName, email: email, uid: uid, onSuccess: onSuccess)
             }
         }
@@ -65,12 +67,13 @@ class UsersManager {
     static func signUpUser(firstName: String, lastName: String, email: String, uid: String, onSuccess: @escaping () -> Void){
         
         let usersRef = Database.database().reference().child(FirebaseNodes.users)
-        let values = ["firstName": firstName, "lastName": lastName, "email": email, "uid": uid] as [String : Any]
+        let values = [FirebaseNodes.firstName: firstName, FirebaseNodes.lastName: lastName, FirebaseNodes.email: email, FirebaseNodes.uid: uid] as [String : Any]
         
         usersRef.child(uid).setValue(values)
         currentUser = User(dictionary: values as NSDictionary)
-        onSuccess()
-        
+        MyAPIClient.createCustomer(userId: uid, email: email, name: "\(firstName) \(lastName)", onSuccess: {
+            onSuccess()
+        })
     }
     static func reauthenticateUser(email: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void){
         

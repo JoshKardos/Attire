@@ -14,7 +14,7 @@ class ShopDesignCell: UICollectionViewCell {
     @IBOutlet weak var designImage: UIImageView!
     
     func configureCell(design: [String: String]) {
-        guard let designUrl = design["imageUrl"] else {
+        guard let designUrl = design[FirebaseNodes.imageUrl] else {
             return
         }
         let url = URL(string: designUrl)

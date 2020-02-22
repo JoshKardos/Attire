@@ -42,7 +42,7 @@ class ChangeEmailViewController: UIViewController {
                     ProgressHUD.showError("\(error?.localizedDescription)")
                     return
                 }
-                Database.database().reference().child(FirebaseNodes.users).child((Auth.auth().currentUser?.uid)!).updateChildValues(["email": newEmailString])
+                Database.database().reference().child(FirebaseNodes.users).child((Auth.auth().currentUser?.uid)!).updateChildValues([FirebaseNodes.email: newEmailString])
                 ProgressHUD.showSuccess("Email successfully changed...")
             }
         }) { (error) in
