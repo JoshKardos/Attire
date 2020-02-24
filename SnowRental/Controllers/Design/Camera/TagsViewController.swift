@@ -52,7 +52,7 @@ class TagsViewController: UIViewController, TKCollectionViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDesignSummary" {
-            let vc = segue.destination as! ConfirmViewController
+            let vc = segue.destination as! UploadConfirmViewController
             vc.image = image
             vc.movie = movie
             vc.tags = productTagsCollection.tags

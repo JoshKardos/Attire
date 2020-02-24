@@ -56,7 +56,20 @@ class MovieViewController: UIViewController {
         }
         let url = URL(string: posterString)
         movieImageView.kf.setImage(with: url)
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toOrderViewController" {
+            let vc = segue.destination as! ConfirmOrderViewController
+            let design = sender as! Design
+            guard let designUrl = design.imageUrl else {
+                return
+            }
+            let url = URL(string: designUrl)
+            vc.imageURL = url
+            vc.design = design
+            vc.movie = movie
+        }
     }
 }
 
@@ -67,12 +80,12 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopDesignCell", for: indexPath) as! ShopDesignCell
-        cell.configureCell(design: MoviesManager.movieViewingDesigns[indexPath.row] as! [String : String])
+        cell.configureCell(design: MoviesManager.movieViewingDesigns[indexPath.row])
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toOrderViewController", sender: nil)
+        performSegue(withIdentifier: "toOrderViewController", sender: MoviesManager.movieViewingDesigns[indexPath.row])
     }
 }
 

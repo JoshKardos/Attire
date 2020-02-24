@@ -348,7 +348,7 @@
         <!--Confirm-->
         <scene sceneID="5xO-iV-XJU">
             <objects>
-                <viewController id="n9o-ST-rgm" customClass="ConfirmViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n9o-ST-rgm" customClass="UploadConfirmViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zjd-1z-6QV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2401"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

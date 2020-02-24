@@ -71,7 +71,7 @@ class UsersManager {
         
         usersRef.child(uid).setValue(values)
         currentUser = User(dictionary: values as NSDictionary)
-        MyAPIClient.createCustomer(userId: uid, email: email, name: "\(firstName) \(lastName)", onSuccess: {
+        MyAPIClient.signUpStripeCustomer(userId: uid, email: email, name: "\(firstName) \(lastName)", onSuccess: {
             onSuccess()
         })
     }

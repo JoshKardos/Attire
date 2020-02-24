@@ -11,13 +11,13 @@ import UIKit
 
 class ShopDesignCell: UICollectionViewCell {
     
-    @IBOutlet weak var designImage: UIImageView!
+    @IBOutlet weak var designImageView: UIImageView!
     
-    func configureCell(design: [String: String]) {
-        guard let designUrl = design[FirebaseNodes.imageUrl] else {
+    func configureCell(design: Design) {
+        guard let designUrl = design.imageUrl else {
             return
         }
         let url = URL(string: designUrl)
-        designImage.kf.setImage(with: url)
+        designImageView.kf.setImage(with: url)
     }
 }

@@ -13,7 +13,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import ProgressHUD
 
-class ConfirmViewController: UIViewController {
+class UploadConfirmViewController: UIViewController {
 
     var image: UIImage?
     var tags: [String]?
@@ -61,7 +61,7 @@ class ConfirmViewController: UIViewController {
             return
         }
         
-        guard let movieId = self.movie![FirebaseNodes.imdbID] as? String else {
+        guard let movieId = self.movie![FirebaseNodes.imdbID] else {
             ProgressHUD.showError("Must have a movie picked")
             return
         }

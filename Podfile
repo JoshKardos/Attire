@@ -16,7 +16,7 @@ target 'SnowRental' do
   pod 'Kingfisher', '~> 5.0'
   pod 'TaggerKit'
   pod 'ChromaColorPicker'
-  pod 'Stripe', '~> 16.0.2'
+  pod 'Stripe'#, '~> 16.0.2'
   
   target 'SnowRentalTests' do
     inherit! :search_paths

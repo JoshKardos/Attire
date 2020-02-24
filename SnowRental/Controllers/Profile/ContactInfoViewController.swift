@@ -19,7 +19,6 @@ class ContactInfoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(Auth.auth().currentUser!.isEmailVerified)
         emailLabel.text = UsersManager.currentUser.email
         if Auth.auth().currentUser!.isEmailVerified {
             verifiedLabel.text = "Verified"

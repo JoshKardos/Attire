@@ -15,12 +15,22 @@ import FirebaseDatabase
 
 class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     
-    static let serverBase = "http://10.247.36.182:80/AttireServer/"
+    static let serverBase = "http://10.0.0.10:80/AttireServer/"
 
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
-        let parameters = ["api_version": apiVersion]
+        
+        guard let customerId = UsersManager.currentUser.stripeCustomerId else {
+            print("no customerId")
+            return
+        }
+        print("$$$ \(customerId)")
+        
+        // maybe add a search in database for customerStripeId
+        
+        let parameters = ["api_version": apiVersion, "customer_id": customerId]
         AF.request(URL(string: "\(MyAPIClient.serverBase)empheralkey.php")!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).responseJSON { (apiResponse) in
             let data = apiResponse.data
+            print(data)
             guard let json = ((try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]) as [String : Any]??) else {
                 completion(nil, apiResponse.error)
                 return
@@ -30,7 +40,7 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
         }
     }
     
-    class func createCustomer(userId: String, email: String, name: String, onSuccess: @escaping () -> Void) {
+    class func signUpStripeCustomer(userId: String, email: String, name: String, onSuccess: @escaping () -> Void) {
         var customerDetailParams = [String: String]()
         customerDetailParams["email"] = email
         customerDetailParams["name"] = name
@@ -38,7 +48,6 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
         AF.request(URL(string: "\(MyAPIClient.serverBase)createCustomer.php")!, method: .post, parameters: customerDetailParams, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
-                // Do whatever here
                 debugPrint(response.error)
                 debugPrint(response.debugDescription)
                 break
@@ -46,10 +55,10 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
                 guard let data = response.data else {
                     return
                 }
-                // stripe customer id is JSON(data["id"])
                 if let stripeUid = JSON(data)["id"].string {
                     print("here")
                     Database.database().reference().child(FirebaseNodes.users).child(userId).child(FirebaseNodes.stripeCustomerId).setValue(stripeUid)
+                    UsersManager.currentUser.setStripeCustomerId(id: stripeUid)
                 }
                 onSuccess()
                 break

@@ -17,6 +17,10 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.isHidden = false
+        self.configurePaymentSettings()
+    }
+    
+    func configurePaymentSettings() {
         // Do any additional setup after loading the view.
         let config = STPPaymentConfiguration.shared()
         config.additionalPaymentOptions = .applePay
@@ -29,21 +33,22 @@ class AccountViewController: UIViewController {
         self.paymentContext?.hostViewController = self
         self.paymentContext?.paymentAmount = 5000
     }
+    
     @IBAction func paymentSettingsPressed(_ sender: Any) {
         self.paymentContext?.pushPaymentOptionsViewController()
     }
 }
 
 extension AccountViewController : STPPaymentContextDelegate {
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
+        
+    }
+    
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
-        
-    }
-    
-    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
         
     }
     

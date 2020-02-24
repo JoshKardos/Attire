@@ -15,7 +15,7 @@ class MoviesManager {
     static var movies: Dictionary<String, Any> = [:]
     static var omdbSearchMovies: [Any] = []
     static var movieViewingDesignIds: [String] = []
-    static var movieViewingDesigns: [Any] = []
+    static var movieViewingDesigns: [Design] = []
     static let omdbBaseUrl = "http://www.omdbapi.com/?apikey=\(ApiKeys.omdbApi)"
     
     static func fetchDesignFromFirebase(id: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
@@ -24,7 +24,8 @@ class MoviesManager {
                 onEmpty()
                 return
             }
-            movieViewingDesigns.append(snapshot.value as Any)
+            let design = Design(dictionary: snapshot.value as! [String: String])
+            movieViewingDesigns.append(design)
             onSuccess()
         }
     }

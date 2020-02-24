@@ -21,6 +21,13 @@ class User{
         firstName = (dictionary[FirebaseNodes.firstName] as! String)
         lastName = (dictionary[FirebaseNodes.lastName] as! String)
         email = (dictionary[FirebaseNodes.email] as! String)
-        stripeCustomerId = (dictionary[FirebaseNodes.stripeCustomerId] as! String)
+        
+        if let stripeId = dictionary[FirebaseNodes.stripeCustomerId] as? String {
+            stripeCustomerId = stripeId
+        }
+    }
+    
+    func setStripeCustomerId(id: String) {
+        self.stripeCustomerId = id
     }
 }
