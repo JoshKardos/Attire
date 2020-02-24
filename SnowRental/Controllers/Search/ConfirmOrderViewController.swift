@@ -60,7 +60,8 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
         let config = STPPaymentConfiguration()
         config.additionalPaymentOptions = .applePay
         config.shippingType = .shipping
-        config.requiredShippingAddressFields = Set<STPContactField>(arrayLiteral: STPContactField.name, STPContactField.emailAddress, STPContactField.phoneNumber, STPContactField.postalAddress)
+        config.requiredBillingAddressFields = STPBillingAddressFields.name
+        config.requiredShippingAddressFields = Set<STPContactField>(arrayLiteral: STPContactField.name, STPContactField.phoneNumber, STPContactField.postalAddress)
         config.companyName = "Testing XYZ"
         customerContext = STPCustomerContext(keyProvider: MyAPIClient())
         paymentContext = STPPaymentContext(customerContext: customerContext!, configuration: config, theme: .default())

@@ -18,9 +18,7 @@ class ShippingAddressViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    var addressChosen = false
-    var isSetShipping = true
-
+    
     var order: Order?
     
     override func viewDidLoad() {
@@ -34,16 +32,10 @@ class ShippingAddressViewController: UIViewController {
         self.paymentContext?.hostViewController = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("DID APPEAR")
-        addressChosen = false
-        isSetShipping = true
+    @IBAction func nextPressed(_ sender: Any) {
+       self.performSegue(withIdentifier: "ToSelectPaymentMethod", sender: nil)
     }
     
-    @IBAction func deliverPressed(_ sender: Any) {
-        addressChosen = true
-        self.paymentContext?.presentShippingViewController()
-    }
     
     @IBAction func editAdressPressed(_ sender: Any) {
         self.paymentContext?.presentShippingViewController()
@@ -56,6 +48,7 @@ class ShippingAddressViewController: UIViewController {
         if segue.identifier == "ToSelectPaymentMethod" {
             let vc = segue.destination as! BillingOptionsViewController
             vc.paymentContext = self.paymentContext
+            vc.order = self.order
         }
     }
     
@@ -78,27 +71,10 @@ extension ShippingAddressViewController: STPPaymentContextDelegate {
             recentlyContainer.isHidden = false
             self.setAddressData(paymentContext: paymentContext)
         }
-        
-//        if paymentContext.selectedPaymentOption != nil && isSetShipping {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                paymentContext.presentShippingViewController()
-//            }
-//        }
-        if paymentContext.shippingAddress != nil && !isSetShipping && addressChosen {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.performSegue(withIdentifier: "ToSelectPaymentMethod", sender: nil)
-            }
-        }
     }
         
     func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
         
-        if !addressChosen {
-            completion(.valid, nil, nil, nil) // dont add shipping method i.e. express shipping
-            return
-        }
-        
-        isSetShipping = false
         let upsGround = PKShippingMethod()
         upsGround.amount = 0
         upsGround.label = "UPS Ground"
@@ -123,6 +99,7 @@ extension ShippingAddressViewController: STPPaymentContextDelegate {
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
+        print("payment result this should not print")
         
     }
     
