@@ -13,6 +13,7 @@ class FirebaseNodes {
     static let storageRef = ApiKeys.firebaseRef
     
     // DATABASE
+    static let designOrders = "designOrders"
     static let orders = "orders"
     static let userOrders = "user-orders"
     static let designs = "designs"

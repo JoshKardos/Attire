@@ -28,6 +28,7 @@
 		B3699DE624039EFD001D495D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE524039EFD001D495D /* Order.swift */; };
 		B3699DE82403A696001D495D /* BillingOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE72403A696001D495D /* BillingOptionsViewController.swift */; };
 		B36B0D3A2404AA6E00C8D6CC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D392404AA6E00C8D6CC /* ReceiptViewController.swift */; };
+		B36B0D3C2405CD1900C8D6CC /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
 		B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5323F879DC005695E8 /* UsersManager.swift */; };
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
@@ -105,6 +106,7 @@
 		B3699DE524039EFD001D495D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B3699DE72403A696001D495D /* BillingOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingOptionsViewController.swift; sourceTree = "<group>"; };
 		B36B0D392404AA6E00C8D6CC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		B3864B5323F879DC005695E8 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				B3864B5C23F8A9B2005695E8 /* MoviesManager.swift */,
 				B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */,
 				B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */,
+				B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -340,11 +343,11 @@
 			isa = PBXGroup;
 			children = (
 				B3D69F3523FE2361007D5C0F /* Extensions */,
-				B34AFB1523FA1B7200D765FD /* Helpers */,
 				B397450423F4F93900604316 /* AppDelegate.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
 				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
 				B34AFB0823F918FB00D765FD /* ApiKeys.swift */,
+				B34AFB1523FA1B7200D765FD /* Helpers */,
 				B3DC904123FF4C880030B330 /* MyAPIClient.swift */,
 				B3864B5523F87B66005695E8 /* Models */,
 				B3864B5223F8787C005695E8 /* Managers */,
@@ -682,6 +685,7 @@
 				B3864B6123F8D2E3005695E8 /* AccountViewController.swift in Sources */,
 				B397453A23F5DA8200604316 /* ProfileViewController.swift in Sources */,
 				B3699DE624039EFD001D495D /* Order.swift in Sources */,
+				B36B0D3C2405CD1900C8D6CC /* CardsManager.swift in Sources */,
 				B397451123F4F93900604316 /* SnowRental.xcdatamodeld in Sources */,
 				B3864B5723F87B7D005695E8 /* User.swift in Sources */,
 			);

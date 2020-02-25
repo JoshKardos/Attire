@@ -12,6 +12,7 @@ class Design {
     var imageUrl: String?
     var movieId: String?
     var userId: String?
+    var price = 4000
     
     init(dictionary: [String : String]) {
         designId = dictionary[FirebaseNodes.designId]

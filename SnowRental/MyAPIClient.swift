@@ -23,14 +23,11 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
             print("no customerId")
             return
         }
-        print("$$$ \(customerId)")
-        
         // maybe add a search in database for customerStripeId
         
         let parameters = ["api_version": apiVersion, "customer_id": customerId]
         AF.request(URL(string: "\(MyAPIClient.serverBase)empheralkey.php")!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).responseJSON { (apiResponse) in
             let data = apiResponse.data
-            print(data)
             guard let json = ((try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]) as [String : Any]??) else {
                 completion(nil, apiResponse.error)
                 return

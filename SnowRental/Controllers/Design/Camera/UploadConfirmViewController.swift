@@ -71,7 +71,11 @@ class UploadConfirmViewController: UIViewController {
 
         ProgressHUD.show()
         UIApplication.shared.beginIgnoringInteractionEvents()
-//        self.view.isUserInteractionEnabled = true
+        
+        // ///////
+        // BELOW
+        // THIS NEEDS TO BE PUT IN DESIGNMANAGER
+        // ///////
         if let imageData = image?.jpegData(compressionQuality: 0.75) {
             storageRef.putData(imageData, metadata: uploadMetadata) { (metadata, error) in
                 if error != nil{

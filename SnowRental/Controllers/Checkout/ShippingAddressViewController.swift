@@ -22,24 +22,27 @@ class ShippingAddressViewController: UIViewController {
     @IBOutlet weak var shippingNameLabel: UILabel!
     @IBOutlet weak var shippingDetailLabel: UILabel!
     var order: Order?
-    
+    let indicator = UIActivityIndicatorView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.validateOrder()
-        
+        indicator.frame = recentlyContainer.frame
+        indicator.style = .large
+        indicator.startAnimating()
+        self.view.addSubview(indicator)
         recentlyContainer.alpha = 0
         recentlyContainer.layer.borderWidth = 1
         recentlyContainer.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         recentlyContainer.layer.cornerRadius = 3
-        self.paymentContext?.delegate = self
         self.paymentContext?.hostViewController = self
+
     }
     
-    func validateOrder() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        self.paymentContext?.delegate = self
+        self.setAddressData(paymentContext: paymentContext!)
     }
-    
     
     @IBAction func editAdressPressed(_ sender: Any) {
         self.paymentContext?.presentShippingViewController()
@@ -83,13 +86,15 @@ class ShippingAddressViewController: UIViewController {
 extension ShippingAddressViewController: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         if paymentContext.shippingAddress != nil {
+            self.indicator.stopAnimating()
+            self.indicator.removeFromSuperview()
             recentlyContainer.alpha = 1
             self.setAddressData(paymentContext: paymentContext)
         }
+            
     }
         
     func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
-        
         let upsGround = PKShippingMethod()
         upsGround.amount = 0
         upsGround.label = "UPS Ground"

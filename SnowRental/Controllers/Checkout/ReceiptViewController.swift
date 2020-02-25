@@ -16,7 +16,9 @@ class ReceiptViewController: UIViewController {
 
     var order: Order?
     var paymentContext: STPPaymentContext?
+    var taxRate: Double = 0.1
     
+    // receipt container
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var shippingHandlingPriceLabel: UILabel!
     @IBOutlet weak var itemsPriceLabel: UILabel!
@@ -25,18 +27,39 @@ class ReceiptViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var redTotalPriceLabel: UILabel!
     
+    // shipping address container
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var shippingAddressLabel: UILabel!
+    
+    //paymnet information container
+    @IBOutlet weak var cardDetailsLabel: UILabel!
+    
+    // shipping details container
+    @IBOutlet weak var deliveryPriceLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.paymentContext?.delegate = self
         self.configureReceipt()
+        self.configureOrderInformation()
+    }
+    
+    func configureOrderInformation() {
+        self.nameLabel.text = paymentContext?.shippingAddress?.name
+        self.shippingAddressLabel.text = paymentContext?.shippingAddress?.line1
+        
+        self.cardDetailsLabel.text = Card(firstPaymentOption: paymentContext!.selectedPaymentOption!).label
+        
+        self.deliveryPriceLabel.text = Double(paymentContext!.selectedShippingMethod!.amount) > 0.0 ? "$\(paymentContext!.selectedShippingMethod!.amount)  \(paymentContext!.selectedShippingMethod!.detail!)" : "FREE  \(paymentContext!.selectedShippingMethod!.detail!)"
+
     }
     
     func configureReceipt() {
-        let itemsPrice = Double(paymentContext!.paymentAmount/100)
+        let itemsPrice = Double(order!.price!/100)
         let shippingHandlingPrice = Double((paymentContext?.selectedShippingMethod?.amount)!)
         let beforeTaxPrice = itemsPrice + shippingHandlingPrice // items is in cents
-        let taxPrice = itemsPrice * 0.1
+        let taxPrice = itemsPrice * taxRate
         let totalPrice = beforeTaxPrice + taxPrice
         itemsPriceLabel.text = String(format: "$%.02f", itemsPrice)
         shippingHandlingPriceLabel.text = String(format: "$%.02f", shippingHandlingPrice)
@@ -71,8 +94,11 @@ extension ReceiptViewController: STPPaymentContextDelegate {
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
         
-        let amount = Double(paymentContext.paymentAmount) + (Double(paymentContext.paymentAmount) * 0.1) //Double(paymentContext.paymentAmount+Int((paymentContext.selectedShippingMethod?.amount)!))
+        var amount = Double(paymentContext.paymentAmount) + (Double(order!.price!)*taxRate) // add tax
         let customerId = UsersManager.currentUser.stripeCustomerId!
+        
+        ProgressHUD.show()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         MyAPIClient.createPaymentIntent(amount: amount, currency: "usd", customerId: customerId) { (response) in
             switch response {
@@ -85,6 +111,7 @@ extension ReceiptViewController: STPPaymentContextDelegate {
                     switch status {
                     case .succeeded:
                         self.order?.id = paymentIntent!.stripeId
+                        self.order?.price = Int(amount)
                         completion(.success, nil)
                         break
                     case .failed:
@@ -115,8 +142,9 @@ extension ReceiptViewController: STPPaymentContextDelegate {
             
                 let value: [String : Any] = [FirebaseNodes.orderId: orderId, FirebaseNodes.timestamp: Date().timeIntervalSince1970.description, FirebaseNodes.userId: uid, FirebaseNodes.designId: designId, FirebaseNodes.movieId: movieId, FirebaseNodes.shirtSize: size, FirebaseNodes.price: price, FirebaseNodes.shirtColor: shirtHex]
                 Database.database().reference().child(FirebaseNodes.orders).child(orderId).updateChildValues(value)
+                print("success")
+                Database.database().reference().child(FirebaseNodes.designOrders).child(designId).child(orderId).setValue(1) // design-orders/{designId}/{orderId}/1
             }
-            
             // "orders/{orderId}/
                        // orderId
                        // timestamp
@@ -126,20 +154,22 @@ extension ReceiptViewController: STPPaymentContextDelegate {
                        // shirtSize
                        // price
                        // shirtColor
+            ProgressHUD.showSuccess("Your order has been successfuly placed")
+            UIApplication.shared.endIgnoringInteractionEvents()
             self.navigationController?.popToRootViewController(animated: false)
             break
         case .error:
             ProgressHUD.showError("Failed to submit order")
+            UIApplication.shared.endIgnoringInteractionEvents()
             break
         case .userCancellation:
+            ProgressHUD.showError("Failed to submit order")
+            UIApplication.shared.endIgnoringInteractionEvents()
             break
          @unknown default:
+            ProgressHUD.showError("Failed to submit order")
+            UIApplication.shared.endIgnoringInteractionEvents()
             break
         }
     }
-    
-    
 }
-
-
-

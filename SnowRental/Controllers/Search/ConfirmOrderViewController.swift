@@ -27,14 +27,13 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
     var shirtColor: UIColor?
     var imageURL: URL?
     var sizes = ["S", "M", "L", "XL"]
-    var price = 4000
 
     var customerContext: STPCustomerContext?
     var paymentContext: STPPaymentContext?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        priceLabel.text = String(format: "$%.02f", Double(price)/100)
+        priceLabel.text = String(format: "$%.02f", Double(design!.price)/100)
         designImageView.kf.setImage(with: self.imageURL)
         self.configureColorPicker()
     }
@@ -47,7 +46,7 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
                 print("order constructor failed")
                 return
             }
-            vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: colorPicker.currentColor, imageUrl: orderImageURL, price: price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
+            vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: colorPicker.currentColor, imageUrl: orderImageURL, price: design!.price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
         }
     }
     
@@ -66,7 +65,7 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
         config.companyName = "Testing XYZ"
         customerContext = STPCustomerContext(keyProvider: MyAPIClient())
         paymentContext = STPPaymentContext(customerContext: customerContext!, configuration: config, theme: .default())
-        self.paymentContext?.paymentAmount = price // in cents
+        self.paymentContext?.paymentAmount = design!.price // in cents
     
         // perform checkout storyboard
         self.performSegue(withIdentifier: "ToCheckout", sender: nil)

@@ -23,10 +23,10 @@ class BillingOptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.paymentContext?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.paymentContext?.delegate = self
         setUpRecentPaymentMethod()
     }
     
@@ -40,37 +40,10 @@ class BillingOptionsViewController: UIViewController {
             editCardButton.setTitle("Edit card", for: .normal)
         }
         if let firstPaymentOption = paymentContext?.selectedPaymentOption {
-            let paymentMethodArr = firstPaymentOption.description.split(separator: ";")
-            var expMonth = ""
-            var expYear = ""
-            var cardOwnerName = ""
-            for ele in paymentMethodArr {
-                if ele.contains("expMonth") {
-                    let monthArr = ele.split(separator: " ")
-                    let month = Int(monthArr[monthArr.count - 1])
-                    
-                    if month! < 10 {
-                        expMonth = "0\(monthArr[monthArr.count - 1])"
-                    } else {
-                        expMonth = "\(monthArr[monthArr.count - 1])"
-                    }
-                }
-                if ele.contains("expYear") {
-                    let yearArr = ele.split(separator: " ")
-                    expYear = String(yearArr[yearArr.count - 1])
-                }
-                if ele.contains("name") {
-                    let nameArr = ele.split(separator: " ")
-                    for i in 2..<nameArr.count {
-                        cardOwnerName = "\(cardOwnerName)\(nameArr[i]) "
-
-                    }
-                }
-
-            }
-            self.cardLabel.text = firstPaymentOption.label
-            self.expiryDateLabel.text = "Expires \(expMonth)/\(expYear)"
-            self.cardholderNameLabel.text = cardOwnerName
+            let card = Card(firstPaymentOption: firstPaymentOption)
+            self.cardLabel.text = card.label
+            self.expiryDateLabel.text = "Expires \(card.expMonth!)/\(card.expYear!)"
+            self.cardholderNameLabel.text = card.cardholderName
         }
     }
     
