@@ -17,6 +17,7 @@ class Order {
     var price: Int?
     var size: String?
     var userId: String?
+    var id: String?
     
     init(design: Design, movie: [String: String], shirtColor: UIColor, imageUrl: URL, price: Int, size: String, userId: String){
         self.design = design

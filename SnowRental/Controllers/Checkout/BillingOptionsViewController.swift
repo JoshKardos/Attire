@@ -9,6 +9,7 @@
 import UIKit
 import Stripe
 import SwiftyJSON
+import ProgressHUD
 
 class BillingOptionsViewController: UIViewController {
     @IBOutlet weak var expiryDateLabel: UILabel!
@@ -70,8 +71,14 @@ class BillingOptionsViewController: UIViewController {
             self.cardLabel.text = firstPaymentOption.label
             self.expiryDateLabel.text = "Expires \(expMonth)/\(expYear)"
             self.cardholderNameLabel.text = cardOwnerName
-            
-            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToReceipt" {
+            let vc = segue.destination as! ReceiptViewController
+            vc.order = self.order
+            vc.paymentContext = self.paymentContext
         }
     }
     
@@ -79,9 +86,15 @@ class BillingOptionsViewController: UIViewController {
         self.paymentContext?.presentPaymentOptionsViewController()
     }
     
-    @IBAction func submitOrderPressed(_ sender: Any) {
+    @IBAction func continuePressed(_ sender: Any) {
         // check card and shipping
-        self.paymentContext?.requestPayment()
+        if paymentContext?.selectedPaymentOption == nil {
+            ProgressHUD.showError("Please choose a payment option")
+            return
+        }
+        if paymentContext?.selectedPaymentOption != nil && paymentContext?.shippingAddress != nil && order != nil {
+            self.performSegue(withIdentifier: "ToReceipt", sender: nil)
+        }
     }
     
 }
@@ -100,52 +113,10 @@ extension BillingOptionsViewController: STPPaymentContextDelegate {
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
-        MyAPIClient.createPaymentIntent(amount: (Double(paymentContext.paymentAmount+Int((paymentContext.selectedShippingMethod?.amount)!))), currency: "usd", customerId: UsersManager.currentUser.stripeCustomerId!) { (response) in
-            print("REPONSE \(response)")
-            switch response {
-            case .success(let clientSecret):
-                let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecret)
-                paymentIntentParams.paymentMethodId = paymentResult.paymentMethod?.stripeId
-                paymentIntentParams.paymentMethodParams = paymentResult.paymentMethodParams
-
-                STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: paymentContext) { (status, paymentIntent, error) in
-                    switch status {
-                    case .succeeded:
-                        completion(.success, nil)
-                        break
-                    case .failed:
-                        completion(.error, error)
-                        break
-                    case .canceled:
-                        completion(.userCancellation, nil)
-                        break
-                    @unknown default:
-                        completion(.error, nil)
-                        break
-                    }
-                }
-                break
-            case .failure(let error):
-                completion(.error, error)
-                break
-            }
-        }
+        
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
-        
-        // add order to firebase "user-orders/{user}/{orderId}/1"
-        print("DID FINISH \(status)")
-        // "orders/{orderId}/
-            // orderId
-            // timestamp
-            // userId
-            // designId
-            // movieId
-            // shirtSize
-            // price
-            // shirtColor
-        self.navigationController?.popToRootViewController(animated: false)
         
     }
     

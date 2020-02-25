@@ -27,6 +27,7 @@
 		B3699DE424037E4C001D495D /* ShippingAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE324037E4C001D495D /* ShippingAddressViewController.swift */; };
 		B3699DE624039EFD001D495D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE524039EFD001D495D /* Order.swift */; };
 		B3699DE82403A696001D495D /* BillingOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE72403A696001D495D /* BillingOptionsViewController.swift */; };
+		B36B0D3A2404AA6E00C8D6CC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D392404AA6E00C8D6CC /* ReceiptViewController.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
 		B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5323F879DC005695E8 /* UsersManager.swift */; };
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
@@ -103,6 +104,7 @@
 		B3699DE324037E4C001D495D /* ShippingAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingAddressViewController.swift; sourceTree = "<group>"; };
 		B3699DE524039EFD001D495D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B3699DE72403A696001D495D /* BillingOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingOptionsViewController.swift; sourceTree = "<group>"; };
+		B36B0D392404AA6E00C8D6CC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		B3864B5323F879DC005695E8 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				B3699DE324037E4C001D495D /* ShippingAddressViewController.swift */,
 				B3699DE72403A696001D495D /* BillingOptionsViewController.swift */,
+				B36B0D392404AA6E00C8D6CC /* ReceiptViewController.swift */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				B34AFB2523FA7EC700D765FD /* LibraryViewController.swift in Sources */,
 				B3699DE82403A696001D495D /* BillingOptionsViewController.swift in Sources */,
 				B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */,
+				B36B0D3A2404AA6E00C8D6CC /* ReceiptViewController.swift in Sources */,
 				B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */,
 				B397450523F4F93900604316 /* AppDelegate.swift in Sources */,
 				B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */,

@@ -19,12 +19,16 @@ class ShippingAddressViewController: UIViewController {
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
+    @IBOutlet weak var shippingNameLabel: UILabel!
+    @IBOutlet weak var shippingDetailLabel: UILabel!
     var order: Order?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recentlyContainer.isOpaque = true
-        recentlyContainer.isHidden = true
+        
+        self.validateOrder()
+        
+        recentlyContainer.alpha = 0
         recentlyContainer.layer.borderWidth = 1
         recentlyContainer.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         recentlyContainer.layer.cornerRadius = 3
@@ -32,16 +36,20 @@ class ShippingAddressViewController: UIViewController {
         self.paymentContext?.hostViewController = self
     }
     
-    @IBAction func nextPressed(_ sender: Any) {
-       self.performSegue(withIdentifier: "ToSelectPaymentMethod", sender: nil)
+    func validateOrder() {
+        
     }
     
     
     @IBAction func editAdressPressed(_ sender: Any) {
         self.paymentContext?.presentShippingViewController()
     }
-    @IBAction func addAdressPressed(_ sender: Any) {
-        self.paymentContext?.presentShippingViewController()
+    @IBAction func continuePressed(_ sender: Any) {
+        if paymentContext?.selectedShippingMethod == nil || paymentContext?.shippingAddress == nil {
+            self.paymentContext?.presentShippingViewController()
+            return
+        }
+        self.performSegue(withIdentifier: "ToSelectPaymentMethod", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,14 +69,21 @@ class ShippingAddressViewController: UIViewController {
         self.cityLabel.text = "\(city), \(state) \(postalCode)"
         self.countryLabel.text = paymentContext.shippingAddress?.country
         self.phoneLabel.text = paymentContext.shippingAddress?.phone
+        
+        if paymentContext.selectedShippingMethod != nil {
+            self.shippingNameLabel.text = paymentContext.selectedShippingMethod?.label
+            self.shippingDetailLabel.text = paymentContext.selectedShippingMethod?.detail
+        } else {
+            self.shippingNameLabel.text = "NONE"
+            self.shippingDetailLabel.text = "NONE"
+        }
     }
 }
 
 extension ShippingAddressViewController: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         if paymentContext.shippingAddress != nil {
-            recentlyContainer.isOpaque = false
-            recentlyContainer.isHidden = false
+            recentlyContainer.alpha = 1
             self.setAddressData(paymentContext: paymentContext)
         }
     }

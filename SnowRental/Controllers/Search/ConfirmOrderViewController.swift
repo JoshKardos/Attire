@@ -34,7 +34,7 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        priceLabel.text = "$\(Double(price)/100.00)"
+        priceLabel.text = String(format: "$%.02f", Double(price)/100)
         designImageView.kf.setImage(with: self.imageURL)
         self.configureColorPicker()
     }
@@ -42,20 +42,21 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToCheckout" {
             let vc = segue.destination as! ShippingAddressViewController
-            
             vc.paymentContext = self.paymentContext
-
             guard let orderDesign = design, let orderMovie = movie, let orderShirtColor = shirtColor, let orderImageURL = imageURL, let uid = Auth.auth().currentUser?.uid else {
-                print("here")
+                print("order constructor failed")
                 return
             }
-            //set up vc - color, size, price, design
-            vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: orderShirtColor, imageUrl: orderImageURL, price: price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
+            vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: colorPicker.currentColor, imageUrl: orderImageURL, price: price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
         }
     }
     
     @IBAction func checkoutPressed(_ sender: Any) {
         // check is logged in
+        if Auth.auth().currentUser == nil {
+            self.performSegue(withIdentifier: "ToAuthentication", sender: nil)
+            return
+        }
         
         let config = STPPaymentConfiguration()
         config.additionalPaymentOptions = .applePay
