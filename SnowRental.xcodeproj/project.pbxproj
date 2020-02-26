@@ -26,7 +26,7 @@
 		B3699DDF24020AFC001D495D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DDE24020AFC001D495D /* Design.swift */; };
 		B3699DE424037E4C001D495D /* CheckoutShippingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE324037E4C001D495D /* CheckoutShippingDetailsViewController.swift */; };
 		B3699DE624039EFD001D495D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE524039EFD001D495D /* Order.swift */; };
-		B3699DE82403A696001D495D /* BillingOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE72403A696001D495D /* BillingOptionsViewController.swift */; };
+		B3699DE82403A696001D495D /* CheckoutPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE72403A696001D495D /* CheckoutPaymentViewController.swift */; };
 		B36B0D3A2404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D392404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift */; };
 		B36B0D3C2405CD1900C8D6CC /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
@@ -104,7 +104,7 @@
 		B3699DDE24020AFC001D495D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		B3699DE324037E4C001D495D /* CheckoutShippingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutShippingDetailsViewController.swift; sourceTree = "<group>"; };
 		B3699DE524039EFD001D495D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		B3699DE72403A696001D495D /* BillingOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingOptionsViewController.swift; sourceTree = "<group>"; };
+		B3699DE72403A696001D495D /* CheckoutPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPaymentViewController.swift; sourceTree = "<group>"; };
 		B36B0D392404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSubmitPaymentViewController.swift; sourceTree = "<group>"; };
 		B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				B3699DE324037E4C001D495D /* CheckoutShippingDetailsViewController.swift */,
-				B3699DE72403A696001D495D /* BillingOptionsViewController.swift */,
+				B3699DE72403A696001D495D /* CheckoutPaymentViewController.swift */,
 				B36B0D392404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift */,
 			);
 			path = Checkout;
@@ -659,7 +659,7 @@
 				B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */,
 				B397453C23F5F7A400604316 /* SearchViewController.swift in Sources */,
 				B34AFB2523FA7EC700D765FD /* LibraryViewController.swift in Sources */,
-				B3699DE82403A696001D495D /* BillingOptionsViewController.swift in Sources */,
+				B3699DE82403A696001D495D /* CheckoutPaymentViewController.swift in Sources */,
 				B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */,
 				B36B0D3A2404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift in Sources */,
 				B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */,
