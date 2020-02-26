@@ -916,7 +916,7 @@
         <!--Select a shipping address-->
         <scene sceneID="yAa-NW-Vq7">
             <objects>
-                <viewController id="rES-WD-Np9" customClass="ShippingAddressViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rES-WD-Np9" customClass="CheckoutShippingDetailsViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="llm-8Q-hib">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1080,7 +1080,7 @@
         <!--Select a Payment Method-->
         <scene sceneID="Msd-6G-AbB">
             <objects>
-                <viewController id="TSj-N8-UVT" customClass="BillingOptionsViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TSj-N8-UVT" customClass="CheckoutPaymentViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuQ-93-pQy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1188,7 +1188,7 @@
         <!--Place your order-->
         <scene sceneID="CKz-Ab-3lb">
             <objects>
-                <viewController id="ovX-ps-huv" customClass="ReceiptViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ovX-ps-huv" customClass="CheckoutSubmitPaymentViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iu1-Fw-tou">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1191"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

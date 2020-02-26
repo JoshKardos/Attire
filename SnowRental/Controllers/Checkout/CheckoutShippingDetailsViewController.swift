@@ -9,7 +9,7 @@
 import UIKit
 import Stripe
 
-class ShippingAddressViewController: UIViewController {
+class CheckoutShippingDetailsViewController: UIViewController {
 
     @IBOutlet weak var recentlyContainer: UIView!
     var paymentContext: STPPaymentContext?
@@ -57,7 +57,7 @@ class ShippingAddressViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToSelectPaymentMethod" {
-            let vc = segue.destination as! BillingOptionsViewController
+            let vc = segue.destination as! CheckoutPaymentViewController
             vc.paymentContext = self.paymentContext
             vc.order = self.order
         }
@@ -83,7 +83,7 @@ class ShippingAddressViewController: UIViewController {
     }
 }
 
-extension ShippingAddressViewController: STPPaymentContextDelegate {
+extension CheckoutShippingDetailsViewController: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         if paymentContext.shippingAddress != nil {
             self.indicator.stopAnimating()

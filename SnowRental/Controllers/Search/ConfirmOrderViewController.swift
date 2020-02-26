@@ -40,7 +40,7 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToCheckout" {
-            let vc = segue.destination as! ShippingAddressViewController
+            let vc = segue.destination as! CheckoutShippingDetailsViewController
             vc.paymentContext = self.paymentContext
             guard let orderDesign = design, let orderMovie = movie, let orderShirtColor = shirtColor, let orderImageURL = imageURL, let uid = Auth.auth().currentUser?.uid else {
                 print("order constructor failed")

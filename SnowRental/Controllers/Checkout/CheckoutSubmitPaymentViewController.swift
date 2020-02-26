@@ -12,7 +12,7 @@ import ProgressHUD
 import FirebaseDatabase
 import FirebaseAuth
 
-class ReceiptViewController: UIViewController {
+class CheckoutSubmitPaymentViewController: UIViewController {
 
     var order: Order?
     var paymentContext: STPPaymentContext?
@@ -79,7 +79,7 @@ class ReceiptViewController: UIViewController {
     
 }
 
-extension ReceiptViewController: STPPaymentContextDelegate {
+extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         
     }
