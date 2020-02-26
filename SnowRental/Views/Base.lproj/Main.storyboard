@@ -479,6 +479,16 @@
             </objects>
             <point key="canvasLocation" x="1019" y="-50"/>
         </scene>
+        <!--Orders-->
+        <scene sceneID="fss-ky-LFD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Orders" id="K04-zZ-rWQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="JCN-09-L7b"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vi0-yQ-No5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="374"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -492,29 +502,13 @@
                     <connections>
                         <segue destination="eDB-rI-1CS" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="4rH-dc-khE" kind="relationship" relationship="viewControllers" id="vsL-a7-6B4"/>
-                        <segue destination="6er-B8-89I" kind="relationship" relationship="viewControllers" id="S4e-wB-lok"/>
+                        <segue destination="K04-zZ-rWQ" kind="relationship" relationship="viewControllers" id="2D6-YV-NBg"/>
                         <segue destination="QSy-re-Hu4" kind="relationship" relationship="viewControllers" id="x9d-XC-RHW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-94" y="-50"/>
-        </scene>
-        <!--Orders-->
-        <scene sceneID="RwN-qJ-RTO">
-            <objects>
-                <viewController id="6er-B8-89I" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JEN-Yn-vUb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="LY4-qs-r9W"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Orders" image="cart" catalog="system" id="Edn-OE-kaT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk7-s6-Js5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1019" y="532"/>
         </scene>
         <!--Profile-->
         <scene sceneID="lkN-Ta-mpY">
@@ -1554,7 +1548,6 @@
     <resources>
         <image name="arrowBack" width="512" height="512"/>
         <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="goodfellasClown" width="1282" height="720"/>
         <image name="greenCalendar" width="128" height="128"/>
         <image name="greenTree" width="128" height="128"/>

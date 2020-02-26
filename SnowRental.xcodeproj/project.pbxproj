@@ -23,12 +23,14 @@
 		B34AFB1C23FA555300D765FD /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1B23FA555300D765FD /* CameraViewController.swift */; };
 		B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */; };
 		B34AFB2523FA7EC700D765FD /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */; };
+		B36444A02405FC2600E742A1 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364449F2405FC2600E742A1 /* OrdersTableViewController.swift */; };
 		B3699DDF24020AFC001D495D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DDE24020AFC001D495D /* Design.swift */; };
 		B3699DE424037E4C001D495D /* CheckoutShippingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE324037E4C001D495D /* CheckoutShippingDetailsViewController.swift */; };
 		B3699DE624039EFD001D495D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE524039EFD001D495D /* Order.swift */; };
 		B3699DE82403A696001D495D /* CheckoutPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3699DE72403A696001D495D /* CheckoutPaymentViewController.swift */; };
 		B36B0D3A2404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D392404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift */; };
 		B36B0D3C2405CD1900C8D6CC /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */; };
+		B36B0D3E2405F31800C8D6CC /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36B0D3D2405F31800C8D6CC /* Orders.storyboard */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
 		B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5323F879DC005695E8 /* UsersManager.swift */; };
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
@@ -101,12 +103,14 @@
 		B34AFB1B23FA555300D765FD /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B34AFB1D23FA641200D765FD /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
 		B34AFB2423FA7EC700D765FD /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		B364449F2405FC2600E742A1 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B3699DDE24020AFC001D495D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		B3699DE324037E4C001D495D /* CheckoutShippingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutShippingDetailsViewController.swift; sourceTree = "<group>"; };
 		B3699DE524039EFD001D495D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B3699DE72403A696001D495D /* CheckoutPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPaymentViewController.swift; sourceTree = "<group>"; };
 		B36B0D392404AA6E00C8D6CC /* CheckoutSubmitPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSubmitPaymentViewController.swift; sourceTree = "<group>"; };
 		B36B0D3B2405CD1900C8D6CC /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
+		B36B0D3D2405F31800C8D6CC /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		B3864B5323F879DC005695E8 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -216,6 +220,14 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		B364449E2405FBF200E742A1 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				B364449F2405FC2600E742A1 /* OrdersTableViewController.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		B3699DE024037E02001D495D /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +246,7 @@
 				B3864B6423F8E1F1005695E8 /* Profile.storyboard */,
 				B3864B4A23F87710005695E8 /* Authentication.storyboard */,
 				B397451423F4F93A00604316 /* LaunchScreen.storyboard */,
+				B36B0D3D2405F31800C8D6CC /* Orders.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 		B3864B4D23F87787005695E8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B364449E2405FBF200E742A1 /* Orders */,
 				B3699DE024037E02001D495D /* Checkout */,
 				B34AFB1A23FA554300D765FD /* Design */,
 				B3864B4E23F8779F005695E8 /* Authentication */,
@@ -519,6 +533,7 @@
 				B397451323F4F93A00604316 /* Assets.xcassets in Resources */,
 				B397450E23F4F93900604316 /* Main.storyboard in Resources */,
 				B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */,
+				B36B0D3E2405F31800C8D6CC /* Orders.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +680,7 @@
 				B34AFB1E23FA641200D765FD /* PreviewPhotoViewController.swift in Sources */,
 				B397450523F4F93900604316 /* AppDelegate.swift in Sources */,
 				B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */,
+				B36444A02405FC2600E742A1 /* OrdersTableViewController.swift in Sources */,
 				B3D69F2E23FDEC10007D5C0F /* ConfirmOrderViewController.swift in Sources */,
 				B3864B5D23F8A9B2005695E8 /* MoviesManager.swift in Sources */,
 				B34AFB1723FA1B7F00D765FD /* ImageHelpers.swift in Sources */,
