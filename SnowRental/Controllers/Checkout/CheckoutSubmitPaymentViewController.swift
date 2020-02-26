@@ -137,23 +137,23 @@ extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
         
         switch status {
         case .success:
-            if let orderId = order?.id, let uid = order?.userId, let designId = order?.design?.designId, let movieId = order?.design?.movieId, let size = order?.size, let price = order?.price, let shirtHex = order?.shirtColor?.hexCode { // "user-orders/{user}/{orderId}/1"
+            if let orderId = order?.id, let uid = order?.userId, let designId = order?.design?.designId, let movieId = order?.design?.movieId, let size = order?.size, let price = order?.price, let shirtHex = order?.shirtColor?.hexCode, let designUrl = order?.imageURL?.absoluteString { // "user-orders/{user}/{orderId}/1"
                 Database.database().reference().child(FirebaseNodes.userOrders).child(uid).child(orderId).setValue(1)
             
-                let value: [String : Any] = [FirebaseNodes.orderId: orderId, FirebaseNodes.timestamp: Date().timeIntervalSince1970.description, FirebaseNodes.userId: uid, FirebaseNodes.designId: designId, FirebaseNodes.movieId: movieId, FirebaseNodes.shirtSize: size, FirebaseNodes.price: price, FirebaseNodes.shirtColor: shirtHex]
+                let value: [String : Any] = [FirebaseNodes.orderId: orderId, FirebaseNodes.timestamp: Date().timeIntervalSince1970.description, FirebaseNodes.userId: uid, FirebaseNodes.designId: designId, FirebaseNodes.movieId: movieId, FirebaseNodes.shirtSize: size, FirebaseNodes.price: price, FirebaseNodes.shirtColor: shirtHex, FirebaseNodes.designImageUrl: designUrl]
                 Database.database().reference().child(FirebaseNodes.orders).child(orderId).updateChildValues(value)
-                print("success")
                 Database.database().reference().child(FirebaseNodes.designOrders).child(designId).child(orderId).setValue(1) // design-orders/{designId}/{orderId}/1
             }
             // "orders/{orderId}/
-                       // orderId
-                       // timestamp
-                       // userId
-                       // designId
-                       // movieId
-                       // shirtSize
-                       // price
-                       // shirtColor
+                // orderId
+                // timestamp
+                // userId
+                // designId
+                // movieId
+                // shirtSize
+                // price
+                // shirtColor
+                // designImageUrl
             ProgressHUD.showSuccess("Your order has been successfuly placed")
             UIApplication.shared.endIgnoringInteractionEvents()
             self.navigationController?.popToRootViewController(animated: false)

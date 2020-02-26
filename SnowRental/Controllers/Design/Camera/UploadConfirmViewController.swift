@@ -61,7 +61,7 @@ class UploadConfirmViewController: UIViewController {
             return
         }
         
-        guard let movieId = self.movie![FirebaseNodes.imdbID] else {
+        guard let movieId = self.movie![FirebaseNodes.imdbID], let movieName = self.movie![FirebaseNodes.title] else {
             ProgressHUD.showError("Must have a movie picked")
             return
         }
@@ -74,7 +74,7 @@ class UploadConfirmViewController: UIViewController {
         
         // ///////
         // BELOW
-        // THIS NEEDS TO BE PUT IN DESIGNMANAGER
+        // THIS NEEDS TO BE PUT IN DESIGN MANAGER
         // ///////
         if let imageData = image?.jpegData(compressionQuality: 0.75) {
             storageRef.putData(imageData, metadata: uploadMetadata) { (metadata, error) in
@@ -97,8 +97,8 @@ class UploadConfirmViewController: UIViewController {
                         UIApplication.shared.endIgnoringInteractionEvents()
                         return
                     }
-
-                    ref.child(newDesignKey).updateChildValues([FirebaseNodes.designId: newDesignKey, FirebaseNodes.imageUrl: url, FirebaseNodes.userId: userId, FirebaseNodes.movieId: movieId])
+                    let newDesignValues = [FirebaseNodes.movieName: movieName, FirebaseNodes.designId: newDesignKey, FirebaseNodes.imageUrl: url, FirebaseNodes.userId: userId, FirebaseNodes.movieId: movieId]
+                    ref.child(newDesignKey).updateChildValues(newDesignValues)
                     Database.database().reference().child(FirebaseNodes.movieDesigns).child(movieId).updateChildValues([newDesignKey: "1"])
                     var designTags: [String: String] = [:]
                     if let newTags = self.tags {

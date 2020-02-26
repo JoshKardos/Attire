@@ -9,11 +9,16 @@
 import Foundation
 class FirebaseNodes {
     
+    // IMDB
+    static let imdbID = "imdbID"
+    static let title = "Title"
+    static let poster = "Poster"
+    
     // STORAGE
     static let storageRef = ApiKeys.firebaseRef
     
     // DATABASE
-    static let designOrders = "designOrders"
+    static let designOrders = "design-orders"
     static let orders = "orders"
     static let userOrders = "user-orders"
     static let designs = "designs"
@@ -44,13 +49,9 @@ class FirebaseNodes {
     static let movieName = "movieName"
     static let timesUsed = "timesUsed"
     
-    // movie node
-    static let title = "Title"
-    static let poster = "Poster"
-    static let imdbID = "imdbID"
-    
     // design node
     static let imageUrl = "imageUrl"
+    static let designImageUrl = "designImageUrl"
 //    static let designId = "designId"
 //    static let userId = "userId"
 //    static let movieId = "movieId"

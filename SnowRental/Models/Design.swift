@@ -8,16 +8,19 @@
 
 import Foundation
 class Design {
+    
     var designId: String?
     var imageUrl: String?
     var movieId: String?
     var userId: String?
     var price = 4000
+    var movieName: String?
     
     init(dictionary: [String : String]) {
         designId = dictionary[FirebaseNodes.designId]
         imageUrl = dictionary[FirebaseNodes.imageUrl]
         movieId = dictionary[FirebaseNodes.movieId]
         userId = dictionary[FirebaseNodes.userId]
+        movieName = dictionary[FirebaseNodes.movieName]
     }
 }

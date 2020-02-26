@@ -29,7 +29,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.delegate = self
         MoviesManager.fetchMovies {
             self.youMightLikeCollectionView.reloadData()
         }
@@ -141,5 +141,19 @@ extension SearchViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.handleHeaderLabel()
         self.handleSearchBar()
+    }
+}
+
+extension SearchViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if Auth.auth().currentUser == nil { // not logged in so check tabs
+            if viewController == tabBarController.viewControllers![1] || viewController == tabBarController.viewControllers![2] { // cannot be in design or orders
+                let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "InitialViewController")
+                self.present(controller, animated: false, completion: nil)
+                return false
+            }
+        }
+        return true
     }
 }
