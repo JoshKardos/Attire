@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  EditProfileViewController.swift
 //  SnowRental
 //
 //  Created by Josh Kardos on 2/27/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

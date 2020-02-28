@@ -1,14 +1,14 @@
 //
-//  ProfileViewController.swift
+//  OrderViewController.swift
 //  SnowRental
 //
-//  Created by Josh Kardos on 2/27/20.
+//  Created by Josh Kardos on 2/25/20.
 //  Copyright © 2020 Josh Kardos. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class OrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
