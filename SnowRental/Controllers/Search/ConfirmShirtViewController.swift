@@ -7,26 +7,28 @@
 //
 
 import UIKit
-import ChromaColorPicker
 import Stripe
 import FirebaseAuth
 // this class is going to handle the checkout process
     // choosing card
     // shipping details
     // going through with payment
-class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
+class ConfirmShirtViewController: UIViewController {
 
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var designImageView: UIImageView!
-    @IBOutlet weak var colorPicker: ChromaColorPicker!
-    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var shirtImageView: UIImageView!
     @IBOutlet weak var sizeSegmentedControl: UISegmentedControl!
-    
+    @IBOutlet weak var designImageView: UIImageView!
+
     var design: Design?
     var movie: [String: String]?
-    var shirtColor: UIColor?
+    var shirtColor: UIColor? = UIColor.white
     var imageURL: URL?
     var sizes = ["S", "M", "L", "XL"]
+    
+    var color: [UIColor: UIImage?] = [
+        UIColor.white: UIImage(named: "WhiteShirt")
+    ]
 
     var customerContext: STPCustomerContext?
     var paymentContext: STPPaymentContext?
@@ -35,7 +37,17 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
         super.viewDidLoad()
         priceLabel.text = String(format: "$%.02f", Double(design!.price)/100)
         designImageView.kf.setImage(with: self.imageURL)
-        self.configureColorPicker()
+        
+    }
+    
+    func configureData(design: Design, movie: [String: String]) {
+        guard let designUrl = design.imageUrl else {
+            return
+        }
+        let url = URL(string: designUrl)
+        self.imageURL = url
+        self.design = design
+        self.movie = movie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,7 +58,7 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
                 print("order constructor failed")
                 return
             }
-            vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: colorPicker.currentColor, imageUrl: orderImageURL, price: design!.price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
+            vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: orderShirtColor, imageUrl: orderImageURL, price: design!.price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
         }
     }
     
@@ -60,7 +72,7 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
         let config = STPPaymentConfiguration()
         config.additionalPaymentOptions = .applePay
         config.shippingType = .shipping
-        config.requiredBillingAddressFields = STPBillingAddressFields.name
+        config.requiredBillingAddressFields = STPBillingAddressFields.full
         config.requiredShippingAddressFields = Set<STPContactField>(arrayLiteral: STPContactField.name, STPContactField.phoneNumber, STPContactField.postalAddress)
         config.companyName = "Testing XYZ"
         customerContext = STPCustomerContext(keyProvider: MyAPIClient())
@@ -69,19 +81,6 @@ class ConfirmOrderViewController: UIViewController, ChromaColorPickerDelegate {
     
         // perform checkout storyboard
         self.performSegue(withIdentifier: "ToCheckout", sender: nil)
-    }
-    
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        self.shirtColor = color
-    }
-    
-    func configureColorPicker() {
-        self.shirtColor = colorPicker.currentColor
-        colorPicker.backgroundColor = view.backgroundColor
-        colorPicker.delegate = self
-        colorPicker.padding = 0
-        colorPicker.stroke = 3
-        colorPicker.hexLabel.textColor = UIColor.clear
     }
     
 }

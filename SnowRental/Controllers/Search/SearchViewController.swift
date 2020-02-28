@@ -30,9 +30,16 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
-        MoviesManager.fetchMovies {
+        DesignManager.fetchSuggestedDesigns(onSuccess: {
+            print("success")
             self.youMightLikeCollectionView.reloadData()
-        }
+
+        }, onError: {
+            print("errro")
+
+            self.youMightLikeCollectionView.reloadData()
+
+        })
         
         scrollView.delegate = self
         youMightLikeCollectionView.dataSource = self
@@ -65,28 +72,25 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("began editing")
         // segue to search controller
         performSegue(withIdentifier: "ShowSearchTableViewController", sender: self)
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("end editing")
-
     }
 }
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MoviesManager.movies.count
+        guard let suggestedDesignCount = DesignManager.suggestedDesigns?.count else {
+            return 0
+        }
+        return suggestedDesignCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YouMightLikeCell", for: indexPath) as! YouMightLikeCell
-        let movieNames = Array(MoviesManager.movies.keys)
-        let movieName = movieNames[indexPath.row]
-        let movie = MoviesManager.movies[movieName] as! Dictionary<String, Any>
-        cell.configureCell(shirtDesign: movie)
+        print("HERE")
+        if let designModel = DesignManager.suggestedDesigns?[indexPath.row] {
+            cell.configureCell(design: designModel)
+        }
         return cell
     }
     

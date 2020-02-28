@@ -7,24 +7,43 @@
 //
 
 import UIKit
+import Kingfisher
 
 class OrderViewController: UIViewController {
 
+    var order: Order?
+    @IBOutlet weak var designImageView: UIImageView!
+    @IBOutlet weak var movieLabel: UILabel!
+    @IBOutlet weak var designIdLabel: UILabel!
+    @IBOutlet weak var orderDateLabel: UILabel!
+    
+    @IBOutlet weak var viewOrderDetailsContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.designImageView.kf.setImage(with: order?.imageURL)
+        self.movieLabel.text = order?.design?.movieName
+        self.designIdLabel.text = order?.designId
+        self.orderDateLabel.text = order?.timestamp?.toMonthDayYear()
+        
+        viewOrderDetailsContainer.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        viewOrderDetailsContainer.layer.borderWidth = 1
+        viewOrderDetailsContainer.layer.cornerRadius = 3
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        viewOrderDetailsContainer.addGestureRecognizer(tap)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toOrderDetails" {
+            let vc = segue.destination as! OrderDetailsViewController
+            vc.order = self.order
+        }
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "toOrderDetails", sender: nil)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

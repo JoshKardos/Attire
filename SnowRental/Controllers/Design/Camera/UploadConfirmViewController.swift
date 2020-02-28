@@ -107,10 +107,13 @@ class UploadConfirmViewController: UIViewController {
                         }
                         Database.database().reference().child(FirebaseNodes.designTags).child(newDesignKey).updateChildValues(designTags)
                     }
+                    let defaults = UserDefaults.standard
+                    if defaults.string(forKey: UserDefaultKeys.hasCreatedDesign) == nil {
+                        defaults.set(true, forKey: UserDefaultKeys.hasCreatedDesign)
+                    }
                     ProgressHUD.showSuccess("Added design!")
                     self.navigationController?.popToRootViewController(animated: false)
                     UIApplication.shared.endIgnoringInteractionEvents()
-
                     return
                 }
             }

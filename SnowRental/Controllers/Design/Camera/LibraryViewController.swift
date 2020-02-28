@@ -46,7 +46,7 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
             imageView.image = image
             DesignManager.imageFromLibrary = image
         } else{
-            ProgressHUD.showError("Error selecting video... Please try again.")
+            ProgressHUD.showError("Error selecting photo... Please try again.")
         }
         dismiss(animated: true, completion: nil)
     }

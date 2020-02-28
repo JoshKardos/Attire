@@ -33,18 +33,19 @@ class OrdersManager {
             let orderIds = Array(values.keys)
             currentUsersOrderIds = orderIds
             for orderId in orderIds {
-                print(orderId)
                 Database.database().reference().child(FirebaseNodes.orders).child(orderId).observe(.value) { (snapshot) in
                     if snapshot.exists() {
                         let value = snapshot.value as! [String: Any]
                         let order = Order(dict: value)
                         Database.database().reference().child(FirebaseNodes.designs).child(order.designId!).observe(.value) { (snapshot) in
-                            let value = snapshot.value as! [String: String]
-                            let design = Design(dictionary: value)
-                            order.design = design
-                            currentUsersOrders?.append(order)
-                            currentUsersOrders?.sort(by: { $0.timestamp! > $1.timestamp! })
-                            onSuccess()
+                            if snapshot.exists() {
+                                let value = snapshot.value as! [String: String]
+                                let design = Design(dictionary: value)
+                                order.design = design
+                                currentUsersOrders?.append(order)
+                                currentUsersOrders?.sort(by: { $0.timestamp! > $1.timestamp! })
+                                onSuccess()
+                            }
                         }
                     } else {
                         print("corrupt order")

@@ -8,6 +8,8 @@
 
 import UIKit
 import Stripe
+import FirebaseAuth
+
 
 class CheckoutShippingDetailsViewController: UIViewController {
 
@@ -40,6 +42,10 @@ class CheckoutShippingDetailsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser == nil || UsersManager.currentUser.uid == nil {
+            self.navigationController?.popToRootViewController(animated: false)
+            return
+        }
         self.paymentContext?.delegate = self
         self.setAddressData(paymentContext: paymentContext!)
     }

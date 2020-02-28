@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 import ProgressHUD
 
 class UsersManager {
@@ -47,10 +48,15 @@ class UsersManager {
                 return
             }
             loadCurrentUser() {
+                let defaults = UserDefaults.standard
+                if defaults.string(forKey: UserDefaultKeys.hasLoggedIn) == nil {
+                    defaults.set(true, forKey: UserDefaultKeys.hasLoggedIn)
+                }
                 onSuccess()
             }
         }
     }
+    
     static func signUp(email: String, password: String, firstName: String, lastName: String, onSuccess: @escaping() -> Void){
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error != nil {
@@ -64,31 +70,76 @@ class UsersManager {
             }
         }
     }
+    
     static func signUpUser(firstName: String, lastName: String, email: String, uid: String, onSuccess: @escaping () -> Void){
         
         let usersRef = Database.database().reference().child(FirebaseNodes.users)
-        let values = [FirebaseNodes.firstName: firstName, FirebaseNodes.lastName: lastName, FirebaseNodes.email: email, FirebaseNodes.uid: uid] as [String : Any]
+        let values = [FirebaseNodes.firstName: firstName, FirebaseNodes.lastName: lastName, FirebaseNodes.email: email, FirebaseNodes.uid: uid, FirebaseNodes.dateJoinedTimestamp: Date().timeIntervalSince1970.description] as [String : Any]
         
         usersRef.child(uid).setValue(values)
+        let defaults = UserDefaults.standard
+        if defaults.string(forKey: UserDefaultKeys.hasSignedUp) == nil {
+            defaults.set(true, forKey: UserDefaultKeys.hasSignedUp)
+        }
         currentUser = User(dictionary: values as NSDictionary)
         MyAPIClient.signUpStripeCustomer(userId: uid, email: email, name: "\(firstName) \(lastName)", onSuccess: {
             onSuccess()
         })
     }
+    
+    static func setUserValuesHelper(userId: String, image: UIImage?, values: [String: String], onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+
+        Database.database().reference().child(FirebaseNodes.users).child(userId).updateChildValues(values) { (error, ref) in
+            if error != nil {
+                onError()
+                return
+            }
+            onSuccess()
+        }
+    }
+    
+    static func setUserValues(userId: String, image: UIImage?, values: [String: String], onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        if image != nil {
+            let imgData = image?.pngData()
+            let storageRef = Storage.storage().reference().child("userImages").child(userId)
+            if let imageData = imgData {
+                storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil{
+                        onError()
+                        return
+                    }
+                    
+                    storageRef.downloadURL { (url, error) in
+                        if error != nil{
+                            print("Error downloading URL: \(error?.localizedDescription)")
+                            onError()
+                            return
+                        }
+                        
+                        //get url of image
+                        guard let profileImageUrl = url?.absoluteString else {return}
+                        var valuesWithImage = values
+                        valuesWithImage[FirebaseNodes.profileImageUrl] = profileImageUrl
+                        setUserValuesHelper(userId: userId, image: image, values: valuesWithImage, onSuccess: onSuccess, onError: onError)
+                    }
+                })
+            }
+        } else {
+            setUserValuesHelper(userId: userId, image: image, values: values, onSuccess: onSuccess, onError: onError)
+        }
+    }
+    
     static func reauthenticateUser(email: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void){
         
         let user = Auth.auth().currentUser;
-        
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
         //https://stackoverflow.com/questions/38253185/re-authenticating-user-credentials-swift
     
         user?.reauthenticate(with: credential, completion: { (result, error) in
-            
             if error != nil {
                 onError((error?.localizedDescription)!)
                 return
             }
-            
             onSuccess()
             return
             

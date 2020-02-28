@@ -16,7 +16,7 @@ class CheckoutSubmitPaymentViewController: UIViewController {
 
     var order: Order?
     var paymentContext: STPPaymentContext?
-    var taxRate: Double = 0.1
+    static var taxRate: Double = 0.1
     
     // receipt container
     @IBOutlet weak var addressLabel: UILabel!
@@ -37,12 +37,18 @@ class CheckoutSubmitPaymentViewController: UIViewController {
     // shipping details container
     @IBOutlet weak var deliveryPriceLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.paymentContext?.delegate = self
         self.configureReceipt()
         self.configureOrderInformation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser == nil || UsersManager.currentUser.uid == nil {
+            self.navigationController?.popToRootViewController(animated: false)
+            return
+        }
     }
     
     func configureOrderInformation() {
@@ -56,27 +62,26 @@ class CheckoutSubmitPaymentViewController: UIViewController {
     }
     
     func configureReceipt() {
-        let itemsPrice = Double(order!.price!/100)
-        let shippingHandlingPrice = Double((paymentContext?.selectedShippingMethod?.amount)!)
-        let beforeTaxPrice = itemsPrice + shippingHandlingPrice // items is in cents
-        let taxPrice = itemsPrice * taxRate
-        let totalPrice = beforeTaxPrice + taxPrice
-        itemsPriceLabel.text = String(format: "$%.02f", itemsPrice)
-        shippingHandlingPriceLabel.text = String(format: "$%.02f", shippingHandlingPrice)
-        beforeTaxPriceLabel.text = String(format: "$%.02f", beforeTaxPrice)
-        taxPriceLabel.text = String(format: "$%.02f", taxPrice)
-        totalPriceLabel.text = String(format: "$%.02f", totalPrice)
-        redTotalPriceLabel.text = String(format: "$%.02f", totalPrice)
-        
+        let receiptValuesMap: [String: Double] = ReceiptHelpers.createReceiptPriceValuesMap(order: order!, paymentContext: paymentContext!)
+        itemsPriceLabel.text = String(format: "$%.02f", receiptValuesMap[ReceiptHelpers.itemsPrice]!/100)
+        shippingHandlingPriceLabel.text = String(format: "$%.02f", receiptValuesMap[ReceiptHelpers.shippingHandlingPrice]!)
+        beforeTaxPriceLabel.text = String(format: "$%.02f", receiptValuesMap[ReceiptHelpers.beforeTaxPrice]!/100)
+        taxPriceLabel.text = String(format: "$%.02f", receiptValuesMap[ReceiptHelpers.taxPrice]!/100)
+        totalPriceLabel.text = String(format: "$%.02f", receiptValuesMap[ReceiptHelpers.totalPrice]!/100)
+        redTotalPriceLabel.text = String(format: "$%.02f", receiptValuesMap[ReceiptHelpers.totalPrice]!/100)
         let addressText = "\((paymentContext?.shippingAddress?.name)!), \((paymentContext?.shippingAddress?.line1)!)"
         addressLabel.text = addressText
         
     }
     
     @IBAction func placeOrderPressed(_ sender: Any) {
+        if Auth.auth().currentUser == nil || UsersManager.currentUser.uid == nil {
+            self.navigationController?.popToRootViewController(animated: false)
+            ProgressHUD.showError("Must be logged in")
+            return
+        }
         self.paymentContext?.requestPayment()
     }
-    
 }
 
 extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
@@ -94,8 +99,13 @@ extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
         
-        var amount = Double(paymentContext.paymentAmount) + (Double(order!.price!)*taxRate) // add tax
-        let customerId = UsersManager.currentUser.stripeCustomerId!
+        var amount = Double(paymentContext.paymentAmount) + (Double(order!.price!)*CheckoutSubmitPaymentViewController.taxRate) // add tax
+        
+        guard let customerId = UsersManager.currentUser.stripeCustomerId else {
+            self.navigationController?.popToRootViewController(animated: false)
+            ProgressHUD.showError("Must have stripe id")
+            return
+        }
         
         ProgressHUD.show()
         UIApplication.shared.beginIgnoringInteractionEvents()
@@ -111,7 +121,6 @@ extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
                     switch status {
                     case .succeeded:
                         self.order?.id = paymentIntent!.stripeId
-                        self.order?.price = Int(amount)
                         completion(.success, nil)
                         break
                     case .failed:
@@ -137,23 +146,45 @@ extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
         
         switch status {
         case .success:
-            if let orderId = order?.id, let uid = order?.userId, let designId = order?.design?.designId, let movieId = order?.design?.movieId, let size = order?.size, let price = order?.price, let shirtHex = order?.shirtColor?.hexCode, let designUrl = order?.imageURL?.absoluteString { // "user-orders/{user}/{orderId}/1"
-                Database.database().reference().child(FirebaseNodes.userOrders).child(uid).child(orderId).setValue(1)
-            
-                let value: [String : Any] = [FirebaseNodes.orderId: orderId, FirebaseNodes.timestamp: Date().timeIntervalSince1970.description, FirebaseNodes.userId: uid, FirebaseNodes.designId: designId, FirebaseNodes.movieId: movieId, FirebaseNodes.shirtSize: size, FirebaseNodes.price: price, FirebaseNodes.shirtColor: shirtHex, FirebaseNodes.designImageUrl: designUrl]
-                Database.database().reference().child(FirebaseNodes.orders).child(orderId).updateChildValues(value)
+            if let orderId = order?.id, let uid = order?.userId, let designId = order?.design?.designId,
+                let movieId = order?.design?.movieId, let size = order?.size, let price = order?.price,
+                let shirtHex = order?.shirtColor?.hexCode, let designUrl = order?.imageURL?.absoluteString,
+                let newOrder = order { // "user-orders/{user}/{orderId}/1"
                 Database.database().reference().child(FirebaseNodes.designOrders).child(designId).child(orderId).setValue(1) // design-orders/{designId}/{orderId}/1
+                Database.database().reference().child(FirebaseNodes.userOrders).child(uid).child(orderId).setValue(1) // user-order/{uid}/{orderId}/1
+                let receiptValues: [String: String] = ReceiptHelpers.createReceiptValuesMap(order: newOrder, paymentContext: paymentContext)
+                print(receiptValues)
+                let value: [String : String] = [
+                    FirebaseNodes.price: String(price),
+                    FirebaseNodes.orderId: orderId,
+                    FirebaseNodes.timestamp: Date().timeIntervalSince1970.description,
+                    FirebaseNodes.userId: uid,
+                    FirebaseNodes.designId: designId,
+                    FirebaseNodes.movieId: movieId,
+                    FirebaseNodes.shirtSize: size,
+                    FirebaseNodes.shirtColor: shirtHex,
+                    FirebaseNodes.designImageUrl: designUrl,
+                    FirebaseNodes.itemsPrice: receiptValues[ReceiptHelpers.itemsPrice]!,
+                    FirebaseNodes.shippingHandlingPrice: receiptValues[ReceiptHelpers.shippingHandlingPrice]!,
+                    FirebaseNodes.beforeTaxPrice: receiptValues[ReceiptHelpers.beforeTaxPrice]!,
+                    FirebaseNodes.taxPrice: receiptValues[ReceiptHelpers.taxPrice]!,
+                    FirebaseNodes.totalPrice: receiptValues[ReceiptHelpers.totalPrice]!,
+                    FirebaseNodes.cardDetails: receiptValues[ReceiptHelpers.cardDetails]!,
+                    FirebaseNodes.shippingDetails: receiptValues[ReceiptHelpers.shippingDetails]!,
+                    FirebaseNodes.shippingAddressStreet: receiptValues[ReceiptHelpers.shippingAddressStreet]!,
+                    FirebaseNodes.shippingAddressDetails: receiptValues[ReceiptHelpers.shippingAddressDetails]!,
+                    FirebaseNodes.billingAddressStreet: receiptValues[ReceiptHelpers.billingAddressStreet]!,
+                    FirebaseNodes.billingAddressDetails: receiptValues[ReceiptHelpers.billingAddressDetails]!
+                    
+
+                ]
+                Database.database().reference().child(FirebaseNodes.orders).child(orderId).updateChildValues(value)
             }
-            // "orders/{orderId}/
-                // orderId
-                // timestamp
-                // userId
-                // designId
-                // movieId
-                // shirtSize
-                // price
-                // shirtColor
-                // designImageUrl
+
+            let defaults = UserDefaults.standard
+            if defaults.string(forKey: UserDefaultKeys.hasMadeOrder) == nil {
+                defaults.set(true, forKey: UserDefaultKeys.hasMadeOrder)
+            }
             ProgressHUD.showSuccess("Your order has been successfuly placed")
             UIApplication.shared.endIgnoringInteractionEvents()
             self.navigationController?.popToRootViewController(animated: false)

@@ -60,15 +60,9 @@ class MovieViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toOrderViewController" {
-            let vc = segue.destination as! ConfirmOrderViewController
+            let vc = segue.destination as! ConfirmShirtViewController
             let design = sender as! Design
-            guard let designUrl = design.imageUrl else {
-                return
-            }
-            let url = URL(string: designUrl)
-            vc.imageURL = url
-            vc.design = design
-            vc.movie = movie
+            vc.configureData(design: design, movie: movie)
         }
     }
 }

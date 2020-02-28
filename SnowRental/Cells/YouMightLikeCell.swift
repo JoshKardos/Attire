@@ -8,17 +8,18 @@
 
 import Foundation
 import UIKit
+import Kingfisher
+
 
 class YouMightLikeCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
-    @IBOutlet weak var timesUsedLabel: UILabel!
     
-    func configureCell(shirtDesign: Dictionary<String, Any>){
-        imageView.image = UIImage(named: shirtDesign[FirebaseNodes.imageName] as! String)
-        movieNameLabel.text = "Movies: " + (shirtDesign[FirebaseNodes.movieName] as! String)
-            timesUsedLabel.text = "Used: " + String(shirtDesign[FirebaseNodes.timesUsed] as! Int)
+    func configureCell(design: Design){
+        print("configure cell")
+        imageView.kf.setImage(with: URL(string: design.imageUrl!))
+        movieNameLabel.text = "Movie: \(design.movieName!)"
     }
     
 }

@@ -38,10 +38,6 @@ class AccountViewController: UIViewController {
     @IBAction func paymentSettingsPressed(_ sender: Any) {
         self.paymentContext?.pushPaymentOptionsViewController()
     }
-    
-    @IBAction func yourOrdersPressed(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 2
-    }
 }
 
 extension AccountViewController : STPPaymentContextDelegate {

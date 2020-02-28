@@ -36,6 +36,17 @@ class FirebaseNodes {
     static let shirtSize = "shirtSize"
     static let price = "price"
     static let shirtColor = "shirtColor"
+    static let itemsPrice = "itemsPrice"
+    static let shippingHandlingPrice = "shippingHandlingPrice"
+    static let beforeTaxPrice = "beforeTaxPrice"
+    static let taxPrice = "taxPrice"
+    static let totalPrice = "totalPrice"
+    static let cardDetails = "cardDetails"
+    static let shippingDetails = "shippingDetails"
+    static let shippingAddressStreet = "shippingAddressStreet"
+    static let shippingAddressDetails = "shippingAddressDetails"
+    static let billingAddressStreet = "billingAddressStreet"
+    static let billingAddressDetails = "billingAddressDetails"
     
     // users node
     static let uid = "uid"
@@ -43,7 +54,8 @@ class FirebaseNodes {
     static let lastName = "lastName"
     static let email = "email"
     static let stripeCustomerId = "stripeCustomerId"
-    
+    static let dateJoinedTimestamp = "dateJoinedTimestamp"
+    static let profileImageUrl = "profileImageUrl"
     // design node
     static let imageName = "imageName"
     static let movieName = "movieName"

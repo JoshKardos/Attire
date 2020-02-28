@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class UserDefaultKeys {
+    
+    static let hasClickedProfile = "hasClickedProfile"
+    static let hasSignedUp = "hasSignedUp"
+    static let hasLoggedIn = "hasLoggedIn"
+    static let hasCreatedDesign = "hasCreatedDesign"
+    static let hasMadeOrder = "hasMadeOrder"
+    
+}

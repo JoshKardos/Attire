@@ -15,7 +15,7 @@ import FirebaseDatabase
 
 class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     
-    static let serverBase = "http://10.0.0.10:80/AttireServer/"
+    static let serverBase = "https://still-tor-66399.herokuapp.com/"
 
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
         

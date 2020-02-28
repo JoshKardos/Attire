@@ -10,6 +10,7 @@ import UIKit
 import Stripe
 import SwiftyJSON
 import ProgressHUD
+import FirebaseAuth
 
 class CheckoutPaymentViewController: UIViewController {
     @IBOutlet weak var expiryDateLabel: UILabel!
@@ -27,6 +28,10 @@ class CheckoutPaymentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.paymentContext?.delegate = self
+        if Auth.auth().currentUser == nil || UsersManager.currentUser.uid == nil {
+            self.navigationController?.popToRootViewController(animated: false)
+            return
+        }
         setUpRecentPaymentMethod()
     }
     

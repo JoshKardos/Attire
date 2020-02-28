@@ -10,21 +10,37 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import ProgressHUD
+import Kingfisher
+
 class ProfileOptionsViewController: UIViewController {
     
     @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var logOutButton: UIButton!
     
+    @IBOutlet weak var profileHeaderContainer: UIView!
+    @IBOutlet weak var profileNameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
+        let defaults = UserDefaults.standard
+        if defaults.string(forKey: UserDefaultKeys.hasClickedProfile) == nil {
+            defaults.set(true, forKey: UserDefaultKeys.hasClickedProfile)
+        }
         profileImageView.layer.cornerRadius = profileImageView.bounds.height/2
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        profileHeaderContainer.addGestureRecognizer(tap)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         configureProfile()
-        self.navigationController?.navigationBar.isHidden = true
-
     }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "ToProfileViewController", sender: nil)
+    }
+    
     @IBAction func logInPressed(_ sender: Any) {
         if Auth.auth().currentUser == nil {
             // button is "Log in or Sign up"
@@ -44,12 +60,20 @@ class ProfileOptionsViewController: UIViewController {
     }
     
     func configureLoggedInProfile() {
+        profileHeaderContainer.alpha = 1
+        if let profileImageUrl = UsersManager.currentUser.profileImageUrl {
+            profileImageView.kf.setImage(with: URL(string: profileImageUrl))
+        }
+        if let firstName = UsersManager.currentUser.firstName, let lastName = UsersManager.currentUser.lastName {
+            profileNameLabel.text = "\(firstName) \(lastName)"
+        }
         logOutButton.isHidden = false
         logOutButton.isEnabled = true
         logInButton.setTitle("Account", for: .normal)
     }
     
     func configureLoggedOutProfile() {
+        profileHeaderContainer.alpha = 0
         logOutButton.isHidden = true
         logOutButton.isEnabled = false
         logInButton.setTitle("Log in or Sign up", for: .normal)

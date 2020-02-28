@@ -83,26 +83,4 @@ class MoviesManager {
         }
     }
     
-    static func fetchMovies(completion: @escaping() -> Void) {
-//        Database.database().reference().child("Goodfellas").observe(.value) { (snapshot) in
-//            self.movies[snapshot.key] = snapshot.value!
-//            completion()
-//        }
-        
-//        Alamofire.request(omdbBaseUrl, method: .get)
-//            .responseJSON { response in
-//                if response.result.isSuccess {
-//                    let bitcoinJSON : JSON = JSON(response.result.value!)
-//                    self.updateBitcoinData(json: bitcoinJSON)
-//                    ProgressHUD.showSuccess("Bitcoin data updated")
-//
-//                } else {
-//                    self.bitcoinPriceLabel.text = "Connection Issues"
-//                    ProgressHUD.showError("Error fetching bitcoin data")
-//                }
-//        }
-//        AF.request(omdbBaseUrl, method: .get).responseJSON { (response) in
-//            print("**** \(response)")
-//        }
-    }
 }
