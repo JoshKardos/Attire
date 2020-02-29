@@ -67,21 +67,11 @@ class FiltersManager {
         filter = CIFilter(name: filterEffect.filterName)
         
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        
-        if let filterEffectValue = filterEffect.filterEffectValue, let filterEffectValueName = filterEffect.filterEffectValueName {
-            filter?.setValue(filterEffectValue, forKey: filterEffectValueName)
-        }
-        
+        filter?.setDefaults()
         if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage, let cgiImageResult = context.createCGImage(output, from: output.extent) {
             filteredImage = UIImage(cgImage: cgiImageResult)
         }
-        
-        do {
-            try filteredImages[filterEffect.filterName] = filteredImage
-            return filteredImage
-        } catch {
-            print("error with filters")
-            return filteredImage
-        }
+        filteredImages[filterEffect.filterName] = filteredImage
+        return filteredImage
     }
 }

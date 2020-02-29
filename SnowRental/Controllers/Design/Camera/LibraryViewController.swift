@@ -21,7 +21,7 @@ class LibraryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if let imgFromLibrary = DesignManager.imageFromLibrary {
             imageView.image = imgFromLibrary
         } else {
@@ -32,6 +32,7 @@ class LibraryViewController: UIViewController {
     @IBAction func choosePressed(_ sender: Any) {
         pickerController = UIImagePickerController()
         pickerController.mediaTypes = ["public.image"]
+        pickerController.allowsEditing = true
         //access to extension
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
@@ -42,7 +43,10 @@ class LibraryViewController: UIViewController {
 extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if  let image = info[.originalImage] as? UIImage {
+        if let image = info[.editedImage] as? UIImage {
+            imageView.image = image
+            DesignManager.imageFromLibrary = image
+        } else if let image = info[.originalImage] as? UIImage {
             imageView.image = image
             DesignManager.imageFromLibrary = image
         } else{

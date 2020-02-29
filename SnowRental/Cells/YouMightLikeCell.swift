@@ -17,7 +17,6 @@ class YouMightLikeCell: UICollectionViewCell {
     @IBOutlet weak var movieNameLabel: UILabel!
     
     func configureCell(design: Design){
-        print("configure cell")
         imageView.kf.setImage(with: URL(string: design.imageUrl!))
         movieNameLabel.text = "Movie: \(design.movieName!)"
     }

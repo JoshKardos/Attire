@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class SearchViewController: UIViewController {
     
+    static var tabSelectedBeforeDesign: Int?
+    
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -43,6 +45,7 @@ class SearchViewController: UIViewController {
         
         scrollView.delegate = self
         youMightLikeCollectionView.dataSource = self
+        youMightLikeCollectionView.delegate = self
         searchBar.delegate = self
         searchBar.searchTextField.backgroundColor = .clear
         searchBar.backgroundColor = UIColor.clear
@@ -53,6 +56,17 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         searchBar.resignFirstResponder() // remove focus
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToMovieController" {
+            self.navigationController?.navigationBar.isHidden = false
+            let vc = segue.destination as! ConfirmShirtViewController
+            let senderObj = sender as! ToMovieControllerSender
+            let design = senderObj.design!
+            let movie = senderObj.movie!
+            vc.configureData(design: design, movie: movie)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,7 +91,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
-extension SearchViewController: UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let suggestedDesignCount = DesignManager.suggestedDesigns?.count else {
             return 0
@@ -94,6 +108,21 @@ extension SearchViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let design = DesignManager.suggestedDesigns?[indexPath.row]
+        MoviesManager.fetchMovieFromOMDB(id: design!.movieId!) { (movie) in
+            let sender = ToMovieControllerSender(design: design!, movie: movie)
+            self.performSegue(withIdentifier: "ToMovieController", sender: sender)
+        }
+        
+//        guard let designUrl = design.imageUrl else {
+//                   return
+//               }
+//               let url = URL(string: designUrl)
+//               self.imageURL = url
+//               self.design = design
+//               self.movie = movie
+    }
     
 }
 
@@ -158,6 +187,20 @@ extension SearchViewController: UITabBarControllerDelegate {
                 return false
             }
         }
+        
+        if viewController == tabBarController.viewControllers![1] {
+            SearchViewController.tabSelectedBeforeDesign = tabBarController.selectedIndex
+        }
         return true
+    }
+}
+
+struct ToMovieControllerSender {
+    var design: Design?
+    var movie: [String: Any]?
+    
+    init(design: Design, movie: [String: Any]){
+        self.design = design
+        self.movie = movie
     }
 }

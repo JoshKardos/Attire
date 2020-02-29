@@ -11,8 +11,7 @@ import UIKit
 
 class Order {
     var design: Design?
-    var movie: [String: String]?
-    var shirtColor: UIColor?
+    var movie: [String: Any]?
     var imageURL: URL?
     var price: Int?
     var size: String?
@@ -25,21 +24,21 @@ class Order {
     var orderId: String?
     
     var itemsPrice: String?
-   var shippingHandlingPrice: String?
-   var beforeTaxPrice: String?
-   var taxPrice: String?
-   var totalPrice: String?
-   var cardDetails: String?
-   var shippingDetails: String?
-   var shippingAddressStreet: String?
-   var shippingAddressDetails: String?
+    var shippingHandlingPrice: String?
+    var beforeTaxPrice: String?
+    var taxPrice: String?
+    var totalPrice: String?
+    var cardDetails: String?
+    var shippingDetails: String?
+    var shippingAddressStreet: String?
+    var shippingAddressDetails: String?
     var billingAddressStreet: String?
     var billingAddressDetails: String?
     
-    init(design: Design, movie: [String: String], shirtColor: UIColor, imageUrl: URL, price: Int, size: String, userId: String){
+    init(design: Design, movie: [String: Any], shirtColor: UIColor, imageUrl: URL, price: Int, size: String, userId: String){
         self.design = design
         self.movie = movie
-        self.shirtColor = shirtColor
+        self.shirtHex = shirtColor.hexString
         self.imageURL = imageUrl
         self.price = price
         self.size = size

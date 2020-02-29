@@ -112,6 +112,7 @@ class UploadConfirmViewController: UIViewController {
                         defaults.set(true, forKey: UserDefaultKeys.hasCreatedDesign)
                     }
                     ProgressHUD.showSuccess("Added design!")
+                    DesignManager.imageFromLibrary = nil
                     self.navigationController?.popToRootViewController(animated: false)
                     UIApplication.shared.endIgnoringInteractionEvents()
                     return

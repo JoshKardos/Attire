@@ -19,15 +19,37 @@ class ConfirmShirtViewController: UIViewController {
     @IBOutlet weak var shirtImageView: UIImageView!
     @IBOutlet weak var sizeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var designImageView: UIImageView!
-
+    @IBOutlet weak var colorsCollectionView: UICollectionView!
+    @IBOutlet weak var designHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var designWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightSlider: UISlider!
+    
     var design: Design?
-    var movie: [String: String]?
+    var movie: [String: Any]?
     var shirtColor: UIColor? = UIColor.white
     var imageURL: URL?
     var sizes = ["S", "M", "L", "XL"]
     
-    var color: [UIColor: UIImage?] = [
-        UIColor.white: UIImage(named: "WhiteShirt")
+    var colors: [UIColor] = [
+        UIColor.white,
+        UIColor.black,
+        UIColor.systemOrange,
+        UIColor.systemYellow,
+        UIColor.systemGreen,
+        UIColor.lightGray,
+//        UIColor.maroon,
+        UIColor.systemPink
+    ]
+    
+    var colorImageMap: [UIColor: UIImage?] = [
+        UIColor.white: UIImage(named: "WhiteShirt"),
+        UIColor.black: UIImage(named: "BlackShirt"),
+        UIColor.systemOrange: UIImage(named: "OrangeShirt"),
+        UIColor.systemYellow: UIImage(named: "YellowShirt"),
+        UIColor.systemGreen: UIImage(named: "DarkGreenShirt"),
+        UIColor.lightGray: UIImage(named: "GrayShirt"),
+//        UIColor.maroon: UIImage(named: "MaroonShirt"),
+        UIColor.systemPink: UIImage(named: "PinkShirt")
     ]
 
     var customerContext: STPCustomerContext?
@@ -37,10 +59,28 @@ class ConfirmShirtViewController: UIViewController {
         super.viewDidLoad()
         priceLabel.text = String(format: "$%.02f", Double(design!.price)/100)
         designImageView.kf.setImage(with: self.imageURL)
-        
+        colorsCollectionView.delegate = self
+        colorsCollectionView.dataSource = self
     }
     
-    func configureData(design: Design, movie: [String: String]) {
+    @IBAction func heightSliderChanged(_ sender: UISlider) {
+        designHeightConstraint.constant = CGFloat(sender.value)
+    }
+    
+    @IBAction func widthSliderChanged(_ sender: UISlider) {
+        designWidthConstraint.constant = CGFloat(sender.value)
+    }
+    
+    @IBAction func fitFillControlChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            designImageView.contentMode = .scaleToFill
+        } else if sender.selectedSegmentIndex == 1 {
+            designImageView.contentMode = .scaleAspectFill
+        }
+    }
+    
+
+    func configureData(design: Design, movie: [String: Any]) {
         guard let designUrl = design.imageUrl else {
             return
         }
@@ -81,6 +121,35 @@ class ConfirmShirtViewController: UIViewController {
     
         // perform checkout storyboard
         self.performSegue(withIdentifier: "ToCheckout", sender: nil)
+    }
+    
+}
+
+extension ConfirmShirtViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.colors.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath)
+//        cell.frame.size.width = 30
+//        cell.frame.size.height = 30
+        cell.backgroundColor = colors[indexPath.row]
+        if colors[indexPath.row] == UIColor.white {
+            print("border")
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let image = self.colorImageMap[self.colors[indexPath.row]] else {
+            print("error with shirt color image")
+            return
+        }
+        self.shirtImageView.image = image
+        self.shirtColor = colors[indexPath.row]
     }
     
 }

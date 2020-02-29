@@ -148,7 +148,7 @@ extension CheckoutSubmitPaymentViewController: STPPaymentContextDelegate {
         case .success:
             if let orderId = order?.id, let uid = order?.userId, let designId = order?.design?.designId,
                 let movieId = order?.design?.movieId, let size = order?.size, let price = order?.price,
-                let shirtHex = order?.shirtColor?.hexCode, let designUrl = order?.imageURL?.absoluteString,
+                let shirtHex = order?.shirtHex, let designUrl = order?.imageURL?.absoluteString,
                 let newOrder = order { // "user-orders/{user}/{orderId}/1"
                 Database.database().reference().child(FirebaseNodes.designOrders).child(designId).child(orderId).setValue(1) // design-orders/{designId}/{orderId}/1
                 Database.database().reference().child(FirebaseNodes.userOrders).child(uid).child(orderId).setValue(1) // user-order/{uid}/{orderId}/1

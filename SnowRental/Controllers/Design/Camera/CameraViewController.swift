@@ -132,7 +132,11 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.tabBarController!.selectedIndex = 0
+        if let goToIndex = SearchViewController.tabSelectedBeforeDesign {
+            self.tabBarController!.selectedIndex = goToIndex
+        } else {
+            self.tabBarController!.selectedIndex = 0
+        }
         DesignManager.imageFromLibrary = nil
         image = nil
     }

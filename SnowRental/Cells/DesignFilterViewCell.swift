@@ -16,7 +16,6 @@ class DesignFilterViewCell: UICollectionViewCell {
  
     func configureCell(image input: UIImage, filter: FiltersManager.Filter, index: Int) {
         self.label.text = filter.nickName
-        print(FiltersManager.filteredImages.count)
         if index < FiltersManager.filteredImages.count {
             self.imageView.image = FiltersManager.filteredImages[filter.filterName]
             return

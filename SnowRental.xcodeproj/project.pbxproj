@@ -40,6 +40,7 @@
 		B370ADA12408873A00B9B040 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370ADA02408873A00B9B040 /* EditProfileViewController.swift */; };
 		B370ADA32408D70900B9B040 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370ADA22408D70900B9B040 /* UserDefaultKeys.swift */; };
 		B370ADA52408E5EF00B9B040 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370ADA42408E5EF00B9B040 /* PrivacyPolicyViewController.swift */; };
+		B370ADA72409A65E00B9B040 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370ADA62409A65E00B9B040 /* UIColor.swift */; };
 		B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3864B4A23F87710005695E8 /* Authentication.storyboard */; };
 		B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5323F879DC005695E8 /* UsersManager.swift */; };
 		B3864B5723F87B7D005695E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3864B5623F87B7D005695E8 /* User.swift */; };
@@ -61,6 +62,8 @@
 		B397453A23F5DA8200604316 /* ProfileOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397453923F5DA8200604316 /* ProfileOptionsViewController.swift */; };
 		B397453C23F5F7A400604316 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397453B23F5F7A400604316 /* SearchViewController.swift */; };
 		B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397453D23F72F8A00604316 /* YouMightLikeCell.swift */; };
+		B3A03F36240A4AF4007BEF61 /* LaunchScreenController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A03F35240A4AF4007BEF61 /* LaunchScreenController.storyboard */; };
+		B3A03F38240A4B3C007BEF61 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A03F37240A4B3C007BEF61 /* LaunchScreenController.swift */; };
 		B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C3495723F7E09400B061E9 /* SignUpViewController.swift */; };
 		B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85923F7A19300333178 /* SearchTableViewController.swift */; };
 		B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */; };
@@ -128,6 +131,7 @@
 		B370ADA02408873A00B9B040 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B370ADA22408D70900B9B040 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		B370ADA42408E5EF00B9B040 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		B370ADA62409A65E00B9B040 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B3864B4A23F87710005695E8 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		B3864B5323F879DC005695E8 /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		B3864B5623F87B7D005695E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -138,7 +142,7 @@
 		B3864B6223F8DE8E005695E8 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		B3864B6423F8E1F1005695E8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B3864B6623F90041005695E8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		B397450123F4F93900604316 /* Attire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B397450123F4F93900604316 /* Flix Clothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flix Clothing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B397450423F4F93900604316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B397450623F4F93900604316 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B397450D23F4F93900604316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 		B397453923F5DA8200604316 /* ProfileOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionsViewController.swift; sourceTree = "<group>"; };
 		B397453B23F5F7A400604316 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B397453D23F72F8A00604316 /* YouMightLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouMightLikeCell.swift; sourceTree = "<group>"; };
+		B3A03F35240A4AF4007BEF61 /* LaunchScreenController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenController.storyboard; sourceTree = "<group>"; };
+		B3A03F37240A4B3C007BEF61 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		B3C3495623F7D73300B061E9 /* SnowRentalDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnowRentalDebug.entitlements; sourceTree = "<group>"; };
 		B3C3495723F7E09400B061E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3CEC85923F7A19300333178 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 				B3864B4A23F87710005695E8 /* Authentication.storyboard */,
 				B397451423F4F93A00604316 /* LaunchScreen.storyboard */,
 				B36B0D3D2405F31800C8D6CC /* Orders.storyboard */,
+				B3A03F35240A4AF4007BEF61 /* LaunchScreenController.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +286,7 @@
 				B3864B4E23F8779F005695E8 /* Authentication */,
 				B3864B5023F877DC005695E8 /* Profile */,
 				B3864B4F23F877BD005695E8 /* Search */,
+				B3A03F37240A4B3C007BEF61 /* LaunchScreenController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -369,7 +377,7 @@
 		B397450223F4F93900604316 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B397450123F4F93900604316 /* Attire.app */,
+				B397450123F4F93900604316 /* Flix Clothing.app */,
 				B397451C23F4F93A00604316 /* SnowRentalTests.xctest */,
 				B397452723F4F93A00604316 /* SnowRentalUITests.xctest */,
 			);
@@ -424,6 +432,7 @@
 			children = (
 				B3D69F3623FE236E007D5C0F /* String.swift */,
 				B3D69F3823FE2416007D5C0F /* UITextField.swift */,
+				B370ADA62409A65E00B9B040 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -460,7 +469,7 @@
 			);
 			name = SnowRental;
 			productName = SnowRental;
-			productReference = B397450123F4F93900604316 /* Attire.app */;
+			productReference = B397450123F4F93900604316 /* Flix Clothing.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B397451B23F4F93A00604316 /* SnowRentalTests */ = {
@@ -556,6 +565,7 @@
 				B3CEC85E23F7C5D100333178 /* GoogleService-Info.plist in Resources */,
 				B397451323F4F93A00604316 /* Assets.xcassets in Resources */,
 				B397450E23F4F93900604316 /* Main.storyboard in Resources */,
+				B3A03F36240A4AF4007BEF61 /* LaunchScreenController.storyboard in Resources */,
 				B3864B4B23F87710005695E8 /* Authentication.storyboard in Resources */,
 				B36B0D3E2405F31800C8D6CC /* Orders.storyboard in Resources */,
 			);
@@ -694,7 +704,9 @@
 				B370ADA52408E5EF00B9B040 /* PrivacyPolicyViewController.swift in Sources */,
 				B319DF1623FB4A0000B2A8D0 /* DesignFilterViewCell.swift in Sources */,
 				B319DF1C23FBC25100B2A8D0 /* UploadConfirmViewController.swift in Sources */,
+				B370ADA72409A65E00B9B040 /* UIColor.swift in Sources */,
 				B3864B5423F879DC005695E8 /* UsersManager.swift in Sources */,
+				B3A03F38240A4B3C007BEF61 /* LaunchScreenController.swift in Sources */,
 				B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */,
 				B370AD9B2407276100B9B040 /* OrderDetailsViewController.swift in Sources */,
 				B397453C23F5F7A400604316 /* SearchViewController.swift in Sources */,
@@ -983,7 +995,7 @@
 					"\"nanopb\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoshKardos.Attire;
-				PRODUCT_NAME = Attire;
+				PRODUCT_NAME = "Flix Clothing";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -1068,7 +1080,7 @@
 					"\"nanopb\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JoshKardos.Attire;
-				PRODUCT_NAME = Attire;
+				PRODUCT_NAME = "Flix Clothing";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

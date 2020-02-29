@@ -57,6 +57,25 @@ class MoviesManager {
             onSuccess()
         }
     }
+    
+    static func fetchMovieFromOMDB(id: String, completion: @escaping ([String: Any]) -> Void) {
+        
+        AF.request("\(omdbBaseUrl)&i=\(id)", method: .get).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                // Do whatever here
+                print("failure")
+                return
+
+            case .success(let data as [String: Any]):
+                completion(data)
+                return
+            default:
+               fatalError("received non-dictionary JSON response")
+            
+            }
+        }
+    }
 
     static func searchMovieFromOMDB(title: String, onSuccess: @escaping() -> Void) {
         let titleUrl = title.replacingOccurrences(of: " ", with: "+")

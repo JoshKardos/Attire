@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,16 +11,54 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="wyJ-jl-UHF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNP-wj-9fx">
+                                <rect key="frame" x="67" y="318" width="280" height="366"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTie" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-OZ-ich">
+                                        <rect key="frame" x="20" y="104" width="240" height="242"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="2wD-kF-Wr0"/>
+                                            <constraint firstAttribute="height" constant="242" id="Lt4-5y-8XB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flix Clothing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp0-zi-Bm4">
+                                        <rect key="frame" x="9" y="20" width="262.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CXU-Wb-X5l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="1" green="0.20020711620000001" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dp0-zi-Bm4" firstAttribute="top" secondItem="sNP-wj-9fx" secondAttribute="top" constant="20" id="8Rt-qu-HKD"/>
+                                    <constraint firstItem="dp0-zi-Bm4" firstAttribute="centerX" secondItem="sNP-wj-9fx" secondAttribute="centerX" id="EEs-bM-u7c"/>
+                                    <constraint firstAttribute="height" constant="366" id="ESs-a5-vto"/>
+                                    <constraint firstAttribute="width" constant="280" id="XRl-k0-iGx"/>
+                                    <constraint firstItem="nb3-OZ-ich" firstAttribute="top" secondItem="dp0-zi-Bm4" secondAttribute="bottom" constant="24" id="ZCV-6j-FZr"/>
+                                    <constraint firstItem="nb3-OZ-ich" firstAttribute="centerX" secondItem="sNP-wj-9fx" secondAttribute="centerX" id="rc1-44-Vek"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sNP-wj-9fx" firstAttribute="centerX" secondItem="JZR-tx-nQm" secondAttribute="centerX" id="Dua-d9-T3u"/>
+                            <constraint firstItem="sNP-wj-9fx" firstAttribute="centerY" secondItem="JZR-tx-nQm" secondAttribute="centerY" constant="48" id="wzY-89-bIz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JZR-tx-nQm"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RedTie" width="512" height="512"/>
+    </resources>
 </document>

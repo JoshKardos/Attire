@@ -15,7 +15,7 @@ class DesignManager {
     static var suggestedDesigns: [Design]?
     
     static func fetchSuggestedDesigns(onSuccess: @escaping() -> Void, onError: @escaping() -> Void) {
-        Database.database().reference().child(FirebaseNodes.designs).observe(.value) { (snapshot) in
+        Database.database().reference().child(FirebaseNodes.designs).queryLimited(toLast: 4).observe(.value) { (snapshot) in
             if !snapshot.exists() {
                 onError()
                 return
