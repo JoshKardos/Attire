@@ -19,9 +19,7 @@ class LaunchScreenController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("DIADS")
-        UIView.animate(withDuration: 0.5, animations: {
-            
+        UIView.animate(withDuration: 0.5, animations: {            
             self.container.transform = CGAffineTransform(translationX: 0, y: -40)
         }) { (success) in
             UIView.animate(withDuration: 1.5, animations: {

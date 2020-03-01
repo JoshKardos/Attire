@@ -996,6 +996,7 @@
 					"-framework",
 					"\"nanopb\"",
 				);
+				OTHER_SWIFT_FLAGS = "\"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoshKardos.FlixClothing;
 				PRODUCT_NAME = "Flix Clothing";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1082,6 +1083,7 @@
 					"-framework",
 					"\"nanopb\"",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoshKardos.FlixClothing;
 				PRODUCT_NAME = "Flix Clothing";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
