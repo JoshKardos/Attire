@@ -161,6 +161,7 @@
 		B397453D23F72F8A00604316 /* YouMightLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouMightLikeCell.swift; sourceTree = "<group>"; };
 		B3A03F35240A4AF4007BEF61 /* LaunchScreenController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenController.storyboard; sourceTree = "<group>"; };
 		B3A03F37240A4B3C007BEF61 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		B3A03F39240AEFEB007BEF61 /* Flix Clothing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Flix Clothing.entitlements"; sourceTree = "<group>"; };
 		B3C3495623F7D73300B061E9 /* SnowRentalDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnowRentalDebug.entitlements; sourceTree = "<group>"; };
 		B3C3495723F7E09400B061E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3CEC85923F7A19300333178 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +388,7 @@
 		B397450323F4F93900604316 /* SnowRental */ = {
 			isa = PBXGroup;
 			children = (
+				B3A03F39240AEFEB007BEF61 /* Flix Clothing.entitlements */,
 				B3D69F3523FE2361007D5C0F /* Extensions */,
 				B397450423F4F93900604316 /* AppDelegate.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
@@ -994,7 +996,7 @@
 					"-framework",
 					"\"nanopb\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JoshKardos.Attire;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshKardos.FlixClothing;
 				PRODUCT_NAME = "Flix Clothing";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1008,6 +1010,7 @@
 			baseConfigurationReference = 37F69FB5023B3EB919F6E90D /* Pods-SnowRental.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "SnowRental/Flix Clothing.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1079,7 +1082,7 @@
 					"-framework",
 					"\"nanopb\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = JoshKardos.Attire;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoshKardos.FlixClothing;
 				PRODUCT_NAME = "Flix Clothing";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

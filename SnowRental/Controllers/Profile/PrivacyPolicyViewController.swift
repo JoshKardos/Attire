@@ -15,7 +15,6 @@ class PrivacyPolicyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadHTMLString(PrivacyPolicyViewController.privacyPolicyHTML, baseURL: nil)
-        // Do any additional setup after loading the view.
     }
     
     static let privacyPolicyHTML = """

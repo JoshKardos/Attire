@@ -18,6 +18,7 @@ class SearchCell: UITableViewCell {
         titleLabel.text = movie[FirebaseNodes.title]
         let posterString = movie[FirebaseNodes.poster]!
         if posterString == "N/A" {
+            movieImageView.image = UIImage(named: "camera")
             return
         }
         let url = URL(string: posterString)

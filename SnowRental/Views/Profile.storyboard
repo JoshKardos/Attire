@@ -10,7 +10,7 @@
         <!--Profile Options View Controller-->
         <scene sceneID="JdM-65-ePQ">
             <objects>
-                <viewController id="CKk-wJ-7xm" customClass="ProfileOptionsViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CKk-wJ-7xm" customClass="ProfileOptionsViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ie0-1v-Ayt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
         <!--Privacy Policy View Controller-->
         <scene sceneID="4pa-I8-m7l">
             <objects>
-                <viewController id="ROg-Ab-cHR" customClass="PrivacyPolicyViewController" customModule="Attire" sceneMemberID="viewController">
+                <viewController id="ROg-Ab-cHR" customClass="PrivacyPolicyViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w9i-PE-Fie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
         <!--Account-->
         <scene sceneID="r3W-g4-qDB">
             <objects>
-                <viewController id="JOs-ky-jSI" customClass="AccountViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JOs-ky-jSI" customClass="AccountViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ndx-uM-xvf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,7 +318,7 @@
         <!--Profile-->
         <scene sceneID="Wzp-ZT-EzL">
             <objects>
-                <viewController id="AA2-Nt-MWQ" customClass="ProfileViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AA2-Nt-MWQ" customClass="ProfileViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q5H-yD-OOo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -493,7 +493,7 @@
         <!--Contact Info-->
         <scene sceneID="poH-cb-Imd">
             <objects>
-                <viewController id="Pg1-rU-gy9" customClass="ContactInfoViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pg1-rU-gy9" customClass="ContactInfoViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="auJ-H3-db3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -634,7 +634,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="LMu-3d-TYa">
             <objects>
-                <viewController id="kFq-vr-UmS" userLabel="Change Password View Controller" customClass="ChangePasswordViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kFq-vr-UmS" userLabel="Change Password View Controller" customClass="ChangePasswordViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gg1-dE-IPQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -806,7 +806,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="8Mq-Ad-c3I">
             <objects>
-                <viewController id="x0N-X1-Zad" userLabel="Change Password View Controller" customClass="ChangeEmailViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x0N-X1-Zad" userLabel="Change Password View Controller" customClass="ChangeEmailViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qMq-dT-sKN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -927,7 +927,7 @@
         <!--Edit Profile-->
         <scene sceneID="YxH-KX-TOT">
             <objects>
-                <viewController id="JRT-A7-3LT" customClass="EditProfileViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JRT-A7-3LT" customClass="EditProfileViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AL1-Ec-IpJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1092,6 +1092,6 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ace-nv-lNj"/>
+        <segue reference="hx9-1c-fNH"/>
     </inferredMetricsTieBreakers>
 </document>

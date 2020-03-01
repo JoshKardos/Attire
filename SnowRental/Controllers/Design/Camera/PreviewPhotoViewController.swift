@@ -50,7 +50,6 @@ class PreviewPhotoViewController: UIViewController {
     
     @IBAction func retakePressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-        FiltersManager.removeData()
     }
 }
 
@@ -67,7 +66,8 @@ extension PreviewPhotoViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        imageView.image = FiltersManager.filteredImages[FiltersManager.Filters[indexPath.row].filterName]
+        let cell = collectionView.cellForItem(at: indexPath) as! DesignFilterViewCell
+        imageView.image = cell.imageView.image
     }
 
 }

@@ -47,14 +47,7 @@ class FiltersManager {
         Filter(filterName: "CICrystallize", nickName: "Crystallize", filterEffectValue: 45, filterEffectValueName: kCIInputRadiusKey)
 
     ]
-    
-    static var filteredImages: [String: UIImage] = [:]
     static var filter: CIFilter?
-    
-    static func removeData() {
-        filteredImages.removeAll(keepingCapacity: false)
-    }
-    
     static func applyFilterTo(image: UIImage, filterEffect: Filter) -> UIImage? {
         guard let cgImage = image.cgImage else {
             return nil
@@ -71,7 +64,6 @@ class FiltersManager {
         if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage, let cgiImageResult = context.createCGImage(output, from: output.extent) {
             filteredImage = UIImage(cgImage: cgiImageResult)
         }
-        filteredImages[filterEffect.filterName] = filteredImage
         return filteredImage
     }
 }
