@@ -63,6 +63,8 @@ class ProfileOptionsViewController: UIViewController {
         profileHeaderContainer.alpha = 1
         if let profileImageUrl = UsersManager.currentUser.profileImageUrl {
             profileImageView.kf.setImage(with: URL(string: profileImageUrl))
+        } else {
+            profileImageView.image = nil
         }
         if let firstName = UsersManager.currentUser.firstName, let lastName = UsersManager.currentUser.lastName {
             profileNameLabel.text = "\(firstName) \(lastName)"

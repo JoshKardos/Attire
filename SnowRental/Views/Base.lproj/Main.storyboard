@@ -11,7 +11,7 @@
         <!--Search View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="SearchViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="SearchViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +169,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YouMightLikeCell" id="bQa-pU-9d5" customClass="YouMightLikeCell" customModule="Attire" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YouMightLikeCell" id="bQa-pU-9d5" customClass="YouMightLikeCell" customModule="Flix_Clothing" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="2.5" width="383" height="259"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XbW-SW-tnM">
@@ -277,6 +277,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="O9p-Js-3W8" firstAttribute="height" secondItem="oUV-CF-mYK" secondAttribute="height" priority="250" id="ClV-hy-hZe"/>
                                     <constraint firstAttribute="trailing" secondItem="O9p-Js-3W8" secondAttribute="trailing" id="JeH-5T-qGp"/>
@@ -362,7 +363,7 @@
         <!--Search Table View Controller-->
         <scene sceneID="zvt-V6-ycy">
             <objects>
-                <viewController storyboardIdentifier="SearchTableViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RU3-l2-Kiq" customClass="SearchTableViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchTableViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RU3-l2-Kiq" customClass="SearchTableViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d5x-MX-fut">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,7 +389,7 @@
                                 <rect key="frame" x="0.0" y="62" width="414" height="401"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableView" rowHeight="66" id="5IT-35-Iog" customClass="SearchCell" customModule="Attire" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableView" rowHeight="66" id="5IT-35-Iog" customClass="SearchCell" customModule="Flix_Clothing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5IT-35-Iog" id="9Ry-N9-f6I">
@@ -537,7 +538,7 @@
         <!--Movie View Controller-->
         <scene sceneID="NmT-iP-27M">
             <objects>
-                <viewController id="dOa-kh-KRj" customClass="MovieViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dOa-kh-KRj" customClass="MovieViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nCg-lL-HlI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1191"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -584,7 +585,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="shopDesignCell" id="YJ6-Uo-FmR" customClass="ShopDesignCell" customModule="Attire" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="shopDesignCell" id="YJ6-Uo-FmR" customClass="ShopDesignCell" customModule="Flix_Clothing" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LuI-Kc-juo">
@@ -713,7 +714,7 @@
         <!--Confirm Shirt View Controller-->
         <scene sceneID="r1k-Dp-Mqp">
             <objects>
-                <viewController id="41L-bO-bvQ" customClass="ConfirmShirtViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="41L-bO-bvQ" customClass="ConfirmShirtViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RBd-fw-o31">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1191"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -993,7 +994,7 @@
         <!--Select a shipping address-->
         <scene sceneID="yAa-NW-Vq7">
             <objects>
-                <viewController id="rES-WD-Np9" customClass="CheckoutShippingDetailsViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rES-WD-Np9" customClass="CheckoutShippingDetailsViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="llm-8Q-hib">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1157,7 +1158,7 @@
         <!--Select a Payment Method-->
         <scene sceneID="Msd-6G-AbB">
             <objects>
-                <viewController id="TSj-N8-UVT" customClass="CheckoutPaymentViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TSj-N8-UVT" customClass="CheckoutPaymentViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuQ-93-pQy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1265,7 +1266,7 @@
         <!--Place your order-->
         <scene sceneID="CKz-Ab-3lb">
             <objects>
-                <viewController id="ovX-ps-huv" customClass="CheckoutSubmitPaymentViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ovX-ps-huv" customClass="CheckoutSubmitPaymentViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iu1-Fw-tou">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1191"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
