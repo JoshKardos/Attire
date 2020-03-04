@@ -25,7 +25,9 @@ class MoviesManager {
                 return
             }
             let design = Design(dictionary: snapshot.value as! [String: String])
-            movieViewingDesigns.append(design)
+            if !design.isBlockedOrHiddenByCurrentUser() {
+                movieViewingDesigns.append(design)
+            }
             onSuccess()
         }
     }

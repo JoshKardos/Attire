@@ -16,6 +16,8 @@ class User{
     var dateJoinedTimestamp: String!
     var profileImageUrl: String?
     var stripeCustomerId: String?
+    var blockedUserIds: [String]?
+    var hiddenDesignIds: [String]?
     
     init(){}
     init(dictionary: NSDictionary){
@@ -34,5 +36,13 @@ class User{
     
     func setStripeCustomerId(id: String) {
         self.stripeCustomerId = id
+    }
+    
+    func setBlockedUsersArr(userIds: [String]) {
+        self.blockedUserIds = userIds
+    }
+    
+    func setHiddenDesignIds(designIds: [String]) {
+        self.hiddenDesignIds = designIds
     }
 }

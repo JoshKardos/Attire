@@ -26,6 +26,8 @@ class FirebaseNodes {
     static let users = "users"
     static let movies = "movies"
     static let designTags = "design-tags"
+    static let userBlockedUsers = "user-blockedUsers"
+    static let userHiddenPosts = "user-hiddenPosts"
     
     // orders node
     static let orderId = "orderId"

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9281090F9494046D3CB2A141 /* Pods_SnowRental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109D7D871265E26A5E4DDE32 /* Pods_SnowRental.framework */; };
+		0D0C373D2C772433B3347633 /* Pods_Flix_Clothing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E517D54EAD142439E9BB1 /* Pods_Flix_Clothing.framework */; };
+		8728CCA510724F141B6FD2E9 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8234899E5BC94DF47964194 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */; };
 		B319DF1623FB4A0000B2A8D0 /* DesignFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */; };
 		B319DF1823FB4CBE00B2A8D0 /* FiltersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */; };
 		B319DF1A23FBA13400B2A8D0 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */; };
 		B319DF1C23FBC25100B2A8D0 /* UploadConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1B23FBC25100B2A8D0 /* UploadConfirmViewController.swift */; };
 		B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */; };
-		B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0823F918FB00D765FD /* ApiKeys.swift */; };
 		B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0A23F932B200D765FD /* SearchCell.swift */; };
 		B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0C23F9432000D765FD /* MovieViewController.swift */; };
 		B34AFB0F23F9F2AE00D765FD /* DesignManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */; };
@@ -64,6 +64,8 @@
 		B397453E23F72F8A00604316 /* YouMightLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397453D23F72F8A00604316 /* YouMightLikeCell.swift */; };
 		B3A03F36240A4AF4007BEF61 /* LaunchScreenController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A03F35240A4AF4007BEF61 /* LaunchScreenController.storyboard */; };
 		B3A03F38240A4B3C007BEF61 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A03F37240A4B3C007BEF61 /* LaunchScreenController.swift */; };
+		B3A03F3D240DCD79007BEF61 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A03F3C240DCD79007BEF61 /* ApiKeys.swift */; };
+		B3A03F3F240F0BA3007BEF61 /* DesignSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A03F3E240F0BA3007BEF61 /* DesignSettingsViewController.swift */; };
 		B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C3495723F7E09400B061E9 /* SignUpViewController.swift */; };
 		B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85923F7A19300333178 /* SearchTableViewController.swift */; };
 		B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */; };
@@ -72,8 +74,7 @@
 		B3D69F3723FE236E007D5C0F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69F3623FE236E007D5C0F /* String.swift */; };
 		B3D69F3923FE2416007D5C0F /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69F3823FE2416007D5C0F /* UITextField.swift */; };
 		B3DC904223FF4C880030B330 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC904123FF4C880030B330 /* MyAPIClient.swift */; };
-		BEF51C1B6BA73D8C09D07121 /* Pods_SnowRentalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD9C705C50C3DB76EB5C9F /* Pods_SnowRentalTests.framework */; };
-		DDA85522369A8B5D0B228935 /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1082E6E9076A3B3DB70C332A /* Pods_SnowRental_SnowRentalUITests.framework */; };
+		F01B79A1D86D2379E1D8E005 /* Pods_Flix_ClothingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F1D5A786E009BF5D62414 /* Pods_Flix_ClothingTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,17 +95,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1082E6E9076A3B3DB70C332A /* Pods_SnowRental_SnowRentalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRental_SnowRentalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		109D7D871265E26A5E4DDE32 /* Pods_SnowRental.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRental.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09C94B3AD306BBC8030D97DB /* Pods-Flix ClothingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix ClothingTests.debug.xcconfig"; path = "Target Support Files/Pods-Flix ClothingTests/Pods-Flix ClothingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		188F1D5A786E009BF5D62414 /* Pods_Flix_ClothingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_ClothingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20350B00D655B26E0E3DB06E /* Pods-SnowRentalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.release.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.release.xcconfig"; sourceTree = "<group>"; };
+		359EBE7809A17A456B680184 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig"; path = "Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		37F69FB5023B3EB919F6E90D /* Pods-SnowRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.release.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.release.xcconfig"; sourceTree = "<group>"; };
-		A0FD9C705C50C3DB76EB5C9F /* Pods_SnowRentalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowRentalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D6C261347349AE8B489572 /* Pods-Flix ClothingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix ClothingTests.release.xcconfig"; path = "Target Support Files/Pods-Flix ClothingTests/Pods-Flix ClothingTests.release.xcconfig"; sourceTree = "<group>"; };
+		679E517D54EAD142439E9BB1 /* Pods_Flix_Clothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Clothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0E667617A33542D199A6A2 /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFilterViewCell.swift; sourceTree = "<group>"; };
 		B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersManager.swift; sourceTree = "<group>"; };
 		B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		B319DF1B23FBC25100B2A8D0 /* UploadConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadConfirmViewController.swift; sourceTree = "<group>"; };
 		B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
-		B34AFB0823F918FB00D765FD /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		B34AFB0A23F932B200D765FD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		B34AFB0C23F9432000D765FD /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		B34AFB0E23F9F2AE00D765FD /* DesignManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignManager.swift; sourceTree = "<group>"; };
@@ -150,10 +153,10 @@
 		B397451223F4F93A00604316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B397451523F4F93A00604316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B397451723F4F93A00604316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B397451C23F4F93A00604316 /* SnowRentalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowRentalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B397451C23F4F93A00604316 /* Flix ClothingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flix ClothingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B397452023F4F93A00604316 /* SnowRentalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowRentalTests.swift; sourceTree = "<group>"; };
 		B397452223F4F93A00604316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B397452723F4F93A00604316 /* SnowRentalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowRentalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B397452723F4F93A00604316 /* Flix ClothingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flix ClothingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B397452B23F4F93A00604316 /* SnowRentalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowRentalUITests.swift; sourceTree = "<group>"; };
 		B397452D23F4F93A00604316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B397453923F5DA8200604316 /* ProfileOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionsViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 		B3A03F35240A4AF4007BEF61 /* LaunchScreenController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenController.storyboard; sourceTree = "<group>"; };
 		B3A03F37240A4B3C007BEF61 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		B3A03F39240AEFEB007BEF61 /* Flix Clothing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Flix Clothing.entitlements"; sourceTree = "<group>"; };
+		B3A03F3C240DCD79007BEF61 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiKeys.swift; path = ../../ApiKeys.swift; sourceTree = "<group>"; };
+		B3A03F3E240F0BA3007BEF61 /* DesignSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSettingsViewController.swift; sourceTree = "<group>"; };
 		B3C3495623F7D73300B061E9 /* SnowRentalDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnowRentalDebug.entitlements; sourceTree = "<group>"; };
 		B3C3495723F7E09400B061E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3CEC85923F7A19300333178 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -172,9 +177,12 @@
 		B3D69F3823FE2416007D5C0F /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B3DC904123FF4C880030B330 /* MyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		B72B0BDE0C5181C702B98C6F /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C81D040C4D68E14928929CFA /* Pods-Flix Clothing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing.release.xcconfig"; path = "Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing.release.xcconfig"; sourceTree = "<group>"; };
 		D46B7D587AEC9C102BCB32C0 /* Pods-SnowRentalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2CFF2FA4EEC69BAED26AEE6 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.release.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E6C0E536FE5F4B980A4795E8 /* Pods-SnowRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.debug.xcconfig"; sourceTree = "<group>"; };
+		E8234899E5BC94DF47964194 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Clothing_Flix_ClothingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDEAF2909435C7305C237A92 /* Pods-Flix Clothing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing.debug.xcconfig"; path = "Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9281090F9494046D3CB2A141 /* Pods_SnowRental.framework in Frameworks */,
+				0D0C373D2C772433B3347633 /* Pods_Flix_Clothing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEF51C1B6BA73D8C09D07121 /* Pods_SnowRentalTests.framework in Frameworks */,
+				F01B79A1D86D2379E1D8E005 /* Pods_Flix_ClothingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA85522369A8B5D0B228935 /* Pods_SnowRental_SnowRentalUITests.framework in Frameworks */,
+				8728CCA510724F141B6FD2E9 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +216,9 @@
 		1758C75E239994CEBB73D31C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				109D7D871265E26A5E4DDE32 /* Pods_SnowRental.framework */,
-				1082E6E9076A3B3DB70C332A /* Pods_SnowRental_SnowRentalUITests.framework */,
-				A0FD9C705C50C3DB76EB5C9F /* Pods_SnowRentalTests.framework */,
+				679E517D54EAD142439E9BB1 /* Pods_Flix_Clothing.framework */,
+				E8234899E5BC94DF47964194 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */,
+				188F1D5A786E009BF5D62414 /* Pods_Flix_ClothingTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */,
 				B370ADA02408873A00B9B040 /* EditProfileViewController.swift */,
 				B370ADA42408E5EF00B9B040 /* PrivacyPolicyViewController.swift */,
+				B3A03F3E240F0BA3007BEF61 /* DesignSettingsViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -379,8 +388,8 @@
 			isa = PBXGroup;
 			children = (
 				B397450123F4F93900604316 /* Flix Clothing.app */,
-				B397451C23F4F93A00604316 /* SnowRentalTests.xctest */,
-				B397452723F4F93A00604316 /* SnowRentalUITests.xctest */,
+				B397451C23F4F93A00604316 /* Flix ClothingTests.xctest */,
+				B397452723F4F93A00604316 /* Flix ClothingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -391,9 +400,9 @@
 				B3A03F39240AEFEB007BEF61 /* Flix Clothing.entitlements */,
 				B3D69F3523FE2361007D5C0F /* Extensions */,
 				B397450423F4F93900604316 /* AppDelegate.swift */,
+				B3A03F3C240DCD79007BEF61 /* ApiKeys.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
 				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
-				B34AFB0823F918FB00D765FD /* ApiKeys.swift */,
 				B3DC904123FF4C880030B330 /* MyAPIClient.swift */,
 				B370ADA22408D70900B9B040 /* UserDefaultKeys.swift */,
 				B34AFB1523FA1B7200D765FD /* Helpers */,
@@ -448,6 +457,12 @@
 				E2CFF2FA4EEC69BAED26AEE6 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */,
 				D46B7D587AEC9C102BCB32C0 /* Pods-SnowRentalTests.debug.xcconfig */,
 				20350B00D655B26E0E3DB06E /* Pods-SnowRentalTests.release.xcconfig */,
+				FDEAF2909435C7305C237A92 /* Pods-Flix Clothing.debug.xcconfig */,
+				C81D040C4D68E14928929CFA /* Pods-Flix Clothing.release.xcconfig */,
+				8C0E667617A33542D199A6A2 /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */,
+				359EBE7809A17A456B680184 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */,
+				09C94B3AD306BBC8030D97DB /* Pods-Flix ClothingTests.debug.xcconfig */,
+				56D6C261347349AE8B489572 /* Pods-Flix ClothingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -455,9 +470,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B397450023F4F93900604316 /* SnowRental */ = {
+		B397450023F4F93900604316 /* Flix Clothing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B397453023F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRental" */;
+			buildConfigurationList = B397453023F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix Clothing" */;
 			buildPhases = (
 				194A237CCCD60C0E374F20C3 /* [CP] Check Pods Manifest.lock */,
 				B39744FD23F4F93900604316 /* Sources */,
@@ -469,14 +484,14 @@
 			);
 			dependencies = (
 			);
-			name = SnowRental;
+			name = "Flix Clothing";
 			productName = SnowRental;
 			productReference = B397450123F4F93900604316 /* Flix Clothing.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B397451B23F4F93A00604316 /* SnowRentalTests */ = {
+		B397451B23F4F93A00604316 /* Flix ClothingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B397453323F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRentalTests" */;
+			buildConfigurationList = B397453323F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix ClothingTests" */;
 			buildPhases = (
 				B42EE6FD099FE845D737AF1F /* [CP] Check Pods Manifest.lock */,
 				B397451823F4F93A00604316 /* Sources */,
@@ -488,14 +503,14 @@
 			dependencies = (
 				B397451E23F4F93A00604316 /* PBXTargetDependency */,
 			);
-			name = SnowRentalTests;
+			name = "Flix ClothingTests";
 			productName = SnowRentalTests;
-			productReference = B397451C23F4F93A00604316 /* SnowRentalTests.xctest */;
+			productReference = B397451C23F4F93A00604316 /* Flix ClothingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B397452623F4F93A00604316 /* SnowRentalUITests */ = {
+		B397452623F4F93A00604316 /* Flix ClothingUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B397453623F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRentalUITests" */;
+			buildConfigurationList = B397453623F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix ClothingUITests" */;
 			buildPhases = (
 				7DD143A312A6BC11200EACBF /* [CP] Check Pods Manifest.lock */,
 				B397452323F4F93A00604316 /* Sources */,
@@ -508,9 +523,9 @@
 			dependencies = (
 				B397452923F4F93A00604316 /* PBXTargetDependency */,
 			);
-			name = SnowRentalUITests;
+			name = "Flix ClothingUITests";
 			productName = SnowRentalUITests;
-			productReference = B397452723F4F93A00604316 /* SnowRentalUITests.xctest */;
+			productReference = B397452723F4F93A00604316 /* Flix ClothingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -536,7 +551,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B39744FC23F4F93900604316 /* Build configuration list for PBXProject "SnowRental" */;
+			buildConfigurationList = B39744FC23F4F93900604316 /* Build configuration list for PBXProject "Flix Clothing" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -549,9 +564,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B397450023F4F93900604316 /* SnowRental */,
-				B397451B23F4F93A00604316 /* SnowRentalTests */,
-				B397452623F4F93A00604316 /* SnowRentalUITests */,
+				B397450023F4F93900604316 /* Flix Clothing */,
+				B397451B23F4F93A00604316 /* Flix ClothingTests */,
+				B397452623F4F93A00604316 /* Flix ClothingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -596,15 +611,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnowRental/Pods-SnowRental-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		194A237CCCD60C0E374F20C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -622,7 +637,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SnowRental-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Flix Clothing-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -635,15 +650,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7DD143A312A6BC11200EACBF /* [CP] Check Pods Manifest.lock */ = {
@@ -661,7 +676,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SnowRental-SnowRentalUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Flix Clothing-Flix ClothingUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -683,7 +698,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SnowRentalTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Flix ClothingTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -699,6 +714,7 @@
 			files = (
 				B34AFB1123FA199B00D765FD /* ShopDesignCell.swift in Sources */,
 				B3864B5F23F8B420005695E8 /* LoginViewController.swift in Sources */,
+				B3A03F3D240DCD79007BEF61 /* ApiKeys.swift in Sources */,
 				B3699DDF24020AFC001D495D /* Design.swift in Sources */,
 				B319DF1823FB4CBE00B2A8D0 /* FiltersManager.swift in Sources */,
 				B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */,
@@ -721,13 +737,13 @@
 				B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */,
 				B36444A02405FC2600E742A1 /* OrdersTableViewController.swift in Sources */,
 				B370ADA32408D70900B9B040 /* UserDefaultKeys.swift in Sources */,
+				B3A03F3F240F0BA3007BEF61 /* DesignSettingsViewController.swift in Sources */,
 				B3D69F2E23FDEC10007D5C0F /* ConfirmShirtViewController.swift in Sources */,
 				B3864B5D23F8A9B2005695E8 /* MoviesManager.swift in Sources */,
 				B36444A4240607C800E742A1 /* OrderCell.swift in Sources */,
 				B34AFB1723FA1B7F00D765FD /* ImageHelpers.swift in Sources */,
 				B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */,
 				B319DF1A23FBA13400B2A8D0 /* TagsViewController.swift in Sources */,
-				B34AFB0923F918FB00D765FD /* ApiKeys.swift in Sources */,
 				B397450723F4F93900604316 /* SceneDelegate.swift in Sources */,
 				B34AFB0F23F9F2AE00D765FD /* DesignManager.swift in Sources */,
 				B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */,
@@ -774,12 +790,12 @@
 /* Begin PBXTargetDependency section */
 		B397451E23F4F93A00604316 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B397450023F4F93900604316 /* SnowRental */;
+			target = B397450023F4F93900604316 /* Flix Clothing */;
 			targetProxy = B397451D23F4F93A00604316 /* PBXContainerItemProxy */;
 		};
 		B397452923F4F93A00604316 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B397450023F4F93900604316 /* SnowRental */;
+			target = B397450023F4F93900604316 /* Flix Clothing */;
 			targetProxy = B397452823F4F93A00604316 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -920,12 +936,13 @@
 		};
 		B397453123F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C0E536FE5F4B980A4795E8 /* Pods-SnowRental.debug.xcconfig */;
+			baseConfigurationReference = FDEAF2909435C7305C237A92 /* Pods-Flix Clothing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SnowRental/SnowRentalDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SnowRental/Info.plist;
@@ -1008,11 +1025,12 @@
 		};
 		B397453223F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37F69FB5023B3EB919F6E90D /* Pods-SnowRental.release.xcconfig */;
+			baseConfigurationReference = C81D040C4D68E14928929CFA /* Pods-Flix Clothing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SnowRental/Flix Clothing.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SnowRental/Info.plist;
@@ -1094,7 +1112,7 @@
 		};
 		B397453423F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D46B7D587AEC9C102BCB32C0 /* Pods-SnowRentalTests.debug.xcconfig */;
+			baseConfigurationReference = 09C94B3AD306BBC8030D97DB /* Pods-Flix ClothingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1111,13 +1129,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnowRental.app/SnowRental";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flix Clothing.app/Flix Clothing";
 			};
 			name = Debug;
 		};
 		B397453523F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20350B00D655B26E0E3DB06E /* Pods-SnowRentalTests.release.xcconfig */;
+			baseConfigurationReference = 56D6C261347349AE8B489572 /* Pods-Flix ClothingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1134,13 +1152,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnowRental.app/SnowRental";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flix Clothing.app/Flix Clothing";
 			};
 			name = Release;
 		};
 		B397453723F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B72B0BDE0C5181C702B98C6F /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */;
+			baseConfigurationReference = 8C0E667617A33542D199A6A2 /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1161,7 +1179,7 @@
 		};
 		B397453823F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2CFF2FA4EEC69BAED26AEE6 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */;
+			baseConfigurationReference = 359EBE7809A17A456B680184 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1183,7 +1201,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B39744FC23F4F93900604316 /* Build configuration list for PBXProject "SnowRental" */ = {
+		B39744FC23F4F93900604316 /* Build configuration list for PBXProject "Flix Clothing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B397452E23F4F93A00604316 /* Debug */,
@@ -1192,7 +1210,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B397453023F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRental" */ = {
+		B397453023F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix Clothing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B397453123F4F93A00604316 /* Debug */,
@@ -1201,7 +1219,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B397453323F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRentalTests" */ = {
+		B397453323F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix ClothingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B397453423F4F93A00604316 /* Debug */,
@@ -1210,7 +1228,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B397453623F4F93A00604316 /* Build configuration list for PBXNativeTarget "SnowRentalUITests" */ = {
+		B397453623F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix ClothingUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B397453723F4F93A00604316 /* Debug */,

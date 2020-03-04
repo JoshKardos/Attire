@@ -17,10 +17,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var confirmLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTextFields()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        confirmLabel.addGestureRecognizer(tap)
+    }
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "ToLicenseAgreement", sender: nil)
     }
     
     @IBAction func signUpPressed(_ sender: Any) {

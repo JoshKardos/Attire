@@ -15,7 +15,7 @@ class DesignManager {
     static var suggestedDesigns: [Design]?
     
     static func fetchSuggestedDesigns(onSuccess: @escaping() -> Void, onError: @escaping() -> Void) {
-        Database.database().reference().child(FirebaseNodes.designs).queryLimited(toLast: 4).observe(.value) { (snapshot) in
+        Database.database().reference().child(FirebaseNodes.designs).queryLimited(toLast: 20).observe(.value) { (snapshot) in
             if !snapshot.exists() {
                 onError()
                 return
@@ -24,10 +24,10 @@ class DesignManager {
             let designsMap = snapshot.value as! [String: [String: String]]
             for (_, d) in designsMap {
                 let design = Design(dictionary: d)
-                print(design)
-                suggestedDesigns!.append(design)
+                if !design.isBlockedOrHiddenByCurrentUser() {
+                    suggestedDesigns!.append(design)
+                }
             }
-            print(suggestedDesigns?.count)
             onSuccess()
         }
     }

@@ -36,7 +36,24 @@ class UsersManager {
                 return
             }
             currentUser = User(dictionary: snapshot.value as! NSDictionary)
-            onSuccess()
+            // load the users blocked users
+            Database.database().reference().child(FirebaseNodes.userBlockedUsers).child(id).observe(.value) { (snapshot) in
+                if snapshot.exists() {
+                    if let usersMap = snapshot.value as? [String: Any] {
+                        let usersIds = usersMap.keys
+                        currentUser.setBlockedUsersArr(userIds: Array(usersIds))
+                    }
+                }
+                Database.database().reference().child(FirebaseNodes.userHiddenPosts).child(id).observe(.value) { (snapshot) in
+                    if snapshot.exists() {
+                        if let designsMap = snapshot.value as? [String: Any] {
+                            let designIds = designsMap.keys
+                            currentUser.setHiddenDesignIds(designIds: Array(designIds))
+                        }
+                    }
+                    onSuccess()
+                }
+            }
         }
     }
     
@@ -145,5 +162,28 @@ class UsersManager {
             
         })
     }
+    
+    static func blockUser(with id: String, currentUserId: String) {
+        ProgressHUD.show()
+        Database.database().reference().child(FirebaseNodes.userBlockedUsers).child(currentUserId).child(id).setValue(1) { (error, ref) in
+            if error != nil {
+                ProgressHUD.showError("Failure blocking")
+                return
+            }
+            ProgressHUD.showSuccess()
+        }
+    }
+    
+    static func hidePost(with designId: String, currentUserId: String) {
+        ProgressHUD.show()
+        Database.database().reference().child(FirebaseNodes.userHiddenPosts).child(currentUserId).child(designId).setValue(1) { (error, ref) in
+            if error != nil {
+                ProgressHUD.showError("Failure blocking")
+                return
+            }
+            ProgressHUD.showSuccess()
+        }
+    }
+    
 }
 

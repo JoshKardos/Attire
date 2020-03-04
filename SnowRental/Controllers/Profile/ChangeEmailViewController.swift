@@ -35,6 +35,7 @@ class ChangeEmailViewController: UIViewController {
         let oldEmailString = (Auth.auth().currentUser?.email)!
         let passwordString = passwordTextField.text!
         
+        
         ProgressHUD.show()
         UsersManager.reauthenticateUser(email: oldEmailString, password: passwordString, onSuccess: {
             Auth.auth().currentUser?.updateEmail(to: newEmailString) { (error) in

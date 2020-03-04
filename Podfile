@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'SnowRental' do
+target 'Flix Clothing' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -17,13 +17,14 @@ target 'SnowRental' do
   pod 'TaggerKit'
   pod 'ChromaColorPicker'
   pod 'Stripe'#, '~> 16.0.2'
+  pod 'AAObnoxiousFilter'
   
-  target 'SnowRentalTests' do
+  target 'Flix ClothingTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'SnowRentalUITests' do
+  target 'Flix ClothingUITests' do
     # Pods for testing
   end
 

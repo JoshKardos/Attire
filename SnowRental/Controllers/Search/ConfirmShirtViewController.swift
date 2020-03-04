@@ -63,6 +63,10 @@ class ConfirmShirtViewController: UIViewController {
         colorsCollectionView.dataSource = self
     }
     
+    @IBAction func settingsPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "ToShirtSettings", sender: nil)
+    }
+    
     @IBAction func heightSliderChanged(_ sender: UISlider) {
         designHeightConstraint.constant = CGFloat(sender.value)
     }
@@ -99,6 +103,9 @@ class ConfirmShirtViewController: UIViewController {
                 return
             }
             vc.order = Order(design: orderDesign, movie: orderMovie, shirtColor: orderShirtColor, imageUrl: orderImageURL, price: design!.price, size: sizes[sizeSegmentedControl.selectedSegmentIndex], userId: uid)
+        } else if segue.identifier == "ToShirtSettings" {
+            let vc = segue.destination as! DesignSettingsViewController
+            vc.design = self.design
         }
     }
     

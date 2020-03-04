@@ -23,4 +23,19 @@ class Design {
         userId = dictionary[FirebaseNodes.userId]
         movieName = dictionary[FirebaseNodes.movieName]
     }
+    
+    func isBlockedOrHiddenByCurrentUser() -> Bool {
+        if let blockedUserIds = UsersManager.currentUser.blockedUserIds {
+            if blockedUserIds.contains(self.userId!) {
+                return true
+            }
+        }
+        if let hiddenDesignIds = UsersManager.currentUser.hiddenDesignIds {
+            if hiddenDesignIds.contains(self.designId!) {
+                return true
+            }
+        }
+        return false
+        
+    }
 }

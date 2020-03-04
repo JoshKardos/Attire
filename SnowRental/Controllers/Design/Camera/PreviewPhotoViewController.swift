@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AAObnoxiousFilter
 
 class PreviewPhotoViewController: UIViewController {
     
@@ -21,6 +22,15 @@ class PreviewPhotoViewController: UIViewController {
         filterCollectionView.delegate = self
         filterCollectionView.dataSource = self
         imageView.image = image
+        print("here")
+        if let prediction = image!.predictImage() {
+            // prediction if greater than 0.5, the image will have inappropriate look
+            print(prediction)
+        }
+        else {
+            // Exception in any other case if the Image is not valid to predict
+            print("nothing")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

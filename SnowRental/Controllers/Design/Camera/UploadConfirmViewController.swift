@@ -51,7 +51,11 @@ class UploadConfirmViewController: UIViewController {
         movieImageView.kf.setImage(with: url)
     }
     
-    
+
+    // ///////
+    // BELOW
+    // THIS NEEDS TO BE PUT IN DESIGN MANAGER
+    // ///////
     @IBAction func confirmPressed(_ sender: Any) {
         let ref = Database.database().reference().child(FirebaseNodes.designs)
         let newDesignKey = ref.childByAutoId().key!
@@ -71,11 +75,7 @@ class UploadConfirmViewController: UIViewController {
 
         ProgressHUD.show()
         UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        // ///////
-        // BELOW
-        // THIS NEEDS TO BE PUT IN DESIGN MANAGER
-        // ///////
+
         if let imageData = image?.jpegData(compressionQuality: 0.75) {
             storageRef.putData(imageData, metadata: uploadMetadata) { (metadata, error) in
                 if error != nil{

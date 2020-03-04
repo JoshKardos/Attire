@@ -10,7 +10,7 @@
         <!--Not Authenticated View Controller-->
         <scene sceneID="8xe-oe-EjX">
             <objects>
-                <viewController storyboardIdentifier="NotAuthenticated" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0pJ-70-Ugc" customClass="NotAuthenticatedViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotAuthenticated" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0pJ-70-Ugc" customClass="NotAuthenticatedViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UA1-8o-2X8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
         <!--Email Sign up-->
         <scene sceneID="tzE-WC-3bm">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="W7P-hp-x3k" customClass="SignUpViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="W7P-hp-x3k" customClass="SignUpViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lpP-QJ-C3a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +168,30 @@
                                     <action selector="signUpPressed:" destination="W7P-hp-x3k" eventType="touchUpInside" id="cE0-fK-HUm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQZ-9b-Sbd">
+                                <rect key="frame" x="20" y="435" width="374" height="31.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31.5" id="AAg-hC-C4r"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="By continuing, I confirm that I have read and I understand the ">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" metaFont="system"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Terms of Service">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" metaFont="system"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392159999998" green="0.42745098040000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -177,6 +201,7 @@
                             <constraint firstItem="nKp-2X-8Vh" firstAttribute="top" secondItem="C3T-MB-43f" secondAttribute="bottom" constant="9" id="4Oc-oj-v4B"/>
                             <constraint firstItem="mni-vD-Y7E" firstAttribute="top" secondItem="HLb-ZA-Bkk" secondAttribute="bottom" constant="9" id="Awl-qB-9ve"/>
                             <constraint firstItem="mni-vD-Y7E" firstAttribute="leading" secondItem="j27-fX-lWN" secondAttribute="leading" constant="20" id="BXg-C7-rB5"/>
+                            <constraint firstItem="j27-fX-lWN" firstAttribute="trailing" secondItem="xQZ-9b-Sbd" secondAttribute="trailing" constant="20" id="EPR-S1-deF"/>
                             <constraint firstItem="C3T-MB-43f" firstAttribute="top" secondItem="M3T-1u-66b" secondAttribute="bottom" constant="9" id="FDx-2g-gZj"/>
                             <constraint firstItem="j27-fX-lWN" firstAttribute="trailing" secondItem="C3T-MB-43f" secondAttribute="trailing" constant="20" id="HHe-w9-23b"/>
                             <constraint firstItem="j27-fX-lWN" firstAttribute="trailing" secondItem="jQS-Wc-Fht" secondAttribute="trailing" constant="20" id="Ltb-08-Wjt"/>
@@ -188,9 +213,11 @@
                             <constraint firstItem="e71-jq-vFi" firstAttribute="leading" secondItem="j27-fX-lWN" secondAttribute="leading" constant="20" id="XU5-xd-nQe"/>
                             <constraint firstItem="7BS-wh-iOI" firstAttribute="leading" secondItem="lpP-QJ-C3a" secondAttribute="leading" constant="20" id="Z6m-TJ-I2t"/>
                             <constraint firstItem="jfu-IM-rnr" firstAttribute="leading" secondItem="lpP-QJ-C3a" secondAttribute="leading" constant="20" id="ZFY-bs-3ZK"/>
+                            <constraint firstItem="xQZ-9b-Sbd" firstAttribute="top" secondItem="e71-jq-vFi" secondAttribute="bottom" constant="20" id="aRv-Qj-bwc"/>
                             <constraint firstAttribute="trailing" secondItem="HLb-ZA-Bkk" secondAttribute="trailing" constant="20" id="bY0-JH-OeS"/>
                             <constraint firstItem="7BS-wh-iOI" firstAttribute="top" secondItem="mni-vD-Y7E" secondAttribute="bottom" constant="9" id="dhy-1M-mZu"/>
                             <constraint firstItem="j27-fX-lWN" firstAttribute="trailing" secondItem="mni-vD-Y7E" secondAttribute="trailing" constant="20" id="eoE-Py-zOx"/>
+                            <constraint firstItem="xQZ-9b-Sbd" firstAttribute="leading" secondItem="j27-fX-lWN" secondAttribute="leading" constant="20" id="fUO-MW-lmr"/>
                             <constraint firstAttribute="trailing" secondItem="jfu-IM-rnr" secondAttribute="trailing" constant="20" id="jj1-Dg-PiA"/>
                             <constraint firstItem="j27-fX-lWN" firstAttribute="trailing" secondItem="e71-jq-vFi" secondAttribute="trailing" constant="20" id="mco-wp-tPn"/>
                             <constraint firstItem="j27-fX-lWN" firstAttribute="trailing" secondItem="M3T-1u-66b" secondAttribute="trailing" constant="20" id="pa3-I2-gQM"/>
@@ -203,15 +230,97 @@
                     </view>
                     <navigationItem key="navigationItem" title="Email Sign up" id="ZQj-tu-TW3"/>
                     <connections>
+                        <outlet property="confirmLabel" destination="xQZ-9b-Sbd" id="vkf-T3-UmT"/>
                         <outlet property="emailTextField" destination="M3T-1u-66b" id="fdm-Si-lbK"/>
                         <outlet property="firstNameTextField" destination="jQS-Wc-Fht" id="bOH-rB-YvH"/>
                         <outlet property="lastNameTextField" destination="mni-vD-Y7E" id="ze3-cA-1aB"/>
                         <outlet property="passwordTextField" destination="nKp-2X-8Vh" id="2NX-d2-Gpt"/>
+                        <segue destination="8hk-Eu-jHU" kind="show" identifier="ToLicenseAgreement" id="brK-W4-Ycc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgG-bB-OgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-671.01449275362324" y="760.71428571428567"/>
+        </scene>
+        <!--License Agreement-->
+        <scene sceneID="V4m-dM-SlF">
+            <objects>
+                <viewController id="8hk-Eu-jHU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eU-8d-7Fl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzI-8h-tic">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-hq-eXL" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1278.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHr-Ud-kp8">
+                                                <rect key="frame" x="8" y="28" width="398" height="1230.5"/>
+                                                <string key="text">Flix Clothing App End User License Agreement
+This End User License Agreement (“Agreement”) is between you and Flix Clothing and governs use of this app made available through the Apple App Store. By installing the Flix Clothing App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Flix Clothing App.
+
+In order to ensure Flix Clothing provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the "Report as offensive" feature found under each post/design.
+
+1. Parties This Agreement is between you and Flix Clothing only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Flix Clothing, not Apple, is solely responsible for the Flix Clothing App and its content.
+
+2. Privacy Flix Clothing may collect and use information about your usage of the Flix Clothing App, including certain types of information from and about your device. Flix Clothing may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Flix Clothing App.
+
+3. Limited License Flix Clothing grants you a limited, non-exclusive, non-transferable, revocable license to use the Flix Clothing App for your personal, non-commercial purposes. You may only use the Flix Clothing App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+
+4. Age Restrictions By using the Flix Clothing App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Flix Clothing App does not violate any applicable law or regulation. Your access to the Flix Clothing App may be terminated without warning if Flix Clothing believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. If you are a parent or legal guardian and you provide your consent to your child's use of the Flix Clothing App, you agree to be bound by this Agreement in respect to your child's use of the Flix Clothing App.
+
+5. Objectionable Content Policy Content may not be submitted to Flix Clothing, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker. A zero tolerance policy on submissions in alignment with Objectionable Content will be enforced.
+
+6. Warranty Flix Clothing disclaims all warranties about the Flix Clothing App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Flix Clothing, not Apple, shall be solely responsible for such warranty.
+
+7. Maintenance and Support Flix Clothing does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Flix Clothing, not Apple, shall be obligated to furnish any such maintenance or support.
+
+8. Product Claims Flix Clothing, not Apple, is responsible for addressing any claims by you relating to the Flix Clothing App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Flix Clothing App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+
+9. Third Party Intellectual Property Claims Flix Clothing shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Flix Clothing App. To the extent Flix Clothing is required to provide indemnification by applicable law, Flix Clothing, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Flix Clothing App or your use of it infringes any third party intellectual property right.</string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.30980392159999998" green="0.42745098040000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jHr-Ud-kp8" secondAttribute="trailing" constant="8" id="531-tR-v23"/>
+                                            <constraint firstItem="jHr-Ud-kp8" firstAttribute="leading" secondItem="Yu7-hq-eXL" secondAttribute="leading" constant="8" id="86p-5q-JIW"/>
+                                            <constraint firstItem="jHr-Ud-kp8" firstAttribute="top" secondItem="Yu7-hq-eXL" secondAttribute="top" constant="28" id="8Qm-va-Cqd"/>
+                                            <constraint firstAttribute="bottom" secondItem="jHr-Ud-kp8" secondAttribute="bottom" constant="20" id="mAn-Eu-MuL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Yu7-hq-eXL" secondAttribute="bottom" id="Jit-7J-0ED"/>
+                                    <constraint firstItem="Yu7-hq-eXL" firstAttribute="width" secondItem="uzI-8h-tic" secondAttribute="width" id="QY4-rZ-qtR"/>
+                                    <constraint firstItem="Yu7-hq-eXL" firstAttribute="top" secondItem="uzI-8h-tic" secondAttribute="top" id="doH-5j-0wg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yu7-hq-eXL" secondAttribute="trailing" id="m6v-NX-abg"/>
+                                    <constraint firstItem="Yu7-hq-eXL" firstAttribute="height" secondItem="uzI-8h-tic" secondAttribute="height" priority="250" id="oNN-Ef-4iF"/>
+                                    <constraint firstItem="Yu7-hq-eXL" firstAttribute="leading" secondItem="uzI-8h-tic" secondAttribute="leading" id="wKN-IV-NwO"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="lZG-oy-Tbz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Mwx-OF-FGp"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.42745098040000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UZN-kY-Can" firstAttribute="bottom" secondItem="uzI-8h-tic" secondAttribute="bottom" id="Q77-un-Rr8"/>
+                            <constraint firstItem="UZN-kY-Can" firstAttribute="top" secondItem="uzI-8h-tic" secondAttribute="top" id="SEQ-j4-ead"/>
+                            <constraint firstItem="uzI-8h-tic" firstAttribute="leading" secondItem="UZN-kY-Can" secondAttribute="leading" id="aYy-oW-Xa6"/>
+                            <constraint firstItem="UZN-kY-Can" firstAttribute="trailing" secondItem="uzI-8h-tic" secondAttribute="trailing" id="gUz-ax-kRy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UZN-kY-Can"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="License Agreement" id="eth-qO-dFm"/>
+                    <size key="freeformSize" width="414" height="1896"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdF-8Y-Ejy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671.01449275362324" y="1899.7767857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aNO-vL-VnE">
@@ -239,7 +348,7 @@
         <!--Email Log in-->
         <scene sceneID="Dnt-hb-THD">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="v3Q-ny-eoA" userLabel="Email Log in" customClass="LoginViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="v3Q-ny-eoA" userLabel="Email Log in" customClass="LoginViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ZJ-Ns-DnS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
