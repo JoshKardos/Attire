@@ -139,11 +139,8 @@ extension ConfirmShirtViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath)
-//        cell.frame.size.width = 30
-//        cell.frame.size.height = 30
         cell.backgroundColor = colors[indexPath.row]
         if colors[indexPath.row] == UIColor.white {
-            print("border")
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }

@@ -31,10 +31,10 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-//        setupCaptureSession()
-//        setupDevice()
-//        setupInputOutput()
-//        setupPreviewLayer()
+        setupCaptureSession()
+        setupDevice()
+        setupInputOutput()
+        setupPreviewLayer()
         
         segmentedControl.selectedSegmentIndex = 0
         
@@ -84,8 +84,11 @@ class CameraViewController: UIViewController {
     }
     
     func setupInputOutput() {
+        guard let camera = currentCamera else {
+            return
+        }
         do {
-            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
+            let captureDeviceInput = try AVCaptureDeviceInput(device: camera)
             captureSession.addInput(captureDeviceInput)
             photoOutput = AVCapturePhotoOutput()
             photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)

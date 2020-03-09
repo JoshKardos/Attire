@@ -15,8 +15,18 @@ import FirebaseDatabase
 
 class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     
-    static let serverBase = "https://still-tor-66399.herokuapp.com/"
-
+    static let stripeServerBase = "https://still-tor-66399.herokuapp.com/"
+    static let serverBase = "https://flix-clothing-server.herokuapp.com/"
+    
+    class func emailReport(design: Design, onSuccess: @escaping () -> Void) {
+        
+        let parameters = ["designId": design.designId!, "apiKey": ApiKeys.sendGridApiKey]
+        AF.request(URL(string: "\(serverBase)api/form")!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).responseJSON { (apiResponse) in
+            print(apiResponse)
+            onSuccess()
+        }
+    }
+    
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
         
         guard let customerId = UsersManager.currentUser.stripeCustomerId else {
@@ -25,8 +35,8 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
         }
         // maybe add a search in database for customerStripeId
         
-        let parameters = ["api_version": apiVersion, "customer_id": customerId]
-        AF.request(URL(string: "\(MyAPIClient.serverBase)empheralkey.php")!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).responseJSON { (apiResponse) in
+        let parameters = ["api_version": apiVersion, "customer_id": customerId, "stripeSecretKey": ApiKeys.stripeSecretKey]
+        AF.request(URL(string: "\(MyAPIClient.stripeServerBase)empheralkey.php")!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:]).responseJSON { (apiResponse) in
             let data = apiResponse.data
             guard let json = ((try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]) as [String : Any]??) else {
                 completion(nil, apiResponse.error)
@@ -41,8 +51,8 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
         var customerDetailParams = [String: String]()
         customerDetailParams["email"] = email
         customerDetailParams["name"] = name
-        
-        AF.request(URL(string: "\(MyAPIClient.serverBase)createCustomer.php")!, method: .post, parameters: customerDetailParams, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        customerDetailParams["stripeSecretKey"] = ApiKeys.stripeSecretKey
+        AF.request(URL(string: "\(MyAPIClient.stripeServerBase)createCustomer.php")!, method: .post, parameters: customerDetailParams, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 debugPrint(response.error)
@@ -64,7 +74,8 @@ class MyAPIClient: NSObject, STPCustomerEphemeralKeyProvider {
     }
     
     class func createPaymentIntent( amount: Double, currency: String, customerId: String, completion: @escaping (Result<String, AFError>)->Void) {
-        AF.request(URL(string: "\(MyAPIClient.serverBase)createpaymentintent.php")!, method: .post, parameters: ["amount": amount, "currency": currency, "customerId": customerId], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        let params = ["amount": amount, "currency": currency, "customerId": customerId, "stripeSecretKey": ApiKeys.stripeSecretKey] as [String: Any]
+        AF.request(URL(string: "\(MyAPIClient.stripeServerBase)createpaymentintent.php")!, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .failure:
                 completion(.failure(response.error!))

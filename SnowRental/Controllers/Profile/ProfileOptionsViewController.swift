@@ -11,6 +11,7 @@ import UIKit
 import FirebaseAuth
 import ProgressHUD
 import Kingfisher
+import WebKit
 
 class ProfileOptionsViewController: UIViewController {
     
@@ -20,13 +21,16 @@ class ProfileOptionsViewController: UIViewController {
     @IBOutlet weak var profileHeaderContainer: UIView!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
-    
+        
+    @IBOutlet weak var copyrightImage: UIImageView!
     
     override func viewDidLoad() {
         let defaults = UserDefaults.standard
+        
         if defaults.string(forKey: UserDefaultKeys.hasClickedProfile) == nil {
             defaults.set(true, forKey: UserDefaultKeys.hasClickedProfile)
         }
+        copyrightImage.image = UIImage(named: "OmdbCopyrightImage")
         profileImageView.layer.cornerRadius = profileImageView.bounds.height/2
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         profileHeaderContainer.addGestureRecognizer(tap)

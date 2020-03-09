@@ -46,6 +46,19 @@ class DesignSettingsViewController: UIViewController {
     }
     
     @IBAction func reportPressed(_ sender: UIButton) {
-        
+        let alert = UIAlertController(title: "Do you want to continue?", message: "Are you sure you want to report this design?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.reportHelper()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
+    func reportHelper() {
+        MyAPIClient.emailReport(design: self.design!) {
+            ProgressHUD.showSuccess("Reported design")
+        }
     }
 }
