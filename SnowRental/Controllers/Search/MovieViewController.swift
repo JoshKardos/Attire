@@ -25,23 +25,13 @@ class MovieViewController: UIViewController {
         self.configureView()
         shopCollectionView.dataSource = self
         shopCollectionView.delegate = self
-        MoviesManager.fetchDesignIdsFromFirebase(imdbID: self.movie[FirebaseNodes.imdbID]!, onSuccess: {
-            for id in MoviesManager.movieViewingDesignIds {
-                MoviesManager.fetchDesignFromFirebase(id: id, onSuccess: {
-                    if MoviesManager.movieViewingDesigns.count == MoviesManager.movieViewingDesignIds.count {
-                        self.designLoadingIndicator.stopAnimating()
-                        self.shopCollectionView.reloadData()
-                    }
-                }, onEmpty: {
-                    self.designLoadingIndicator.stopAnimating()
-                    print("empty 2")
-                })
-            }
+        MoviesManager.fetchDesignsFromFirebase(imdbID: self.movie[FirebaseNodes.imdbID]!, onSuccess: {
+            self.designLoadingIndicator.stopAnimating()
+            self.shopCollectionView.reloadData()
         }, onEmpty: {
             //no designs
             self.designLoadingIndicator.stopAnimating()
             self.noDesignsLabel.isHidden = false
-            print("empty 1")
         })
     }
     

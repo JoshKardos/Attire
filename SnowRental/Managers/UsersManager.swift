@@ -13,7 +13,10 @@ import FirebaseStorage
 import ProgressHUD
 
 class UsersManager {
+    
     static var currentUser = User()
+    static var hidePostEnabled = false
+    static var blockUserEnabled  = false
     
     static func logOut(onSuccess: @escaping() -> Void) {
         do {
@@ -163,24 +166,34 @@ class UsersManager {
         })
     }
     
-    static func blockUser(with id: String, currentUserId: String) {
+    static func blockUser(with id: String, currentUserId: String, onSuccess: @escaping () -> Void) {
+        if id == Auth.auth().currentUser?.uid {
+            ProgressHUD.showError("Cannot block yourself")
+            return
+        }
         ProgressHUD.show()
         Database.database().reference().child(FirebaseNodes.userBlockedUsers).child(currentUserId).child(id).setValue(1) { (error, ref) in
             if error != nil {
                 ProgressHUD.showError("Failure blocking")
                 return
             }
+            onSuccess()
             ProgressHUD.showSuccess()
         }
     }
     
-    static func hidePost(with designId: String, currentUserId: String) {
+    static func hidePost(with design: Design, currentUserId: String, onSuccess: @escaping () -> Void) {
+        if design.userId == Auth.auth().currentUser?.uid {
+            ProgressHUD.showError("Cannot hide your own post")
+            return
+        }
         ProgressHUD.show()
-        Database.database().reference().child(FirebaseNodes.userHiddenPosts).child(currentUserId).child(designId).setValue(1) { (error, ref) in
+        Database.database().reference().child(FirebaseNodes.userHiddenPosts).child(currentUserId).child(design.designId!).setValue(1) { (error, ref) in
             if error != nil {
-                ProgressHUD.showError("Failure blocking")
+                ProgressHUD.showError("Failure hiding")
                 return
             }
+            onSuccess()
             ProgressHUD.showSuccess()
         }
     }

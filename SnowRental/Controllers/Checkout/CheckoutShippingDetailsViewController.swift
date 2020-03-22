@@ -71,6 +71,8 @@ class CheckoutShippingDetailsViewController: UIViewController {
     
     func setAddressData(paymentContext: STPPaymentContext) {
         guard let city = paymentContext.shippingAddress?.city, let state = paymentContext.shippingAddress?.state, let postalCode = paymentContext.shippingAddress?.postalCode else {
+            self.indicator.stopAnimating()
+            self.indicator.removeFromSuperview()
             return
         }
         self.nameLabel.text = paymentContext.shippingAddress?.name

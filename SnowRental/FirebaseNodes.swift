@@ -58,12 +58,11 @@ class FirebaseNodes {
     static let stripeCustomerId = "stripeCustomerId"
     static let dateJoinedTimestamp = "dateJoinedTimestamp"
     static let profileImageUrl = "profileImageUrl"
+    
     // design node
     static let imageName = "imageName"
     static let movieName = "movieName"
     static let timesUsed = "timesUsed"
-    
-    // design node
     static let imageUrl = "imageUrl"
     static let designImageUrl = "designImageUrl"
 //    static let designId = "designId"

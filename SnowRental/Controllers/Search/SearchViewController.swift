@@ -36,7 +36,7 @@ class SearchViewController: UIViewController {
             self.youMightLikeCollectionView.reloadData()
 
         }, onError: {
-            print("errro")
+            print("errror")
 
             self.youMightLikeCollectionView.reloadData()
 
@@ -55,6 +55,17 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         searchBar.resignFirstResponder() // remove focus
         self.navigationController?.navigationBar.isHidden = true
+        
+        if UsersManager.hidePostEnabled || UsersManager.blockUserEnabled {
+            UsersManager.hidePostEnabled = false
+            UsersManager.blockUserEnabled = false
+
+            DesignManager.fetchSuggestedDesigns(onSuccess: {
+                self.youMightLikeCollectionView.reloadData()
+            }, onError: {
+                self.youMightLikeCollectionView.reloadData()
+            })
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

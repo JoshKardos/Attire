@@ -20,19 +20,12 @@ class MoviesManager {
     
     static func fetchDesignFromFirebase(id: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
         Database.database().reference().child(FirebaseNodes.designs).child(id).observe(.value) { (snapshot) in
-            if !snapshot.exists() {
-                onEmpty()
-                return
-            }
-            let design = Design(dictionary: snapshot.value as! [String: String])
-            if !design.isBlockedOrHiddenByCurrentUser() {
-                movieViewingDesigns.append(design)
-            }
+            
             onSuccess()
         }
     }
     
-    static func fetchDesignIdsFromFirebase(imdbID: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
+    static func fetchDesignsFromFirebase(imdbID: String, onSuccess: @escaping() -> Void, onEmpty: @escaping() -> Void) {
         Database.database().reference().child(FirebaseNodes.movieDesigns).child(imdbID).observe(.value) { (snapshot) in
             if !snapshot.exists() {
                 onEmpty()
@@ -41,7 +34,20 @@ class MoviesManager {
             let designsMap = snapshot.value as! [String: Any]
             let designsIds = designsMap.keys
             movieViewingDesignIds = Array(designsIds)
-            onSuccess()
+            Database.database().reference().child(FirebaseNodes.designs).observe(.value) { (snapshot) in
+                if !snapshot.exists() {
+                    onEmpty()
+                    return
+                }
+                let snapshotMap = snapshot.value as! [String: Any]
+                for id in movieViewingDesignIds {
+                    let design = Design(dictionary: snapshotMap[id] as! [String: String])
+                    if !design.isBlockedOrHiddenByCurrentUser() {
+                        movieViewingDesigns.append(design)
+                    }
+                }
+                onSuccess()
+            }
         }
     }
     

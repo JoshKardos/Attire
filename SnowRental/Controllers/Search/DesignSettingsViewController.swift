@@ -29,7 +29,10 @@ class DesignSettingsViewController: UIViewController {
             ProgressHUD.showError("Reload page")
             return
         }
-        UsersManager.blockUser(with: uid, currentUserId: currentUserId)
+        UsersManager.blockUser(with: uid, currentUserId: currentUserId) {
+            UsersManager.blockUserEnabled = true
+            self.navigationController?.popToRootViewController(animated: false)
+        }
 
     }
     
@@ -38,11 +41,14 @@ class DesignSettingsViewController: UIViewController {
             ProgressHUD.showError("Not logged in")
             return
         }
-        guard let designId = design?.designId else {
+        guard let design = design else {
             ProgressHUD.showError("Reload page")
             return
         }
-        UsersManager.hidePost(with: designId, currentUserId: currentUserId)
+        UsersManager.hidePost(with: design, currentUserId: currentUserId) {
+            UsersManager.hidePostEnabled = true
+            self.navigationController?.popToRootViewController(animated: false)
+        }
     }
     
     @IBAction func reportPressed(_ sender: UIButton) {

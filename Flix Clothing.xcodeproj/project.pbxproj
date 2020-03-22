@@ -313,6 +313,7 @@
 		B3864B4F23F877BD005695E8 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				B3A03F3E240F0BA3007BEF61 /* DesignSettingsViewController.swift */,
 				B397453B23F5F7A400604316 /* SearchViewController.swift */,
 				B3CEC85923F7A19300333178 /* SearchTableViewController.swift */,
 				B34AFB0C23F9432000D765FD /* MovieViewController.swift */,
@@ -332,7 +333,6 @@
 				B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */,
 				B370ADA02408873A00B9B040 /* EditProfileViewController.swift */,
 				B370ADA42408E5EF00B9B040 /* PrivacyPolicyViewController.swift */,
-				B3A03F3E240F0BA3007BEF61 /* DesignSettingsViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -942,7 +942,7 @@
 				CODE_SIGN_ENTITLEMENTS = SnowRental/SnowRentalDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SnowRental/Info.plist;
@@ -1030,7 +1030,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SnowRental/Flix Clothing.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SnowRental/Info.plist;
