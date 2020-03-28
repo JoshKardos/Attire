@@ -52,7 +52,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>We would like to access your camera to take images</string>
+	<string>This app uses the camera to take images to upload as a shirt design.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

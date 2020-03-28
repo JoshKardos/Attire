@@ -106,13 +106,13 @@ extension CheckoutShippingDetailsViewController: STPPaymentContextDelegate {
         let upsGround = PKShippingMethod()
         upsGround.amount = 0
         upsGround.label = "UPS Ground"
-        upsGround.detail = "Arrives in 3-5 days"
+        upsGround.detail = "Arrives in 2 weeks"
         upsGround.identifier = "ups_ground"
         
         let fedEx = PKShippingMethod()
-        fedEx.amount = 5.99
+        fedEx.amount = 10.99
         fedEx.label = "FedEx"
-        fedEx.detail = "Arrives tomorrow"
+        fedEx.detail = "Arrives in one week"
         fedEx.identifier = "fedex"
         
         if address.country == "US" {

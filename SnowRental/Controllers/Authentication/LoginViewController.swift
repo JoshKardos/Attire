@@ -41,6 +41,17 @@ class LoginViewController: UIViewController {
             
     }
     
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
+            if error != nil {
+                ProgressHUD.showError(error?.localizedDescription)
+                return
+            }
+            ProgressHUD.showSuccess("Reset link has been sent to your email")
+            return
+        }
+    }
+    
     @IBAction func logInButtonPressed(_ sender: Any) {
         ProgressHUD.show()
         if self.validTextFields() {

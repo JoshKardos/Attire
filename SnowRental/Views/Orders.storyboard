@@ -10,7 +10,7 @@
         <!--Orders Table View Controller-->
         <scene sceneID="Wdg-78-aiE">
             <objects>
-                <viewController id="vUM-M8-p68" customClass="OrdersTableViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vUM-M8-p68" customClass="OrdersTableViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7cW-dM-gIi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="111" width="414" height="663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="112" id="OH9-pc-V6f" customClass="OrderCell" customModule="Attire" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="112" id="OH9-pc-V6f" customClass="OrderCell" customModule="Flix_Clothing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OH9-pc-V6f" id="eDb-kD-8fT">
@@ -138,7 +138,7 @@
         <!--Order View Controller-->
         <scene sceneID="7Bd-AT-gwG">
             <objects>
-                <viewController id="ARv-nN-FO7" customClass="OrderViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ARv-nN-FO7" customClass="OrderViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bv9-jv-2iH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="908"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tdv-2p-dtf" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="558"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="549"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqq-v3-xuZ">
                                                 <rect key="frame" x="217" y="40" width="173" height="92"/>
@@ -166,14 +166,14 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-MQ-Cv8">
-                                                <rect key="frame" x="0.0" y="237" width="414" height="7"/>
+                                                <rect key="frame" x="0.0" y="237" width="414" height="4"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="7" id="f4r-RQ-5Ta"/>
+                                                    <constraint firstAttribute="height" constant="4" id="f4r-RQ-5Ta"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need help?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-Xe-YyZ">
-                                                <rect key="frame" x="24" y="268" width="106.5" height="24"/>
+                                                <rect key="frame" x="24" y="265" width="106.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1M-Xs-xrI">
-                                                <rect key="frame" x="56" y="303" width="217" height="18"/>
+                                                <rect key="frame" x="56" y="300" width="217" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="217" id="3Xa-wx-fJt"/>
                                                 </constraints>
@@ -207,20 +207,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkg-9G-Snc">
-                                                <rect key="frame" x="0.0" y="345" width="414" height="7"/>
+                                                <rect key="frame" x="0.0" y="342" width="414" height="4"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="7" id="Htj-rv-UB9"/>
+                                                    <constraint firstAttribute="height" constant="4" id="Htj-rv-UB9"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twa-fy-JFI">
-                                                <rect key="frame" x="24" y="376" width="95" height="24"/>
+                                                <rect key="frame" x="24" y="370" width="95" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aI-l3-xg3">
-                                                <rect key="frame" x="24" y="415" width="366" height="46"/>
+                                                <rect key="frame" x="24" y="409" width="366" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View order details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfO-Iy-2su">
                                                         <rect key="frame" x="15" y="14" width="123" height="18"/>
@@ -249,16 +249,16 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordered on February 15, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dni-iE-Ueq">
-                                                <rect key="frame" x="24" y="473" width="207" height="18"/>
+                                                <rect key="frame" x="24" y="467" width="207" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqJ-8R-ppS">
-                                                <rect key="frame" x="0.0" y="515" width="414" height="7"/>
+                                                <rect key="frame" x="0.0" y="509" width="414" height="4"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="7" id="XEI-Ld-Tl6"/>
+                                                    <constraint firstAttribute="height" constant="4" id="XEI-Ld-Tl6"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -356,7 +356,7 @@
         <!--Order Details View Controller-->
         <scene sceneID="dli-lR-xai">
             <objects>
-                <viewController id="qg0-lj-VcU" customClass="OrderDetailsViewController" customModule="Attire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qg0-lj-VcU" customClass="OrderDetailsViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dcy-id-9s4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1208"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
