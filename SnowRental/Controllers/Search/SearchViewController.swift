@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import iOSPhotoEditor
 class SearchViewController: UIViewController {
     
     static var tabSelectedBeforeDesign: Int?

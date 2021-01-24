@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D0C373D2C772433B3347633 /* Pods_Flix_Clothing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E517D54EAD142439E9BB1 /* Pods_Flix_Clothing.framework */; };
-		8728CCA510724F141B6FD2E9 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8234899E5BC94DF47964194 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */; };
+		845A8942A8F57A360DBDF876 /* Pods_Flix_Clothing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBEB52446FCD89F65BBD3DC /* Pods_Flix_Clothing.framework */; };
 		B319DF1623FB4A0000B2A8D0 /* DesignFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */; };
 		B319DF1823FB4CBE00B2A8D0 /* FiltersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */; };
 		B319DF1A23FBA13400B2A8D0 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */; };
 		B319DF1C23FBC25100B2A8D0 /* UploadConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319DF1B23FBC25100B2A8D0 /* UploadConfirmViewController.swift */; };
+		B32075E224FAD9A80002212E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B32075E124FAD9A80002212E /* GoogleService-Info.plist */; };
 		B34AFB0723F90F1400D765FD /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */; };
 		B34AFB0B23F932B200D765FD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0A23F932B200D765FD /* SearchCell.swift */; };
 		B34AFB0D23F9432000D765FD /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AFB0C23F9432000D765FD /* MovieViewController.swift */; };
@@ -69,12 +69,12 @@
 		B3C3495823F7E09400B061E9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C3495723F7E09400B061E9 /* SignUpViewController.swift */; };
 		B3CEC85A23F7A19300333178 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85923F7A19300333178 /* SearchTableViewController.swift */; };
 		B3CEC85C23F7BA3000333178 /* NotAuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */; };
-		B3CEC85E23F7C5D100333178 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3CEC85D23F7C5D100333178 /* GoogleService-Info.plist */; };
 		B3D69F2E23FDEC10007D5C0F /* ConfirmShirtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69F2D23FDEC10007D5C0F /* ConfirmShirtViewController.swift */; };
 		B3D69F3723FE236E007D5C0F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69F3623FE236E007D5C0F /* String.swift */; };
 		B3D69F3923FE2416007D5C0F /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69F3823FE2416007D5C0F /* UITextField.swift */; };
 		B3DC904223FF4C880030B330 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC904123FF4C880030B330 /* MyAPIClient.swift */; };
-		F01B79A1D86D2379E1D8E005 /* Pods_Flix_ClothingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F1D5A786E009BF5D62414 /* Pods_Flix_ClothingTests.framework */; };
+		BB77E64243D2510A4AE61A29 /* Pods_Flix_ClothingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D514CD897DD4664DF6F80B /* Pods_Flix_ClothingTests.framework */; };
+		F777090E55617319BD3365B4 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4663CD9664228F43D0850F25 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,18 +95,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09C94B3AD306BBC8030D97DB /* Pods-Flix ClothingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix ClothingTests.debug.xcconfig"; path = "Target Support Files/Pods-Flix ClothingTests/Pods-Flix ClothingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		188F1D5A786E009BF5D62414 /* Pods_Flix_ClothingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_ClothingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20350B00D655B26E0E3DB06E /* Pods-SnowRentalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.release.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.release.xcconfig"; sourceTree = "<group>"; };
-		359EBE7809A17A456B680184 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig"; path = "Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		37F69FB5023B3EB919F6E90D /* Pods-SnowRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.release.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.release.xcconfig"; sourceTree = "<group>"; };
-		56D6C261347349AE8B489572 /* Pods-Flix ClothingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix ClothingTests.release.xcconfig"; path = "Target Support Files/Pods-Flix ClothingTests/Pods-Flix ClothingTests.release.xcconfig"; sourceTree = "<group>"; };
-		679E517D54EAD142439E9BB1 /* Pods_Flix_Clothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Clothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C0E667617A33542D199A6A2 /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3386A0498CCE2D6E795732EA /* Pods-Flix Clothing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing.release.xcconfig"; path = "Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing.release.xcconfig"; sourceTree = "<group>"; };
+		34878DC008F5B8D05705FA9C /* Pods-Flix ClothingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix ClothingTests.release.xcconfig"; path = "Target Support Files/Pods-Flix ClothingTests/Pods-Flix ClothingTests.release.xcconfig"; sourceTree = "<group>"; };
+		42D514CD897DD4664DF6F80B /* Pods_Flix_ClothingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_ClothingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4663CD9664228F43D0850F25 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Clothing_Flix_ClothingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		636EF7BE493519EFEB1E330D /* Pods-Flix ClothingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix ClothingTests.debug.xcconfig"; path = "Target Support Files/Pods-Flix ClothingTests/Pods-Flix ClothingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		72D4B40A6D798B9440978065 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig"; path = "Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B19DA551675195C00FC53ABC /* Pods-Flix Clothing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing.debug.xcconfig"; path = "Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing.debug.xcconfig"; sourceTree = "<group>"; };
 		B319DF1523FB4A0000B2A8D0 /* DesignFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFilterViewCell.swift; sourceTree = "<group>"; };
 		B319DF1723FB4CBE00B2A8D0 /* FiltersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersManager.swift; sourceTree = "<group>"; };
 		B319DF1923FBA13400B2A8D0 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		B319DF1B23FBC25100B2A8D0 /* UploadConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadConfirmViewController.swift; sourceTree = "<group>"; };
+		B32075E124FAD9A80002212E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B34AFB0623F90F1400D765FD /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		B34AFB0A23F932B200D765FD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		B34AFB0C23F9432000D765FD /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -171,18 +171,12 @@
 		B3C3495723F7E09400B061E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3CEC85923F7A19300333178 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		B3CEC85B23F7BA3000333178 /* NotAuthenticatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotAuthenticatedViewController.swift; sourceTree = "<group>"; };
-		B3CEC85D23F7C5D100333178 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3D69F2D23FDEC10007D5C0F /* ConfirmShirtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmShirtViewController.swift; sourceTree = "<group>"; };
 		B3D69F3623FE236E007D5C0F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B3D69F3823FE2416007D5C0F /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B3DC904123FF4C880030B330 /* MyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
-		B72B0BDE0C5181C702B98C6F /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C81D040C4D68E14928929CFA /* Pods-Flix Clothing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing.release.xcconfig"; path = "Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing.release.xcconfig"; sourceTree = "<group>"; };
-		D46B7D587AEC9C102BCB32C0 /* Pods-SnowRentalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRentalTests.debug.xcconfig"; path = "Target Support Files/Pods-SnowRentalTests/Pods-SnowRentalTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E2CFF2FA4EEC69BAED26AEE6 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental-SnowRentalUITests.release.xcconfig"; path = "Target Support Files/Pods-SnowRental-SnowRentalUITests/Pods-SnowRental-SnowRentalUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E6C0E536FE5F4B980A4795E8 /* Pods-SnowRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowRental.debug.xcconfig"; path = "Target Support Files/Pods-SnowRental/Pods-SnowRental.debug.xcconfig"; sourceTree = "<group>"; };
-		E8234899E5BC94DF47964194 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Clothing_Flix_ClothingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDEAF2909435C7305C237A92 /* Pods-Flix Clothing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing.debug.xcconfig"; path = "Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing.debug.xcconfig"; sourceTree = "<group>"; };
+		CDBEB52446FCD89F65BBD3DC /* Pods_Flix_Clothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Clothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2A1388755B9EDEE2E49F33A /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D0C373D2C772433B3347633 /* Pods_Flix_Clothing.framework in Frameworks */,
+				845A8942A8F57A360DBDF876 /* Pods_Flix_Clothing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F01B79A1D86D2379E1D8E005 /* Pods_Flix_ClothingTests.framework in Frameworks */,
+				BB77E64243D2510A4AE61A29 /* Pods_Flix_ClothingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,23 +200,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8728CCA510724F141B6FD2E9 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework in Frameworks */,
+				F777090E55617319BD3365B4 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1758C75E239994CEBB73D31C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				679E517D54EAD142439E9BB1 /* Pods_Flix_Clothing.framework */,
-				E8234899E5BC94DF47964194 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */,
-				188F1D5A786E009BF5D62414 /* Pods_Flix_ClothingTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B34AFB1523FA1B7200D765FD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,7 +364,7 @@
 				B397452A23F4F93A00604316 /* SnowRentalUITests */,
 				B397450223F4F93900604316 /* Products */,
 				E4491DAEA1CCBCBE8DE28108 /* Pods */,
-				1758C75E239994CEBB73D31C /* Frameworks */,
+				DACBFD59860047C7FC8C57B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -398,13 +382,13 @@
 			isa = PBXGroup;
 			children = (
 				B3A03F39240AEFEB007BEF61 /* Flix Clothing.entitlements */,
-				B3D69F3523FE2361007D5C0F /* Extensions */,
 				B397450423F4F93900604316 /* AppDelegate.swift */,
 				B3A03F3C240DCD79007BEF61 /* ApiKeys.swift */,
 				B397450623F4F93900604316 /* SceneDelegate.swift */,
 				B3864B5A23F89F72005695E8 /* FirebaseNodes.swift */,
 				B3DC904123FF4C880030B330 /* MyAPIClient.swift */,
 				B370ADA22408D70900B9B040 /* UserDefaultKeys.swift */,
+				B3D69F3523FE2361007D5C0F /* Extensions */,
 				B34AFB1523FA1B7200D765FD /* Helpers */,
 				B3864B5523F87B66005695E8 /* Models */,
 				B3864B5223F8787C005695E8 /* Managers */,
@@ -413,8 +397,8 @@
 				B3864B4C23F8777B005695E8 /* Views */,
 				B3C3495623F7D73300B061E9 /* SnowRentalDebug.entitlements */,
 				B397451223F4F93A00604316 /* Assets.xcassets */,
+				B32075E124FAD9A80002212E /* GoogleService-Info.plist */,
 				B397451723F4F93A00604316 /* Info.plist */,
-				B3CEC85D23F7C5D100333178 /* GoogleService-Info.plist */,
 				B397450F23F4F93900604316 /* SnowRental.xcdatamodeld */,
 			);
 			path = SnowRental;
@@ -448,21 +432,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DACBFD59860047C7FC8C57B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDBEB52446FCD89F65BBD3DC /* Pods_Flix_Clothing.framework */,
+				4663CD9664228F43D0850F25 /* Pods_Flix_Clothing_Flix_ClothingUITests.framework */,
+				42D514CD897DD4664DF6F80B /* Pods_Flix_ClothingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E4491DAEA1CCBCBE8DE28108 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E6C0E536FE5F4B980A4795E8 /* Pods-SnowRental.debug.xcconfig */,
-				37F69FB5023B3EB919F6E90D /* Pods-SnowRental.release.xcconfig */,
-				B72B0BDE0C5181C702B98C6F /* Pods-SnowRental-SnowRentalUITests.debug.xcconfig */,
-				E2CFF2FA4EEC69BAED26AEE6 /* Pods-SnowRental-SnowRentalUITests.release.xcconfig */,
-				D46B7D587AEC9C102BCB32C0 /* Pods-SnowRentalTests.debug.xcconfig */,
-				20350B00D655B26E0E3DB06E /* Pods-SnowRentalTests.release.xcconfig */,
-				FDEAF2909435C7305C237A92 /* Pods-Flix Clothing.debug.xcconfig */,
-				C81D040C4D68E14928929CFA /* Pods-Flix Clothing.release.xcconfig */,
-				8C0E667617A33542D199A6A2 /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */,
-				359EBE7809A17A456B680184 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */,
-				09C94B3AD306BBC8030D97DB /* Pods-Flix ClothingTests.debug.xcconfig */,
-				56D6C261347349AE8B489572 /* Pods-Flix ClothingTests.release.xcconfig */,
+				B19DA551675195C00FC53ABC /* Pods-Flix Clothing.debug.xcconfig */,
+				3386A0498CCE2D6E795732EA /* Pods-Flix Clothing.release.xcconfig */,
+				F2A1388755B9EDEE2E49F33A /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */,
+				72D4B40A6D798B9440978065 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */,
+				636EF7BE493519EFEB1E330D /* Pods-Flix ClothingTests.debug.xcconfig */,
+				34878DC008F5B8D05705FA9C /* Pods-Flix ClothingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -474,11 +462,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B397453023F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix Clothing" */;
 			buildPhases = (
-				194A237CCCD60C0E374F20C3 /* [CP] Check Pods Manifest.lock */,
+				67C7ECC073B718660963A429 /* [CP] Check Pods Manifest.lock */,
 				B39744FD23F4F93900604316 /* Sources */,
 				B39744FE23F4F93900604316 /* Frameworks */,
 				B39744FF23F4F93900604316 /* Resources */,
-				14E82417741E09000760E2D5 /* [CP] Embed Pods Frameworks */,
+				A6C50F57F61B07B3D0CBE34E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,7 +481,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B397453323F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix ClothingTests" */;
 			buildPhases = (
-				B42EE6FD099FE845D737AF1F /* [CP] Check Pods Manifest.lock */,
+				04A7978E2209D8ED256D6CFC /* [CP] Check Pods Manifest.lock */,
 				B397451823F4F93A00604316 /* Sources */,
 				B397451923F4F93A00604316 /* Frameworks */,
 				B397451A23F4F93A00604316 /* Resources */,
@@ -512,11 +500,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B397453623F4F93A00604316 /* Build configuration list for PBXNativeTarget "Flix ClothingUITests" */;
 			buildPhases = (
-				7DD143A312A6BC11200EACBF /* [CP] Check Pods Manifest.lock */,
+				B631B01610A23A8D31C7A595 /* [CP] Check Pods Manifest.lock */,
 				B397452323F4F93A00604316 /* Sources */,
 				B397452423F4F93A00604316 /* Frameworks */,
 				B397452523F4F93A00604316 /* Resources */,
-				2517B37691539B9F1F79FC74 /* [CP] Embed Pods Frameworks */,
+				47065990F1A9FA1650D5EAB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -577,9 +565,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3864B6523F8E1F1005695E8 /* Profile.storyboard in Resources */,
+				B32075E224FAD9A80002212E /* GoogleService-Info.plist in Resources */,
 				B34AFB1923FA233900D765FD /* Design.storyboard in Resources */,
 				B397451623F4F93A00604316 /* LaunchScreen.storyboard in Resources */,
-				B3CEC85E23F7C5D100333178 /* GoogleService-Info.plist in Resources */,
 				B397451323F4F93A00604316 /* Assets.xcassets in Resources */,
 				B397450E23F4F93900604316 /* Main.storyboard in Resources */,
 				B3A03F36240A4AF4007BEF61 /* LaunchScreenController.storyboard in Resources */,
@@ -605,24 +593,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14E82417741E09000760E2D5 /* [CP] Embed Pods Frameworks */ = {
+		04A7978E2209D8ED256D6CFC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flix ClothingTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		194A237CCCD60C0E374F20C3 /* [CP] Check Pods Manifest.lock */ = {
+		47065990F1A9FA1650D5EAB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67C7ECC073B718660963A429 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -644,24 +654,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2517B37691539B9F1F79FC74 /* [CP] Embed Pods Frameworks */ = {
+		A6C50F57F61B07B3D0CBE34E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing-Flix ClothingUITests/Pods-Flix Clothing-Flix ClothingUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flix Clothing/Pods-Flix Clothing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7DD143A312A6BC11200EACBF /* [CP] Check Pods Manifest.lock */ = {
+		B631B01610A23A8D31C7A595 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -677,28 +687,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Flix Clothing-Flix ClothingUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B42EE6FD099FE845D737AF1F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Flix ClothingTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -870,7 +858,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -924,7 +912,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -936,21 +924,22 @@
 		};
 		B397453123F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDEAF2909435C7305C237A92 /* Pods-Flix Clothing.debug.xcconfig */;
+			baseConfigurationReference = B19DA551675195C00FC53ABC /* Pods-Flix Clothing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SnowRental/SnowRentalDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SnowRental/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -978,8 +967,6 @@
 					"\"FirebaseDatabase\"",
 					"-framework",
 					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseInstanceID\"",
 					"-framework",
 					"\"FirebaseStorage\"",
 					"-framework",
@@ -1025,20 +1012,21 @@
 		};
 		B397453223F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C81D040C4D68E14928929CFA /* Pods-Flix Clothing.release.xcconfig */;
+			baseConfigurationReference = 3386A0498CCE2D6E795732EA /* Pods-Flix Clothing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "SnowRental/Flix Clothing.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S879Z9A2RC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SnowRental/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1066,8 +1054,6 @@
 					"\"FirebaseDatabase\"",
 					"-framework",
 					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseInstanceID\"",
 					"-framework",
 					"\"FirebaseStorage\"",
 					"-framework",
@@ -1112,7 +1098,7 @@
 		};
 		B397453423F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09C94B3AD306BBC8030D97DB /* Pods-Flix ClothingTests.debug.xcconfig */;
+			baseConfigurationReference = 636EF7BE493519EFEB1E330D /* Pods-Flix ClothingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1135,7 +1121,7 @@
 		};
 		B397453523F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56D6C261347349AE8B489572 /* Pods-Flix ClothingTests.release.xcconfig */;
+			baseConfigurationReference = 34878DC008F5B8D05705FA9C /* Pods-Flix ClothingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1158,7 +1144,7 @@
 		};
 		B397453723F4F93A00604316 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C0E667617A33542D199A6A2 /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */;
+			baseConfigurationReference = F2A1388755B9EDEE2E49F33A /* Pods-Flix Clothing-Flix ClothingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1179,7 +1165,7 @@
 		};
 		B397453823F4F93A00604316 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 359EBE7809A17A456B680184 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */;
+			baseConfigurationReference = 72D4B40A6D798B9440978065 /* Pods-Flix Clothing-Flix ClothingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

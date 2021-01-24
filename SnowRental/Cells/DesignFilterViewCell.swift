@@ -17,7 +17,7 @@ class DesignFilterViewCell: UICollectionViewCell {
     func configureCell(image input: UIImage, filter: FiltersManager.Filter, index: Int) {
         self.label.text = filter.nickName
         DispatchQueue.global(qos: .userInteractive).async {
-            let filteredImage = FiltersManager.applyFilterTo(image: input, filterEffect: filter)//FiltersManager.applyFilter(input, filterName, intensity: 1)
+            let filteredImage = FiltersManager.applyFilterTo(image: input, filterEffect: filter, filterIntensity: nil)//FiltersManager.applyFilter(input, filterName, intensity: 1)
             DispatchQueue.main.async {
                 self.imageView.image = filteredImage
             }

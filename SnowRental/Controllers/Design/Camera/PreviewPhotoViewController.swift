@@ -16,6 +16,7 @@ class PreviewPhotoViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage?
     var designMovie: [String: String]?
+    var selectedFilterIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,10 @@ class PreviewPhotoViewController: UIViewController {
     @IBAction func retakePressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        print(sender.value)
+        self.imageView.image = FiltersManager.applyFilterTo(image: self.image!, filterEffect: FiltersManager.Filters[self.selectedFilterIndex], filterIntensity: sender.value)
+    }
 }
 
 extension PreviewPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -78,6 +83,7 @@ extension PreviewPhotoViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! DesignFilterViewCell
         imageView.image = cell.imageView.image
+        self.selectedFilterIndex = indexPath.row
     }
 
 }

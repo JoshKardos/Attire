@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFf-af-DNi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFf-af-DNi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Camera View Controller-->
         <scene sceneID="Lsm-9Z-jvR">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="Fq9-U2-19j" customClass="CameraViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="Fq9-U2-19j" customClass="CameraViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fbR-Se-E5h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,13 +118,13 @@
         <!--Preview Photo Controller-->
         <scene sceneID="267-Jm-jow">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="Zqd-li-RHv" userLabel="Preview Photo Controller" customClass="PreviewPhotoViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="Zqd-li-RHv" userLabel="Preview Photo Controller" customClass="PreviewPhotoViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdg-Rr-TBj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-jl-vcB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="562"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="524"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3bA-No-mtz">
                                 <rect key="frame" x="0.0" y="658" width="414" height="204"/>
@@ -139,7 +139,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="DesignFilterCell" id="KrE-HM-nj2" customClass="DesignFilterViewCell" customModule="SnowRental" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="DesignFilterCell" id="KrE-HM-nj2" customClass="DesignFilterViewCell" customModule="Flix_Clothing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="141" height="202"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="j6s-fu-gJu">
@@ -178,14 +178,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.01" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iQR-1H-aTC">
+                                <rect key="frame" x="6" y="620" width="402" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="Zqd-li-RHv" eventType="valueChanged" id="oSn-Ud-QJ8"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3bA-No-mtz" firstAttribute="bottom" secondItem="9xN-Ac-r1R" secondAttribute="bottom" id="B1U-ky-oxM"/>
+                            <constraint firstItem="iQR-1H-aTC" firstAttribute="leading" secondItem="9xN-Ac-r1R" secondAttribute="leading" constant="8" id="GQQ-UK-Cba"/>
+                            <constraint firstItem="iQR-1H-aTC" firstAttribute="top" secondItem="LaG-jl-vcB" secondAttribute="bottom" constant="8" id="Jrh-as-p00"/>
                             <constraint firstItem="3bA-No-mtz" firstAttribute="leading" secondItem="9xN-Ac-r1R" secondAttribute="leading" id="NU3-Hr-vHt"/>
+                            <constraint firstItem="9xN-Ac-r1R" firstAttribute="trailing" secondItem="iQR-1H-aTC" secondAttribute="trailing" constant="8" id="Qsy-92-Tlq"/>
                             <constraint firstItem="9xN-Ac-r1R" firstAttribute="trailing" secondItem="LaG-jl-vcB" secondAttribute="trailing" id="VeQ-10-N4X"/>
                             <constraint firstItem="3bA-No-mtz" firstAttribute="trailing" secondItem="9xN-Ac-r1R" secondAttribute="trailing" id="c9w-pX-6Qe"/>
-                            <constraint firstItem="3bA-No-mtz" firstAttribute="top" secondItem="LaG-jl-vcB" secondAttribute="bottom" constant="8" id="crN-n6-kQe"/>
+                            <constraint firstItem="3bA-No-mtz" firstAttribute="top" secondItem="iQR-1H-aTC" secondAttribute="bottom" constant="8" id="dGB-SP-CAq"/>
                             <constraint firstItem="LaG-jl-vcB" firstAttribute="leading" secondItem="9xN-Ac-r1R" secondAttribute="leading" id="i8L-m5-EVP"/>
                             <constraint firstItem="LaG-jl-vcB" firstAttribute="top" secondItem="9xN-Ac-r1R" secondAttribute="top" id="tcQ-c7-kaM"/>
                         </constraints>
@@ -216,7 +225,7 @@
         <!--Tags-->
         <scene sceneID="LIN-uU-TgT">
             <objects>
-                <viewController id="xyu-oA-LIB" customClass="TagsViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xyu-oA-LIB" customClass="TagsViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OxY-8L-DNg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +310,7 @@
         <!--Libray View Controller-->
         <scene sceneID="tBI-dX-1Fa">
             <objects>
-                <viewController id="iFh-ll-U83" userLabel="Libray View Controller" customClass="LibraryViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iFh-ll-U83" userLabel="Libray View Controller" customClass="LibraryViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jpJ-a7-Qaz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +322,7 @@
                                     <constraint firstAttribute="height" constant="64" id="ndz-Fc-nPU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                                <state key="normal" title="Choose">
+                                <state key="normal" title="Pick from library">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -321,7 +330,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xQ4-XX-AXa">
-                                <rect key="frame" x="0.0" y="0.5" width="414" height="499"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="497"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
@@ -329,14 +338,15 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cxE-NW-Fmo" secondAttribute="trailing" id="9hk-V1-xbx"/>
                             <constraint firstItem="xQ4-XX-AXa" firstAttribute="leading" secondItem="jpJ-a7-Qaz" secondAttribute="leading" id="HEI-gg-hOc"/>
+                            <constraint firstItem="xQ4-XX-AXa" firstAttribute="top" secondItem="9Ej-SX-LG9" secondAttribute="top" id="NY4-q0-FVl"/>
                             <constraint firstAttribute="trailing" secondItem="xQ4-XX-AXa" secondAttribute="trailing" id="QTe-YH-VOC"/>
                             <constraint firstAttribute="bottom" secondItem="cxE-NW-Fmo" secondAttribute="bottom" constant="133" id="RYJ-7L-j1s"/>
-                            <constraint firstItem="xQ4-XX-AXa" firstAttribute="top" secondItem="jpJ-a7-Qaz" secondAttribute="top" id="SOt-JO-t12"/>
                             <constraint firstItem="cxE-NW-Fmo" firstAttribute="leading" secondItem="jpJ-a7-Qaz" secondAttribute="leading" id="mio-Du-3g0"/>
-                            <constraint firstItem="cxE-NW-Fmo" firstAttribute="top" secondItem="xQ4-XX-AXa" secondAttribute="bottom" constant="110" id="wkG-en-O9R"/>
+                            <constraint firstItem="cxE-NW-Fmo" firstAttribute="top" secondItem="xQ4-XX-AXa" secondAttribute="bottom" constant="24" id="wkG-en-O9R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ej-SX-LG9"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="imageView" destination="xQ4-XX-AXa" id="PHb-2w-7mo"/>
                     </connections>
@@ -348,7 +358,7 @@
         <!--Confirm-->
         <scene sceneID="5xO-iV-XJU">
             <objects>
-                <viewController id="n9o-ST-rgm" customClass="UploadConfirmViewController" customModule="SnowRental" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n9o-ST-rgm" customClass="UploadConfirmViewController" customModule="Flix_Clothing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zjd-1z-6QV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2401"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -525,7 +535,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="link" catalog="system" width="64" height="58"/>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="link" catalog="system" width="128" height="116"/>
     </resources>
 </document>

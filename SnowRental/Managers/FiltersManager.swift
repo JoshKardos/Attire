@@ -25,6 +25,11 @@ class FiltersManager {
         }
     }
     
+    // create filters func
+    
+        //takes slider value
+        //creates the array to the bottom
+    
     static let Filters: [Filter] = [
         Filter(filterName: "None", nickName: "None", filterEffectValue: nil, filterEffectValueName: nil),
         Filter(filterName: "CISepiaTone", nickName: "Sepia", filterEffectValue: 3, filterEffectValueName: kCIInputIntensityKey),
@@ -34,7 +39,7 @@ class FiltersManager {
 
     ]
     static var filter: CIFilter?
-    static func applyFilterTo(image: UIImage, filterEffect: Filter) -> UIImage? {
+    static func applyFilterTo(image: UIImage, filterEffect: Filter, filterIntensity: Float?) -> UIImage? {
         guard let cgImage = image.cgImage else {
             return nil
         }
@@ -46,9 +51,16 @@ class FiltersManager {
         filter = CIFilter(name: filterEffect.filterName)
         
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        filter?.setDefaults()
-        if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage, let cgiImageResult = context.createCGImage(output, from: output.extent) {
-            filteredImage = UIImage(cgImage: cgiImageResult)
+        if let intensity = filterIntensity {
+            filter?.setValue(intensity * Float(filterEffect.filterEffectValue as! Int), forKey: filterEffect.filterEffectValueName!)
+        } else {
+            filter?.setValue(filterEffect.filterEffectValue, forKey: filterEffect.filterEffectValueName!)
+        }
+//        filter?.setDefaults()
+        if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage{
+            if let cgiImageResult = context.createCGImage(output, from: output.extent) {
+                filteredImage = UIImage(cgImage: cgiImageResult)
+            }
         }
         return filteredImage
     }
