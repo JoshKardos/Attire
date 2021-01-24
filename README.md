@@ -1,3 +1,3 @@
 # Flix Clothing
 
-iOS application to buy and design tshirts based on movies.
+App store URL: https://apps.apple.com/us/app/flix-clothing/id1501044434?ls=1
